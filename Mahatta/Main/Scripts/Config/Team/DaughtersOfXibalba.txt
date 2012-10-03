@@ -1,0 +1,115 @@
+-- Register the Daughters of Xibalba.
+RegisterTeam("Daughters of Xibalba", {
+	-- Players --
+	{ name = "IXTAB", file = "dox_team/new captain" },
+	{ name = "IX CHEL", file = "dox_team/henchman" },
+	{ name = "xmucane", file = "dox_team/henchman" },
+	{ name = "Canec", file = "dox_team/henchman" },
+
+	-- Files --
+	namemodel = "Models/dox_team/new captain/new captain.cfg",
+	nametexture = "Textures/dox_team/doxtext.PNG",
+
+	-----------
+	-- Begin --
+	-----------
+	Begin = function(T)
+		-- Entrance procession
+	end,
+
+	-----------
+	-- Serve --
+	-----------
+	Serve = function(T)
+		-- Taunting
+		
+		
+		
+		-- Assign server duties.
+		local players = {};
+		for index = 1, #T do
+			players[index] = T:getPlayer(index - 1);
+		end
+		PickBestPlayer(players, ServerBest, { ball = ball }, function(server)
+			server:GetSteering():EnableForces{ "Target", "Separation" };
+			server:GetSteering():SetProperties{
+				SeparationScale = 3,
+				TargetSpeed = server:GetMaxSpeed()
+			};
+			server:SetNeighborRange(250);
+			server:SetProc(ServerProc(server));
+		end);
+	end,
+
+	-------------
+	-- Defense --
+	-------------
+	Defense = function(T)
+		-- Send everybody home.
+		SendAllHome(T);
+
+		-- Take defensive positions
+	end,
+
+	-------------
+	-- Offense --
+	-------------
+	Offense = function(T)
+		-- Assign shooter duties.
+		local bThis, players = T == team1 and "bTeam1" or "bTeam2", {};
+		for index = 1, #T do
+			players[index] = T:getPlayer(index - 1);
+		end
+		local data = { ball = ball, bThis = bThis, time = 0 };
+		PickBestPlayer(players, ShooterBest, data, function(shooter)
+			shooter:GetSteering():EnableForces{ "Target" };
+			shooter:GetSteering():SetProperties{ TargetSpeed = shooter:GetMaxSpeed() };
+			shooter:SetNeighborRange(250);
+			shooter:SetProc(ShooterProc(shooter, data));
+		end);
+
+		-- Assign backup duties.
+		PickBestPlayer(players, BackupBest, { ball = ball, bThis = bThis, time = data.time }, function(backup)
+			local speed = backup:GetMaxSpeed();		
+			backup:GetSteering():EnableForces{ "Target" };
+			backup:GetSteering():SetProperties{ TargetSpeed = speed };
+			backup:SetNeighborRange(250);
+--	backup <- speed: comfortable speed to get into position
+			backup:SetProc(BackupProc(backup, data));
+		end);
+	end,
+
+	---------------
+	-- GainPoint --
+	---------------
+	GainPoint = function(T)
+		-- Cheers
+
+		-- Send everybody home.
+		SendAllHome(T);
+	end,
+
+	---------------
+	-- LosePoint --
+	---------------
+	LosePoint = function(T)
+		-- Sulks
+	
+		-- Send everybody home.
+		SendAllHome(T);
+	end,
+
+	---------
+	-- Win --
+	---------
+	Win = function(T)
+		-- Rooting
+	end,
+
+	----------
+	-- Lose --
+	----------
+	Lose = function(T)
+		-- To the chopping block!
+	end
+});

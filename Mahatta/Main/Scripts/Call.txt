@@ -1,0 +1,81 @@
+--------------------------------
+-- Call_
+-- Calls a routine if it exists
+-- routine: Routine to call
+-- ...: Arguments to routine
+-- Returns: Results of call
+--------------------------------
+function Call_ (routine, ...)
+	return CallIf(routine, routine, ...);
+end
+
+-----------------------------------------
+-- CallIf
+-- Calls a function if a condition holds
+-- condition: Condition to test
+-- routine: Routine to call
+-- ...: Arguments to routine
+-- Returns: Results of call
+-----------------------------------------
+function CallIf (condition, routine, ...)
+	if condition then
+		return routine(...);
+	end
+end
+
+--------------------------------------------
+-- CallIf_N
+-- Calls a function if an argument is valid
+-- routine: Routine to call
+-- N: Argument index
+-- ...: Arguments to routine
+-- Returns: Results of call
+--------------------------------------------
+function CallIf_N (routine, N, ...)
+	if select(N, ...) then
+		return routine(...);
+	end
+end
+
+-------------------------------------------
+-- Invoke
+-- Invokes a method if its instance exists
+-- I: Instance handle
+-- method: Method to invoke
+-- ...: Arguments to method
+-- Returns: Results of invocation
+-------------------------------------------
+function Invoke (I, method, ...)
+	if I then
+		return I[method](I, ...);
+	end
+end
+
+-------------------------------------------------
+-- Invoke_
+-- Invokes a method if it and its instance exist
+-- I: Instance handle
+-- method: Method to invoke
+-- ...: Arguments to method
+-- Returns: Results of invocation
+-------------------------------------------------
+function Invoke_ (I, method, ...)
+	if I then
+		return I:Invoke_(method, ...);
+	end
+end
+
+----------------------------------------------------------------
+-- InvokeIf
+-- Invokes a method if an instance exists and a condition holds
+-- condition: Condition to test
+-- I: Instance handle
+-- method: Method to invoke
+-- ...: Arguments to method
+-- Returns: Results of invocation
+----------------------------------------------------------------
+function InvokeIf (condition, I, method, ...)
+	if I and condition then
+		return I[method](I, ...);
+	end
+end

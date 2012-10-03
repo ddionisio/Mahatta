@@ -1,0 +1,87 @@
+-----------------------------------------
+-- BoxesIntersect
+-- Indicates whether two boxes intersect
+-- x1, y1: First box coordinates
+-- w1, h1: First box dimensions
+-- x2, y2: Second box coordinates
+-- w2, h2: Second box dimensions
+-- Returns: If true, the boxes intersect
+-----------------------------------------
+function BoxesIntersect (x1, y1, w1, h1, x2, y2, w2, h2)
+	return not (x1 > x2 + w2 or x2 > x1 + w1 or y1 > y2 + h2 or y2 > y1 + h1);
+end
+
+-----------------------------------------------
+-- BoxInBox
+-- Indicates whether a box lies in another box
+-- bx, by: Box coordinates
+-- bw, bh: Box dimensions
+-- x, y: Container box coordinates
+-- w, h: Container box dimensions
+-- Returns: If true, box is contained
+-----------------------------------------------
+function BoxInBox (bx, by, bw, bh, x, y, w, h)
+	return not (bx < x or bx + bw > x + w or by < y or by + bh > y + h);
+end
+
+--------------------------------------
+-- ClampIn
+-- Clamps a number between two bounds
+-- number: Number to clamp
+-- min, max: Bounds to clamp between
+--------------------------------------
+function ClampIn (number, min, max)
+	min, max = SwapIf(min > max, min, max);
+	return math.min(math.max(number, min), max);
+end
+
+-------------------------------------------
+-- PointInBox
+-- Indicates whether a point lies in a box
+-- px, py: Point coordinates
+-- x, y: Box coordinates
+-- w, h: Box dimensions
+-- Returns: If true, point is contained
+-------------------------------------------
+function PointInBox (px, py, x, y, w, h)
+	return not (px < x or px >= x + w or py < y or py >= y + h);
+end
+
+-------------------------------------------------
+-- Rect
+-- Converts coordinate pairs into a rectangle
+-- x1, y1: First pair of coordinates
+-- x2, y2: Second pair of coordinates
+-- Returns: Rectangle coordinates and dimensions
+-------------------------------------------------
+function Rect (x1, y1, x2, y2)
+	x1, y1, x2, y2 = SortPairs(x1, y1, x2, y2);
+	return x1, y1, x2 - x1, y2 - y1;
+end
+
+----------------------------------------
+-- SortPairs
+-- Sorts a pair of coordinates
+-- x1, y1: First pair of coordinates
+-- x2, y2: Second pair of coordinates
+-- Returns: The sorted coordinate pairs 
+----------------------------------------
+function SortPairs (x1, y1, x2, y2)
+	x1, x2 = SwapIf(x1 > x2, x1, x2);
+	y1, y2 = SwapIf(y1 > y2, y1, y2);
+	return x1, y1, x2, y2;
+end
+
+-----------------------------------------
+-- SwapIf
+-- Swaps two values if a condition holds
+-- condition: Condition to test
+-- a, b: Values to swap
+-- Returns: Values in proper order
+-----------------------------------------
+function SwapIf (condition, a, b)
+	if condition then
+		return b, a;
+	end
+	return a, b;
+end

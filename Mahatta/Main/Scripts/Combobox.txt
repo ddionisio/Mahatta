@@ -1,0 +1,213 @@
+-----------------------------------------------------
+-- Combobox class definition; inherits from Textlist
+-----------------------------------------------------
+class.define("Combobox", {
+	-- Adds an entry to the end of the combobox
+	-- text: Text to assign
+	-- datum: Datum to attach to entry
+	--------------------------------------------
+	Append = function(C, text, datum)
+		C:AddEntry(#C.array, text, datum);
+		
+		-- If this is the first entry, invoke a refresh.
+		C:CallIf(#C.array == 1, "onRefresh", true);
+	end,
+
+	-- Gets the combobox heading entry
+	-- Returns: Heading entry
+	-----------------------------------
+	GetHeading = function(C)
+		return C:GetEntry(C:Heading());
+	end,
+	
+	-- Gets the combobox's local rectangle
+	-- Returns: Combobox coordinates, dimensions
+	---------------------------------------------
+	GetLocalRect = function(C)
+		return C.x, C.y, C.w, C.h + (C:GetOpen() and C.capacity * C.h or 0);
+	end,
+		
+	-- Gets the combobox open state
+	-- Returns: Open state
+	--------------------------------
+	GetOpen = function(C)
+		return C.bOpen == true;
+	end,	
+	
+	-- Gets the combobox heading
+	-- Returns: Heading
+	-----------------------------
+	Heading = function(C)
+		return C.heading or 0;
+	end,
+	
+	-- Builds an iterator over the scroll set
+	-- bThis: If true, include the combobox
+	-- Returns: Iterator which returns handles
+	-------------------------------------------
+	ScrollSet = function(C, bThis)
+		local set, index = {}, 0;
+		CallIf(bThis, table.insert, set, C);
+		for _, component in ipairs{ "sU", "sD" } do
+			CallIf_N(table.insert, 2, set, C[component]);
+		end
+		return function()
+			index = index + 1;
+			return set[index];
+		end
+	end,
+		
+	-- Sets the combobox open state
+	-- bOpen: Open state to apply
+	--------------------------------
+	SetOpen = function(C, bOpen)
+		if bOpen then
+			-- Prioritize combobox draws and hit tests by promoting both the combobox and
+			-- its scroll set, in that order, to the head.
+			for component in C:ScrollSet(true) do
+				component:PromoteToDockHead();
+			end
+			
+			-- Place the offset at the heading.
+			C.offset:Set(C:Heading());
+			
+			-- Load a net to trap outside presses.
+			C.net = Net(function()
+				for component in C:ScrollSet(true) do
+					component:SignalTest(component:GetRect("xywh"));
+					if component:IsSignaled() then
+						return true;
+					end
+				end
+				return table.find(C.parts, C:GetState():GetSignaled());
+			end, function()
+				C:SetOpen(false);
+			end);
+			C.net:Frame(0, 0, vw, vh);
+		else
+			-- Remove the net on closes.
+			Invoke(C.net, "Remove");
+			C.grab, C.net = nil, nil;
+		end
+		C.bOpen = bOpen;
+		
+		-- Enable or disable the scroll set as necessary.
+		for component in C:ScrollSet(false) do
+			component:AllowSignal(bOpen);
+			component:AllowUpdate(bOpen);
+		end
+	end
+},
+
+-- New
+-- state: State handle
+-- capacity: Combobox capacity
+-------------------------------
+function(C, state, capacity)
+	class.scons("Textlist", state, capacity);
+
+	-- Set default offset position.
+	C.offset:Set(0);
+
+	-- Key press timer.
+	C.press = class.new("Timer", function()
+		if C.enter then
+			-- On up or down, move the entered item.
+			if C.action == "up" then
+				if C.enter ~= 0 then
+					C.enter = C.enter - 1;
+				end
+			elseif C.action == "down" then
+				if C.enter + 1 ~= #C.array then
+					C.enter = C.enter + 1;
+				end
+			end
+			
+			-- Put the item in view if it was altered while out of view.
+			if C.action == "up" or C.action == "down" then
+				C.offset:InvokeIf(C.enter < C.offset:Get(), "Set", C.enter);
+				C.offset:InvokeIf(C.enter >= C.offset:Get() + C.capacity, "Set", C.enter - C.capacity + 1);	
+			end
+		end
+	end);
+	
+	-- Methods --
+	C:SetMethod{
+		event = function(event)
+			if event == WE.Grab then
+				C:SetOpen(not C:GetOpen());
+			elseif event == WE.DropPart then
+				local grab = C.grab;
+				C:InvokeIf(C.heading ~= grab, "RefreshAction", function()
+					C.heading = grab;
+				end);
+				C:SetOpen(false);
+			elseif event == WE.EnterPart then
+				C.enter = C.offset:Get() + table.find(C.parts, state:GetEntered()) - 1;
+			elseif event == WE.GrabPart then
+				C.grab = C.offset:Get() + table.find(C.parts, state:GetGrabbed()) - 1;
+			elseif event == WE.LeavePart then
+				C.enter = nil;
+			end
+		end,
+		signal = function(cx, cy, x, y, w, h)
+			-- Compute the open height. Reduce it if too few items exist.
+			local itemcount, oh = #C.array, h * (C.capacity + 1);
+			if C.capacity > itemcount then
+				oh = oh - (C.capacity - itemcount) * h;
+			end
+
+			-- Signal a hit if the cursor lies in the combobox body. Signal an item if the
+			-- cursor falls within it while the combobox is open.
+			local bOpen = C:GetOpen();
+			if PointInBox(cx, cy, x, y, w, bOpen and oh or h) then
+				C:Signal();
+				if bOpen then
+					local offset = C.offset:Get() - 1;
+					for index in C:View() do
+						y = y + h;
+						C.parts[index - offset]:InvokeIf(cy >= y and cy < y + h, "Signal");
+					end
+				end
+			end
+		end,		
+		update = function(x, y, w, h)
+			C:DrawPicture("H", x, y, w, h);
+
+			-- Update the key press timer.
+			C.press:Update();
+
+			-- If the combobox is not empty, draw the heading text.
+			if #C.array ~= 0 then
+				C:StringF(C:GetHeading().text, "vo", x, y, w, h);
+				
+				-- If the box is open, go down one row and draw the backdrop.
+				if C:GetOpen() then
+					local y = y + h;
+					C:DrawPicture("B", x, y, w, math.min(C.capacity, #C.array) * h);
+
+					-- Iterate through the visible items. If an item is entered, highlight it.
+					-- Draw any string attached to the item and go to the next line.
+					for index, entry in C:View() do
+						C:InvokeIf(index == C.enter, "DrawPicture", "S", x, y, w, h);
+						C:StringF(entry.text, "vo", x, y, w, h);
+						y = y + h;
+					end
+				end
+			end
+
+			-- Frame the combobox according to whether it is the focus.
+			C:DrawFrame(C:IsFocus() and "H" or "D", x, y, w, h);
+		end,
+		onBind = function(sp, bUp)
+			C[bUp and "sU" or "sD"] = sp;
+			
+			-- Put the scroll button into a matching state with the combobox.
+			sp:AllowSignal(C:GetOpen());
+			sp:AllowUpdate(C:GetOpen());		
+		end,
+		onUnbind = function(bUp)
+			C[bUp and "sU" or "sD"] = nil;		
+		end
+	};
+end, { base = "Textlist" });

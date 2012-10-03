@@ -1,0 +1,28 @@
+-- Install the main screen.
+local data = {};
+LoadSection("Main", class.new("Section", function(S, state, ...)
+	-- Load --
+	if state == "load" then
+		-- Install widgets.
+		data.pane = Backdrop(true);
+		data.start = PushButton(SectionClose(S), L"Textures/start_off.tga", L"Textures/start_on.tga");
+		data.exit = PushButton(function()
+			game.CmdPostStr(L"quit");
+		end, L"Textures/exit_off.tga", L"Textures/exit_on.tga");
+
+		-- Dock widgets.
+		data.pane:DockIn(data.start, .475 * vw, 0.7 * vh, 0.2 * vw, 0.1333 * vh);
+		data.pane:DockIn(data.exit, .775 * vw, 0.7 * vh, 0.2 * vw, 0.1333 * vh);
+	
+	-- Enter --
+	elseif state == "enter" then
+		data.pane:Frame(0, 0, vw, vh);
+
+		-- Enable the cursor.
+		Cursor = hTXT(L"Textures/MonkeyCursor.tga");
+
+	-- Close / Pop --
+	elseif state == "close" or state == "pop" then
+		data.pane:Unload();
+	end
+end));

@@ -1,0 +1,17 @@
+LIBRARY	Audio
+
+EXPORTS
+	SFXSetFS
+
+	AudioInitSystem
+	AudioPlaySource
+
+	AudioCreateSourceFromFile
+	AudioCreateSourceFromMemory 
+
+	AudioQuitSystem
+	AudioDestroySource
+
+	AudioWasInit
+	AudioIsSourcePlaying
+	AudioIsSourceValid

@@ -1,0 +1,350 @@
+----------------------------------------
+-- Closer
+-- Rating helper used to refine choices
+-- data: Rating data
+-- distance: Distance to compare
+-- Returns: If true, choice is closer
+----------------------------------------
+local function Closer (data, distance)
+	if distance < (data.distance or math.huge) then
+		data.distance = distance;
+		return true;
+	end
+end
+
+---------------------------------------------------------------
+-- Builds an iterator over future path points on the team side
+-- ball: Ball used to supply path
+-- side: Key for team side
+-- Returns: Iterator which supplies path entries
+---------------------------------------------------------------
+function BallPath (ball, side)
+	local index, set = 0, {};
+	for _, entry in ipairs(ball:GetPath()) do
+		if entry[side] and entry.time >= 0 then
+			set[#set + 1] = entry;
+		end
+	end
+	return function()
+		index = index + 1;
+		return set[index];
+	end
+end
+
+---------------------------------------
+-- GoHome
+-- Directs a player back to its origin
+-- player: Player handle
+---------------------------------------
+function GoHome (player)
+	local steering = player:GetSteering();
+	steering:EnableForces{ "Target", "Separation" };
+	player:SetProc(function()
+		GoToPoint(player:GetEnt(), steering, player:GetOrigin());
+		steering:EnableForces{};
+		RotateToward(player:GetEnt(), player:GetFacing(), math.pi / 20, math.pi / 15);
+	end);
+end
+
+-----------------------------------
+-- PickBestPlayer
+-- Picks the best available player
+-- players: Available players
+-- best: Rating routine
+-- data: Rating data
+-- setup: Performs setup on choice
+-----------------------------------
+function PickBestPlayer (players, best, data, setup)
+	-- Choose the best available player.
+	local ckey, choice;
+	for key, player in pairs(players) do
+		if best(player, data) then
+			ckey = key;
+		end
+	end
+
+	-- Extract the player from the choices.
+	choice, players[ckey] = players[ckey];
+	Call_(setup, choice);
+end
+
+--------------------------------
+-- PickBestShot
+--
+--------------------------------
+--[[
+function PickBestShot (shooter, ball, shots)
+local data, best = {};
+for _, shot in ipairs(shots) do
+	ball:hit(shot * 450);--STRENGTH);
+
+	-- Check for shots that go near the goal.
+--[=[
+	for entry in BallPath(ball, shooter:GetTeam() == team1 and "team1" or "team2") do
+		dist = (goal.loc - ball:getEnt().loc):LenXZ();
+		if dist < (data.min or math.huge) then
+			data.min = dist;
+			-- consider shot!!!
+		end
+	end
+]=]
+	-- Check for shots that land on the opponent's side, preferably out
+	-- of reach of other players.
+	local enemy = Team2(shooter:GetTeam());
+	for entry in BallPath(ball, shooter:GetTeam() == team2 and "team1" or "team2") do
+		for index = 1, #enemy do
+			local player = enemy:getPlayer(index - 1);
+			local enemydist = (player:GetEnt().loc - entry.loc):LenXZ();
+			if enemydist > (data.max or 0) then
+				data.max = enemydist;
+				
+			--	consider shot!!!
+			end
+		end
+	end
+--			assess options; refine bad ones (out-of-bounds, etc.)
+end
+--		choose best option
+end
+-- Recursively select better options?
+]]
+
+
+-------------------------------------------
+-- PlayersAreAway
+-- Indicates whether some players are away
+-- teams: Teams to test
+-- Returns: If true, some players are away
+-------------------------------------------
+function PlayersAreAway (teams)
+	for _, team in ipairs(teams) do
+		for index = 1, #team do
+			local player = team:getPlayer(index - 1);
+			if (player:GetEnt().loc - player:GetOrigin()):LenSQXZ() > player:GetEnt().boundRadius^2 then
+				return true;
+			end
+		end
+	end
+end
+
+--------------------------------------
+-- SendAllHome
+-- Sends all players on the team home
+-- team: Team handle
+--------------------------------------
+function SendAllHome (team)
+	for index = 1, #team do
+		local player = team:getPlayer(index - 1);
+		player:GetSteering():SetProperties{
+			SeparationScale = 5,
+			TargetApproach = 25,
+			TargetSpeed = player:GetMaxSpeed()
+		};
+		player:SetNeighborRange(125);
+		GoHome(player);
+	end
+end
+
+------------------------
+-- Team2
+-- Gets the second team
+-- team: First team
+-- Returns: Team handle
+------------------------
+function Team2 (team)
+	return team == team1 and team2 or team1;
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------
+-- BackupBest
+-- Rates backup shooter candidates
+-- P: Player handle
+-- data: Rating data
+-- Returns: If true, player is best so far
+-------------------------------------------
+function BackupBest (P, data)
+	local pLoc, speed, mindist = P:GetEnt().loc, P:GetMaxSpeed();
+
+	-- Follow the lead of the shooter selection, but only consider later times.
+	for entry in BallPath(data.ball, data.bThis) do
+--		local tooHighY, fastY = 50, 255
+		if entry.time > data.time then	--entry.pos.y < pEnt.loc.y + tooHighY and entry.vel.y < fastY then
+			local dist = (entry.pos + entry.vel:ScaleToXZ(P:GetEnt().boundRadius) - pLoc):LenXZ();
+			if dist <= entry.time * speed and dist < (mindist or math.huge) then
+				mindist, data.time = dist, entry.time;
+			end
+		end
+	end
+	return Closer(data, mindist or math.huge);
+end
+
+
+-------------------------------------------
+-- BackupProc
+-- 
+-------------------------------------------
+function BackupProc (backup, data)
+	return function()
+--		GoToPoint(...)
+--		blah blah blah
+	end
+end
+
+
+
+-------------------------------------------
+-- ServerBest
+-- Rates server candidates
+-- P: Player handle
+-- data: Rating data
+-- Returns: If true, player is best so far
+-------------------------------------------
+function ServerBest (P, data)
+	return Closer(data, (data.ball:getEnt().loc - P:GetEnt().loc):LenXZ());
+end
+
+-------------------------------------------
+-- ServerProc
+-- 
+-------------------------------------------
+function ServerProc (server)
+	return function()
+		--
+
+		-- Run up to the ball and stop.
+		local bEnt, pEnt = ball:getEnt(), server:GetEnt();
+		GoToPoint(pEnt, server:GetSteering(), bEnt.loc + (pEnt.loc - bEnt.loc):ScaleToXZ(bEnt.boundRadius + pEnt.boundRadius));
+		server:GetSteering():EnableForces{};
+
+		-- Face the ball.
+		RotateToward(pEnt, bEnt.loc - pEnt.loc, math.pi / 20, math.pi / 15);
+
+		-- Hit the ball when it draws level with the player.
+		WaitUntilLevelWith(pEnt, bEnt, .7 * pEnt.boundMax.y, bEnt.boundRadius);
+		server:Shoot();
+	end
+end
+
+
+
+
+
+
+
+
+
+-------------------------------------------
+-- ShooterBest
+-- Rates shooter candidates
+-- P: Player handle
+-- data: Rating data
+-- Returns: If true, player is best so far
+-------------------------------------------
+function ShooterBest (P, data)
+	local pLoc, speed, mindist = P:GetEnt().loc, P:GetMaxSpeed();
+
+	-- Choose among the best reachable points on the ball's path. If a point is on the team's
+	-- side and hasn't already passed by a point, check it a little ahead along the path. Keep
+	-- track of the time of the selected point in order to assist in subsequent rating steps.
+	-- Ignore points that are too high, which may result from crossing entities or bouncing on
+	-- elevated terrain. [TODO: Rising too fast?]
+	for entry in BallPath(data.ball, data.bThis) do
+--		local tooHighY, fastY = 50, 255
+--		if entry.pos.y < pEnt.loc.y + tooHighY and entry.vel.y < fastY then
+			local dist = (entry.pos + entry.vel:ScaleToXZ(P:GetEnt().boundRadius) - pLoc):LenXZ();
+			if dist <= entry.time * speed and dist < (mindist or math.huge) then
+				mindist, data.time = dist, entry.time;
+			end
+--		end
+	end
+	return Closer(data, mindist);
+end
+
+-------------------------------------------
+-- ShooterProc
+-- 
+-------------------------------------------
+function ShooterProc (shooter, data)
+	return function()
+		--
+		local bEnt, pEnt, bThis, vel = ball:getEnt(), shooter:GetEnt(), shooter:GetTeam() == team1 and "bTeam1" or "bTeam2";
+		GoToRovingPoint(pEnt, shooter:GetSteering(), function()
+			--
+			local mindist, target;
+			for entry in BallPath(ball, bThis) do
+				local bPos = entry.pos + entry.vel:ScaleToXZ(bEnt.boundRadius + pEnt.boundRadius);
+				local tooHighY = 50
+				if entry.pos.y < tooHighY then --and IsPathClear(shooter, map) then
+					local dist = (bPos - pEnt.loc):LenXZ();
+					if dist <= entry.time * shooter:GetSteering():GetProperty("TargetSpeed") and dist < (mindist or math.huge) then
+						mindist, target, vel = dist, bPos, entry.vel;
+					end
+				end
+			end
+			return target or bEnt.loc;
+		end, bEnt.boundRadius + pEnt.boundRadius);
+		shooter:GetSteering():EnableForces{};
+
+		-- Face the oncoming ball.
+		RotateToward(pEnt, -(vel or ball:GetVel()), math.pi / 20, math.pi / 15);
+
+		-- Wait for the ball to arrive and hit it.
+		if not WaitForContact(bEnt, pEnt, {
+			abort = function()
+				local player = { center = pEnt.loc:XZ(), vel = Vec3D(0, 0, 0), radius = pEnt.boundRadius };
+				if mathops.SpheresIntersect(player, { center = bEnt.loc:XZ(), vel = ball:GetVel():XZ(), radius = bEnt.boundRadius }, data.time + 1.25) then
+					return;
+				end
+				for entry in BallPath(ball, bThis) do
+					if mathops.SpheresIntersect(player, { center = entry.pos:XZ(), vel = entry.vel:XZ(), radius = bEnt.boundRadius }, entry.time + 1.25) then
+						return;
+					end
+				end
+				return true;
+			end,
+			onDone = function()
+				-- Figure out how high the ball was at its peak. Use this to figure
+				-- out what kinds of shots can be made. Try these out and build a
+				-- list of the results.
+				local t, shots = -ball:GetVel().y / gravity.y, {};
+				local maxh = bEnt.loc.y + ball:GetVel().y * t + .5 * gravity.y * t^2;
+				local side, da = Vec3D(pEnt.dir.z, 0, -pEnt.dir.x), math.pi / 6;
+				for _, entry in ipairs{
+					{ bGood = true, incline = 0 },
+					{ bGood = maxh > pEnt.loc.y + .4 * pEnt.boundMax.y, incline = math.pi / 6 },
+					{ bGood = maxh > pEnt.loc.y + .7 * pEnt.boundMax.y, incline = math.pi / 3 }
+				} do
+					if entry.bGood then
+						local cura, cos, sin = -math.pi / 4, math.cos(entry.incline), math.sin(entry.incline);
+						for index = 1, 3 do
+							local ground = side * math.cos(cura) + pEnt.dir * math.sin(cura);
+							shots[#shots + 1], cura = ground * cos + Vec3D(0, sin, 0), cura + da;
+						end
+					end
+				end
+
+				-- Pick the best shot and hit the ball.
+--local shot = PickBestShot(shooter, ball, shots)
+				shooter:Shoot();
+			end
+		}) then
+printf("Missed!!")
+		--	redetermine roles
+		--	be ready with save moves
+		end
+	end
+end

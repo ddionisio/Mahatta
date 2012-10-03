@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Pre_Release|Win32">
+      <Configuration>Pre_Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{98145621-B568-4895-935D-D5163CD1A604}</ProjectGuid>
+    <RootNamespace>Game</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Pre_Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Pre_Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Pre_Release|Win32'">$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Pre_Release|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Pre_Release|Win32'">false</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Pre_Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Pre_Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Pre_Release|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;GAME_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <OutputFile>$(SolutionDir)/Main/game_d.dll</OutputFile>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>LIBCMTD;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ModuleDefinitionFile>Game.def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)Game.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <ImportLibrary>$(OutDir)Game_d.lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;GAME_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>unicows.lib %(AdditionalOptions)</AdditionalOptions>
+      <OutputFile>$(SolutionDir)/Main/game.dll</OutputFile>
+      <ModuleDefinitionFile>Game.def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <ImportLibrary>$(OutDir)Game.lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Pre_Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;GAME_EXPORTS;PRERELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <OutputFile>$(SolutionDir)/Main/game_r.dll</OutputFile>
+      <IgnoreSpecificDefaultLibraries>LIBCMT;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ModuleDefinitionFile>Game.def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <ImportLibrary>$(OutDir)Game.lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="game_ball.cpp" />
+    <ClCompile Include="game_destroy.cpp" />
+    <ClCompile Include="game_HUD.cpp" />
+    <ClCompile Include="game_init.cpp" />
+    <ClCompile Include="game_main.cpp" />
+    <ClCompile Include="game_match.cpp" />
+    <ClCompile Include="game_render.cpp" />
+    <ClCompile Include="game_saveload.cpp" />
+    <ClCompile Include="game_score.cpp" />
+    <ClCompile Include="game_spawn.cpp" />
+    <ClCompile Include="game_steering.cpp" />
+    <ClCompile Include="game_team.cpp" />
+    <ClCompile Include="game_teamplayer.cpp" />
+    <ClCompile Include="game_update.cpp" />
+    <ClCompile Include="trajectory.cpp" />
+    <ClCompile Include="entity_ball.cpp" />
+    <ClCompile Include="entity_block.cpp" />
+    <ClCompile Include="entity_bullet.cpp" />
+    <ClCompile Include="entity_courtside.cpp" />
+    <ClCompile Include="entity_doodad.cpp" />
+    <ClCompile Include="entity_door.cpp" />
+    <ClCompile Include="entity_NPC.cpp" />
+    <ClCompile Include="entity_ringarea.cpp" />
+    <ClCompile Include="entity_scorearea.cpp" />
+    <ClCompile Include="entity_skybox.cpp" />
+    <ClCompile Include="entity_teamplayer.cpp" />
+    <ClCompile Include="game_entity_load.cpp" />
+    <ClCompile Include="cmd_demo.cpp" />
+    <ClCompile Include="cmd_init.cpp" />
+    <ClCompile Include="cmd_player.cpp" />
+    <ClCompile Include="Lua_Access.cpp" />
+    <ClCompile Include="Lua_Helpers.cpp" />
+    <ClCompile Include="Lua_LibEx.cpp" />
+    <ClCompile Include="Bind_Bit.cpp" />
+    <ClCompile Include="Bind_Class.cpp" />
+    <ClCompile Include="Bind_GameLogic.cpp" />
+    <ClCompile Include="Bind_Graphics.cpp" />
+    <ClCompile Include="Bind_Input.cpp" />
+    <ClCompile Include="Bind_Mathops.cpp" />
+    <ClCompile Include="Bind_Sequence.cpp" />
+    <ClCompile Include="Bind_State.cpp" />
+    <ClCompile Include="Bind_Std.cpp" />
+    <ClCompile Include="Bind_Voxel.cpp" />
+    <ClCompile Include="Interval.cpp" />
+    <ClCompile Include="Interval_Imp.cpp" />
+    <ClCompile Include="Sequence.cpp" />
+    <ClCompile Include="Sequence_Imp.cpp" />
+    <ClCompile Include="Spot.cpp" />
+    <ClCompile Include="Spot_Imp.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="game.h" />
+    <ClInclude Include="game_ball.h" />
+    <ClInclude Include="game_local.h" />
+    <ClInclude Include="game_lua.h" />
+    <ClInclude Include="game_match.h" />
+    <ClInclude Include="game_score.h" />
+    <ClInclude Include="game_sequence.h" />
+    <ClInclude Include="game_share.h" />
+    <ClInclude Include="game_steering.h" />
+    <ClInclude Include="game_team.h" />
+    <ClInclude Include="game_teamplayer.h" />
+    <ClInclude Include="trajectory.h" />
+    <ClInclude Include="game_lua_i.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Game.def" />
+    <None Include="..\..\Main\Scripts\Boot.txt" />
+    <None Include="..\..\Main\Scripts\Collection.txt" />
+    <None Include="..\..\Main\Scripts\Pen.txt" />
+    <None Include="..\..\Main\Scripts\Pump.txt" />
+    <None Include="..\..\Main\Scripts\Section.txt" />
+    <None Include="..\..\Main\Scripts\Timer.txt" />
+    <None Include="..\..\Main\Scripts\Generic.txt" />
+    <None Include="..\..\Main\Scripts\Method.txt" />
+    <None Include="..\..\Main\Scripts\Interval.txt" />
+    <None Include="..\..\Main\Scripts\Sequence.txt" />
+    <None Include="..\..\Main\Scripts\Spot.txt" />
+    <None Include="..\..\Main\Scripts\State.txt" />
+    <None Include="..\..\Main\Scripts\Checkbox.txt" />
+    <None Include="..\..\Main\Scripts\EditboxBasic.txt" />
+    <None Include="..\..\Main\Scripts\Grid.txt" />
+    <None Include="..\..\Main\Scripts\Image.txt" />
+    <None Include="..\..\Main\Scripts\Marquee.txt" />
+    <None Include="..\..\Main\Scripts\Radiobox.txt" />
+    <None Include="..\..\Main\Scripts\Ring.txt" />
+    <None Include="..\..\Main\Scripts\ScrollBar.txt" />
+    <None Include="..\..\Main\Scripts\Slider.txt" />
+    <None Include="..\..\Main\Scripts\StaticText.txt" />
+    <None Include="..\..\Main\Scripts\Widget.txt" />
+    <None Include="..\..\Main\Scripts\PushButton.txt" />
+    <None Include="..\..\Main\Scripts\ScrollButton.txt" />
+    <None Include="..\..\Main\Scripts\Net.txt" />
+    <None Include="..\..\Main\Scripts\Pane.txt" />
+    <None Include="..\..\Main\Scripts\Popup.txt" />
+    <None Include="..\..\Main\Scripts\Title.txt" />
+    <None Include="..\..\Main\Scripts\Combobox.txt" />
+    <None Include="..\..\Main\Scripts\ListboxBasic.txt" />
+    <None Include="..\..\Main\Scripts\Textlist.txt" />
+    <None Include="..\..\Main\Scripts\MultiPicture.txt" />
+    <None Include="..\..\Main\Scripts\Picture.txt" />
+    <None Include="..\..\Main\Scripts\Config\Matches.txt" />
+    <None Include="..\..\Main\Scripts\Config\Teams.txt" />
+    <None Include="..\..\Main\Scripts\Config\Match\SinglePlayerStory.txt" />
+    <None Include="..\..\Main\Scripts\Config\Team\DaughtersOfXibalba.txt" />
+    <None Include="..\..\Main\Scripts\Config\Team\Elites.txt" />
+    <None Include="..\..\Main\Scripts\Config\Team\Twins.txt" />
+    <None Include="..\..\Main\Scripts\Routines\Main.txt" />
+    <None Include="..\..\Main\Scripts\Routines\Match.txt" />
+    <None Include="..\..\Main\Scripts\S_Home.txt" />
+    <None Include="..\..\Main\Scripts\S_Main.txt" />
+    <None Include="..\..\Main\Scripts\Section\Game.txt" />
+    <None Include="..\..\Main\Scripts\Section\TeamSelect.txt" />
+    <None Include="..\..\Main\Scripts\Utility\Actor.txt" />
+    <None Include="..\..\Main\Scripts\Utility\AI.txt" />
+    <None Include="..\..\Main\Scripts\Call.txt" />
+    <None Include="..\..\Main\Scripts\Format.txt" />
+    <None Include="..\..\Main\Scripts\List.txt" />
+    <None Include="..\..\Main\Scripts\Table.txt" />
+    <None Include="..\..\Main\Scripts\Utility\UI.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="resource.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\tools\Lua\Lua.vcxproj">
+      <Project>{d58661e4-62fa-40ad-9c92-dc640d3a5bcb}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\tools\Voxel\Voxel.vcxproj">
+      <Project>{add14f43-90a2-4a8d-bf1c-dc65792f62fa}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

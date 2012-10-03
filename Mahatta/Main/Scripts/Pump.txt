@@ -1,0 +1,83 @@
+-------------------------
+-- Pump class definition
+-------------------------
+class.define("Pump", {
+	-- Adds a new task
+	-- task: Task to add
+	---------------------
+	Add = function(P, task)
+		P.tasks[#P.tasks + 1] = task;
+	end,
+
+	-- Adds a new conditional task
+	-- task: Routine to invoke from task
+	-- what: Condition on which task depends
+	-----------------------------------------
+	AddConditional = function(P, task, what)
+		P:Add(function()
+			-- Invoke a set task. If waiting, go to the next task; discard otherwise.
+			if P.conditions[what] then
+				return P.conditions[what] == "wait" and true or task();
+			end
+		end);
+	end,
+
+	-- Clears the pump
+	-------------------
+	Clear = function(P)
+		P.tasks = {};
+	end,
+
+	-- Kills a condition
+	-- what: Condition to kill
+	---------------------------
+	Kill = function(P, what)
+		P.conditions[what] = nil;
+	end,
+
+	-- Waits on a condition
+	-- what: Condition to pause
+	----------------------------
+	Pause = function(P, what)
+		P.conditions[what] = "wait";
+	end,
+
+	-- Performs pending tasks
+	--------------------------
+	Run = function(P)
+		-- Iterate until only persistent tasks remain.
+		local persist, sleep = 0, {};
+		while persist ~= #P.tasks do
+			-- Create an empty cache for this pass, and store the task list. The current
+			-- task list is emptied, allowing it to be filled during this run.
+			local cache, live = {}, P.tasks;
+			P.tasks = {};
+
+			-- Invoke all live tasks; ignore sleeping tasks. If a task is to be kept,
+			-- increment the persistent task count and put it to sleep.
+			for _, task in ipairs(live) do
+				if not sleep[task] and task() then
+					persist, sleep[task] = persist + 1, true;
+				end
+				CallIf(sleep[task], table.insert, cache, task);
+			end
+
+			-- Put any new tasks into the cache. Replace the task list with the cache.
+			table.foreachi(P.tasks, table.each_load(cache));
+			P.tasks = cache;
+		end	
+	end,
+
+	-- Sets a condition
+	-- what: Condition to set
+	--------------------------
+	Set = function(P, what)
+		P.conditions[what] = true;
+	end
+},
+
+-- New
+-------
+function(P)
+	P.conditions, P.tasks = {}, {}
+end);

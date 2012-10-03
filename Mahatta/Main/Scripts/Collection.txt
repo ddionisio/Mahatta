@@ -1,0 +1,136 @@
+-------------------------------
+-- Collection class definition
+-------------------------------
+class.define("Collection", {
+	-- Adds an element to the collection
+	-- index: Index to assign to; append if nil
+	-- element: Element handle
+	-- type: If specified, the element type
+	--------------------------------------------
+	AddElement = function(C, index, element, type)
+		-- Determine the type to which the element is added.
+		type = type or (class.isinstance(element) and element:InvokeIf_("Type") or generic.type(element));
+		C.types[type] = C.types[type] or {};
+
+		-- If the index is unspecified, append the element; otherwise, put it in a slot in
+		-- the type if the index is valid.
+		local count = #C.types[type];
+		if not index or index == count + 1 then
+			table.insert(C.types[type], element);
+		elseif index >= 1 and index <= count then
+			C.types[type][index] = element;
+		elseif index <= -1 and index >= -count then
+			C.types[type][count + index + 1] = element;
+		end
+	end,
+
+	-- Clears the collection, restricting to a type if desired
+	-- type: If specified, type whose elements are to be cleared
+	-------------------------------------------------------------
+	Clear = function(C, type)
+		if type then
+			C.types[type] = nil;
+		else
+			C.types = {};
+		end
+	end,
+
+	-- Gets the element count for a given type
+	-- type: Type whose elements are counted
+	-- Returns: Element count
+	-------------------------------------------
+	GetCount = function(C, type)
+		return #(C.types[type] or {});
+	end,
+
+	-- Gets the element of a specified type at a given index
+	-- type: Type from which element is drawn
+	-- index: Index of element in type
+	-- Returns: Element handle
+	---------------------------------------------------------
+	GetElement = function(C, type, index)
+		local count = #C.types[type];
+		if index then
+			if index >= 1 and index <= count then
+				return C.types[type][index];
+			elseif index <= -1 and index >= -count then
+				return C.types[type][count + index + 1];
+			end
+		end		
+	end,
+
+	-- Gets types belonging to the collection
+	-- Returns: Iterator which supplies types
+	------------------------------------------
+	GetTypes = function(C)
+		return function(_, type)
+			return (next(C.types, type));
+		end;
+	end,
+
+	-- Builds an iterator over the collection, restricting to a type if desired
+	-- type: If specified, type whose elements are to be gathered
+	-- ...: Custom iterator arguments
+	-- Returns: Iterator which supplies elements
+	----------------------------------------------------------------------------
+	Iter = function(C, type, ...)
+		-- If there is a type specified with a custom iterator installed, invoke it and
+		-- load up elements from the collection to be supplied by the iterator.
+		local set;
+		if type and C.types[type] and C.iterators[type] then
+			set = { elements = {} };
+			for element in C.iterators[type](...) do
+				set.elements[#set.elements + 1] = C.types[type][element];
+			end
+		else
+			set = type and { C.types[type] } or C.types;
+		end
+
+		-- Choose the appropriate set. If the element extends beyond its type, skip ahead
+		-- until a non-empty type is found; exit on running out of elements.
+		local element, count, type = 1, 0;
+		return function()
+			if element > count then
+				repeat
+					type = next(set, type);
+					if not type then
+						return;
+					end
+					count = #set[type];
+				until count > 0;
+				element = 1;
+			end
+		
+			-- Increment the element. Return the previously referenced element.
+			element = element + 1;
+			return set[type][element - 1];
+		end;
+	end,
+
+	-- Packs the collection, restricting to a type if desired; ordering matches iterators
+	-- type: If specified, type whose elements are to be packed
+	-- ...: Custom pack arguments
+	-- Returns: Table of ordered elements
+	--------------------------------------------------------------------------------------
+	Pack = function(C, type, ...)
+		local elements = {};
+		for element in C:Iter(type, ...) do
+			elements[#elements + 1] = element;
+		end
+		return elements;
+	end,
+
+	-- Installs a custom iterator for a type
+	-- type: Type to which iterator is assigned
+	-- iterator: Iterator to assign
+	--------------------------------------------
+	SetIterator = function(C, type, iterator)
+		C.iterators[type] = iterator;
+	end
+},
+
+-- New
+-------
+function(C)
+	C.iterators, C.types = {}, {};
+end);

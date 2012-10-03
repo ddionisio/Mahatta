@@ -1,0 +1,127 @@
+buttscratch
+{
+	file sounds\buttscratch.ogg
+	local
+}
+
+computer
+{
+	file sounds\computer.ogg
+	looping
+	refDist 50
+	rollOff 3.5
+	maxDist 3000
+}
+
+doorclose
+{
+	file sounds\doorclose.ogg
+	refDist 100
+	rollOff 2.5
+	maxDist 3000
+}
+
+dooropen
+{
+	file sounds\dooropen.ogg
+	refDist 100
+	rollOff 2.5
+	maxDist 3000
+}
+
+fan
+{
+	file sounds\fan.ogg
+	looping
+	refDist 100
+	rollOff 2.5
+	maxDist 3000	
+}
+
+run
+{
+	file sounds\run.ogg
+	local
+	looping
+}
+
+spin
+{
+	file sounds\spin.ogg
+}
+
+strafe
+{
+	file sounds\strafe.ogg
+	local
+	looping
+}
+
+swish
+{
+	file sounds\swish.ogg
+}
+
+truck
+{
+	file sounds\truck.ogg
+	looping
+	refDist 100
+	rollOff 2.5
+	maxDist 2500
+}
+
+vent
+{
+	file sounds\vent.ogg
+	looping
+	refDist 60
+	rollOff 2.75
+	maxDist 3000
+}
+
+walk
+{
+	file sounds\walk.ogg
+	local
+	looping
+}
+
+bullet_fire
+{
+	file sounds\smash.ogg
+	local
+	precache
+}
+
+bullet_bounce
+{
+	file sounds\spin.ogg
+	precache
+	refDist 60
+	rollOff 2.75
+	maxDist 3000	
+}
+
+bullet_explode
+{
+	file sounds\explode.ogg
+	precache
+	refDist 60
+	rollOff 2.75
+	maxDist 3000	
+}
+
+
+//format of sound library:
+//<name>
+//{
+//		file <string>		//the sound file
+//		volume <int>
+//		local				//sound is 2D
+//		looping				//sound loops
+//		no_cull				//cannot be culled by the map
+//		precache			//sound data is loaded once at the start
+//		refDist <float>		//reference distance
+//		rollOff <float>		//roll off
+//		maxDist <float>		//max distance

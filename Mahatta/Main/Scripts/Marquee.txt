@@ -1,0 +1,50 @@
+--------------------------------------------------
+-- Marquee class definition; inherits from Widget
+--------------------------------------------------
+class.define("Marquee", {
+	-- Sets the marquee string
+	-- text: Text string
+	-- bLoop: Loop boolean
+	---------------------------
+	SetString = function(M, text, bLoop)
+		-- Pad the string with spaces.
+		M.string = string.rep(" ", math.ceil(M:GetRect("w") / M:GetText():GetWidth(" ", 1, 1))) .. text;
+		
+		-- Flag the looping and reset the marquee.
+		M.bLoop, M.offset = bLoop, 1;
+	end
+},
+
+-- New
+-- state: State handle
+-- timeout: Text scroll timeout
+--------------------------------
+function(M, state, timeout)
+	class.scons("Widget", state);
+
+	-- Assign format parameters.
+	M.offset = 1;
+
+	-- Counter used to update marquee scroll.
+	M.counter = class.new("Timer", function()
+		if M.offset + 1 < #M:GetString() then
+			M.offset = M.offset + 1;
+		elseif M.bLoop then
+			M.offset = 1;
+		else
+			M.string = "";
+		end			
+	end, timeout);
+
+	-- Methods --
+	M:SetMethod("update", function(x, y, w, h)
+		M:DrawPicture("B", x, y, w, h);
+		
+		-- Draw and move the string.
+		M:StringF(M:GetString():sub(M.offset), "vo", x, y, w, h);
+		M.counter:Update();
+		
+		-- Frame the marquee.
+		M:DrawFrame("D", x, y, w, h);
+	end);
+end, { base = "Widget" });

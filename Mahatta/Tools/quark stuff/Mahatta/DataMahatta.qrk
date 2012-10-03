@@ -1,0 +1,958 @@
+QQRKSRC1
+// This file has been written by QuArK QuArK 6.4 alpha
+// It's the text version of file: DataMahatta.qrk
+
+{
+  QuArKProtected = "1"
+  Description = "Base Mahatta data"
+  Mahatta setup.qctx =
+  {
+    Game = "Mahatta"
+    HTML = "help\index.html"
+    ShaderFiles: =
+    {
+      scripts/shaderlist.txt =
+      {
+        Data = "// Created by QuArK"$0D0A"// All shaders are extracted to a si"
+         "ngle file called 'quark.shader'"$0D0A"quark"$0D0A
+      }
+      scripts/shaderlist.txt =
+      {
+        Data = "// Created by QuArK"$0D0A"// No shader in this map"$0D0A
+      }
+    }
+    TextureFlags:form =
+    {
+      Style = "5"
+      Reset: =
+      {
+        Cap = "Reset to default"
+        Typ = "B"
+        Hint = "Reset all flags to the texture's default"
+        Delete: =
+        {
+          Flags = ""
+          Contents = ""
+          Value = ""
+        }
+      }
+      Contents: =
+      {
+        Cap = "detail"
+        Typ = "X134217728"
+        Hint = "for small, detail brushes that QVIS3 can ignore"
+      }
+    }
+  }
+  NewFiles.qtx =
+  {
+    ToolBox = "New files..."
+    Root = "Mahatta file types.qtxfolder"
+    Torque file types.qtxfolder =
+    {
+      Qkm.qkm =
+      {
+      }
+    }
+  }
+  t_originpoly:incl =
+  {
+    ORIGIN:p =
+    {
+      east:f =
+      {
+        v = '8 0 0 8 64 0 8 0 64'
+        tex = "common/origin"
+      }
+      west:f =
+      {
+        v = '-8 0 0 -8 -64 0 -8 0 64'
+        tex = "common/origin"
+      }
+      north:f =
+      {
+        v = '0 8 0 -64 8 0 0 8 64'
+        tex = "common/origin"
+      }
+      south:f =
+      {
+        v = '0 -8 0 64 -8 0 0 -8 64'
+        tex = "common/origin"
+      }
+      up:f =
+      {
+        v = '0 0 24 64 0 24 0 64 24'
+        tex = "common/origin"
+      }
+      down:f =
+      {
+        v = '0 0 -24 64 0 -24 0 -64 -24'
+        tex = "common/origin"
+      }
+    }
+    poly:p =
+    {
+      east:f =
+      {
+        v = '32 -32 -32 32 96 -32 32 -32 96'
+        tex = "[auto]"
+      }
+      west:f =
+      {
+        v = '-32 -32 -32 -32 -32 96 -32 96 -32'
+        tex = "[auto]"
+        m = "1"
+      }
+      north:f =
+      {
+        v = '-32 32 -32 -32 32 96 96 32 -32'
+        tex = "[auto]"
+        m = "1"
+      }
+      south:f =
+      {
+        v = '-32 -32 -32 96 -32 -32 -32 -32 96'
+        tex = "[auto]"
+      }
+      up:f =
+      {
+        v = '-32 -32 32 96 -32 32 -32 96 32'
+        tex = "[auto]"
+      }
+      down:f =
+      {
+        v = '-32 -32 -32 -32 96 -32 96 -32 -32'
+        tex = "[auto]"
+        m = "1"
+      }
+    }
+  }
+  t_orig:incl =
+  {
+    origin = "0 0 0"
+  }
+  MahattaEntities.qtx =
+  {
+    ToolBox = "New map items..."
+    Root = "Mahatta Entities.qtxfolder"
+    Mahatta Entities.qtxfolder =
+    {
+      Common Entities.qtxfolder =
+      {
+        info_player_start:e =
+        {
+          origin = "0 0 0"
+          angle = "0"
+          ;desc = "Player spawing postion for all Mahatta maps."
+        }
+	info_npc_start:e =
+        {
+          origin = "0 0 0"
+          angle = "0"
+          ;desc = "NPC spawing postion for all Mahatta maps."
+        }
+        info_null:e =
+        {
+          origin = "0 0 0"
+          ;desc = "Target - for light to create a spotlight. A directional poi"
+           "nting entity. Used in many triggers and such"
+        }
+        waypoint:e =
+        {
+          origin = "0 0 0"
+          angle = "0"
+          ;desc = "Waypoints for movement path and navigation. The order of the waypoints are from top to bottom of list."
+        }
+        doodad:e =
+        {
+          origin = "0 0 0"
+          angle = "0"
+          ;desc = "Use this to add decorative models in the map"
+        }
+        doodad_b:b =
+        {
+          ;desc = "Map model version of doodad."
+        }
+        block:b =
+        {
+          ;desc = "Solid object."
+        }
+      }
+      Light Entities.qtxfolder =
+      {
+        light:e =
+        {
+          origin = "0 0 0"
+          ;desc = "Point of light"
+          light = "300"
+          _color = "1.0 1.0 1.0"
+	  priority = "0"
+        }
+      }
+      Func Entities.qtxfolder =
+      {
+        func_group:b =
+        {
+          ;desc = "This is for customizing settings of selected entities and brushes"
+        }
+        door:b =
+        {
+          angle = "0"
+          wait = "3000"
+          time = "500"
+          extend = "0 0 0"
+          ;desc = "Automatic door"
+        }
+        loadmap:b =
+        {
+          new cube:p =
+          {
+            east:f =
+            {
+              v = '568 -224 84 568 -96 84 568 -224 212'
+              tex = "common/full_clip"
+              tv = '64 -64 128 -64 64 -128'
+            }
+            west:f =
+            {
+              v = '536 -224 84 536 -352 84 536 -224 212'
+              tex = "common/full_clip"
+              tv = '64 -64 128 -64 64 -128'
+            }
+            north:f =
+            {
+              v = '516 -240 84 388 -240 84 516 -240 212'
+              tex = "common/full_clip"
+              tv = '64 -64 128 -64 64 -128'
+            }
+            south:f =
+            {
+              v = '516 -272 84 644 -272 84 516 -272 212'
+              tex = "common/full_clip"
+              tv = '64 -64 128 -64 64 -128'
+            }
+            up:f =
+            {
+              v = '516 -224 24 644 -224 24 516 -96 24'
+              tex = "common/full_clip"
+              tv = '64 64 64 128 128 64'
+            }
+            down:f =
+            {
+              v = '516 -224 20 644 -224 20 516 -352 20'
+              tex = "common/full_clip"
+              tv = '-64 -64 -64 -128 -128 -64'
+            }
+          }
+
+          ;desc = "Traverse to another map"
+        }
+      }
+    }
+  }
+  Entity forms.qctx =
+  {
+    t_player_size:incl =
+    {
+      bbox = '-16 -16 -24 16 16 32'
+    }
+    t_modelbrowser:incl =
+    {
+      Typ = "EP"
+      DefExt = "cfg;*.x"
+      BasePath = "$Game\main"
+      CutPath = "$Game\?\models"
+      DirSep = "/"
+      AugPath = "models"
+    }
+    t_model:incl =
+    {
+      model: =
+      {
+        Txt = " "
+        Typ = "B"
+        Cap = "models..."
+        form = "t_models_form:form"
+        hint = "Available .CFG files"
+      }
+    }
+    t_texturebrowser:incl =
+    {
+      Typ = "EP"
+      DefExt = "jpg;*.tga;*.png;*.bmp"
+      BasePath = "$Game\main"
+      CutPath = "$Game\?\textures"
+      DirSep = "/"
+      AugPath = "textures"
+    }
+    t_fxbrowser:incl =
+    {
+      Typ = "EP"
+      DefExt = "fx"
+      BasePath = "$Game\main"
+      CutPath = "$Game\?\fx"
+      DirSep = "/"
+      AugPath = "fx"
+    }
+    t_mapbrowser:incl =
+    {
+      Typ = "EP"
+      DefExt = "bsp"
+      BasePath = "$Game\main"
+      CutPath = "$Game\?\maps"
+      DirSep = "/"
+      AugPath = "maps"
+    }
+    t_soundbrowser:incl =
+    {
+      Typ = "EP"
+      DefExt = "ogg"
+      BasePath = "$Game\main"
+      CutPath = "$Game\?\sounds"
+      DirSep = "/"
+      AugPath = "sounds"
+    }
+    block:form =
+    {
+      Help = "This is a solid object."
+
+      particle: =
+      {
+        Txt = "&"
+        Hint = "The name of the particle system to use if you want particles.  Make sure that particle system is loaded."
+      }
+      target: =
+      {
+        Txt = "&"
+        Hint = "Offset of particle."
+      }
+      flags: =
+      {
+	Txt = "&"
+	Typ = "X1"
+	Cap = "OBJ_PUSHABLE"
+	Hint = "this block can be pushed."
+      }
+      flags: =
+      {
+	Txt = "&"
+	Typ = "X2"
+	Cap = "OBJ_SHADOW"
+	Hint = "cast shadow."
+      }
+      flags: =
+      {
+	Txt = "&"
+	Typ = "X4"
+	Cap = "OBJ_NOGRAVITY"
+	Hint = "This block is not affected by gravity."
+      }
+    }
+
+    doodad:form =
+    {
+      Help = "This is used to add decoratives to the map."
+      model: = 
+      {
+        t_modelbrowser = !
+        Txt = "&"
+        Hint = "The model to load."
+      }
+      particle: =
+      {
+        Txt = "&"
+        Hint = "The name of the particle system to use if you want particles.  Make sure that particle system is loaded."
+      }
+      sound: = 
+      {
+        t_soundbrowser = !
+        Txt = "&"
+        Hint = "The looping sound of this doodad."
+      }
+      soundParam: =
+      {
+	Txt = "&"
+	Hint = "Sound parameters = <num> <num> <num>: reference dist, rolloff factor, max dist."
+      }
+      anim: = 
+      {
+        Txt = "&"
+        Hint = "The animation name for Cal3D models to animate."
+      }
+      rotSpd: =
+      {
+	Txt = "&"
+	Hint = "Rotation speed along y-axis."
+      }
+      target: =
+      {
+        Txt = "&"
+        Hint = "Follow the waypoint which matches this target (targetname of waypoint)"
+      }
+      delay: =
+      {
+	Txt = "&"
+	Hint = "The time (milliseconds) it takes to get to the next waypoint node."
+      }
+      flags: =
+      {
+	Txt = "&"
+	Typ = "X1"
+	Cap = "WP_CURVE"
+	Hint = "makes the object follow the waypoints in curve."
+      }
+      flags: =
+      {
+	Txt = "&"
+	Typ = "X2"
+	Cap = "OBJ_SHADOW"
+	Hint = "cast shadow."
+      }
+    }
+    doodad_b:form =
+    {
+      Help = "This is used to add decoratives to the map."
+      axis: =
+      {
+        Txt = "&"
+        Hint = "rotation axis vector (info_null target)"
+      }
+      sound: = 
+      {
+        t_soundbrowser = !
+        Txt = "&"
+        Hint = "The looping sound of this doodad."
+      }
+      soundParam: =
+      {
+	Txt = "&"
+	Hint = "Sound parameters = <num> <num> <num>: reference dist, rolloff factor, max dist."
+      }
+      rotSpd: =
+      {
+	Txt = "&"
+	Hint = "Rotation speed with given axis."
+      }
+      target: =
+      {
+        Txt = "&"
+        Hint = "Follow the waypoint which matches this target (targetname of waypoint)"
+      }
+      delay: =
+      {
+	Txt = "&"
+	Hint = "The time (milliseconds) it takes to get to the next waypoint node."
+      }
+      flags: =
+      {
+	Txt = "&"
+	Typ = "X1"
+	Cap = "WP_CURVE"
+	Hint = "makes the object follow the waypoints in curve."
+      }
+      flags: =
+      {
+	Txt = "&"
+	Typ = "X2"
+	Cap = "OBJ_SHADOW"
+	Hint = "cast shadow."
+      }
+    }
+    door:form =
+    {
+      Help = "This is used to add an automatic door."
+      target: =
+      {
+        Txt = "&"
+        Hint = "Aim this at an info_null to set the door's destination instead of using angle."
+      }
+      wait: =
+      {
+        Txt = "&"
+        Hint = "How long do we have to wait before we close? (In milliseconds)"
+      }
+      time: =
+      {
+        Txt = "&"
+        Hint = "The speed of opening/closing. (In milliseconds)"
+      }
+      team: =
+      {
+        Txt = "&"
+        Hint = "All doors with this team name will activate when this door activates."
+      }
+      extend: =
+      {
+        Txt = "&"
+        Hint = "The trigger extension.  This is when the door opens whenever the player is near."
+      }
+      flags: =
+      {
+	Txt = "&"
+	Typ = "X1"
+	Cap = "DOOR_OPEN"
+	Hint = "door is opened upon load."
+      }
+      flags: =
+      {
+	Txt = "&"
+	Typ = "X2"
+	Cap = "DOOR_MANUAL"
+	Hint = "door will not open/close automatically."
+      }
+    }
+    func_group:form =
+    {
+      Help = "This is used to customize build settings for entities/brushes."
+      _lightmapscale: =
+      {
+        Txt = "&"
+        Hint = "scaling of lightmap on brushes. (default: 1.0)"
+      }
+    }
+    info_null:form =
+    {
+      Help = "This is used as a postional target for entities."
+      targetname: =
+      {
+        Txt = "&"
+        Hint = "This is its target name for the target argument."
+      }
+    }
+    info_npc_start:form =
+    {
+      Help = "This is where an NPC spawns into the game at."
+      bbox = '-16 -16 -24 16 16 32'
+      name: =
+      {
+        Txt = "&"
+        Hint = "The name of the NPC (unique identifier)"
+      }
+      type: =
+      {
+        Txt = "&"
+        Hint = "The NPC type (from Data\Entity\*.ini)"
+      }
+      target: =
+      {
+        Txt = "&"
+        Hint = "Follow the waypoint which matches this target (targetname of waypoint)"
+      }
+      action: = 
+      { 
+        typ="C" 
+        txt="Action"
+        items=
+          "NONE"$0D
+          "DONTUSETHIS"
+        values=
+          "0"$0D
+          "1"
+        Hint = "This is a useless parameter and its here to stay. Leave it be!"
+      }
+      radius: =
+      {
+        Txt = "&"
+        Hint = "The radius for detecting the player nearby. (NPC will stop when player is within radius, put 0 to ignore player)"
+      }
+      flags: =
+      {
+	Txt = "&"
+	Typ = "X1"
+	Cap = "OBJ_SHADOW"
+	Hint = "This NPC will cast shadow."
+      }
+      flags: =
+      {
+	Txt = "&"
+	Typ = "X2"
+	Cap = "OBJ_PUSHABLE"
+	Hint = "This NPC can be pushed."
+      }
+    }
+    info_player_start:form =
+    {
+      Help = "This is where a player spawns into the game at."
+      bbox = '-16 -16 -24 16 16 32'
+      target: =
+      {
+        Txt = "&"
+        Hint = "this is a tag for transitioning to this map."
+      }
+    }
+    light:form =
+    {
+      Help = "invisible light source"
+      target: =
+      {
+        Txt = "&"
+        Hint = "Aim this at an info_null to make a spotlight."
+      }
+      light: =
+      {
+        Txt = "&"
+        Hint = "light value, default 300"
+      }
+      _color: =
+      {
+        Txt = "&"
+        Hint = "light color (not the intensity, only the color)"
+      }
+      _color: =
+      {
+        Txt = "&"
+        Typ = "L"
+        Hint = "light color (not the intensity, only the color)"
+      }
+      radius: =
+      {
+        Txt = "&"
+        Hint = "The radius for the cone of a spot light."
+      }
+      priority: =
+      {
+        Txt = "&"
+        Hint = "This is the priority of the light for casting shadows. 0 is lowest."
+      }
+      _sun: =
+      {
+        Txt = "&"
+        Hint = "This is if you want entity sun. (To suppress q3map_sun in your sky shaders, add _noshadersun 1 to worldspawn)"
+      }
+      spawnflags: =
+      {
+        Txt = "&"
+        Typ = "X1"
+        Cap = "LINEAR"
+        Hint = "light falloff will be linear instead of inverse square of dist"
+         "ance from source. i.e. makes sharp, contrasting shadows."
+      }
+    }
+    loadmap:form =
+    {
+      Help = "This is for going to another map."
+      map: = 
+      {
+        t_mapbrowser = !
+        Txt = "&"
+        Hint = "The map we want to load."
+      }
+      target: = 
+      {
+        Txt = "&"
+        Hint = "If this is set, we spawn from info_player_start with the matching name."
+      }
+    }
+    waypoint:form =
+    {
+      Help = "This is used for movement path and navigation."
+      target: =
+      {
+	Txt = "&"
+	Hint = "The next waypoint (targetname)"
+      }
+      targetname: =
+      {
+	Txt = "&"
+	Hint = "This waypoint's name."
+      }
+      wait: =
+      {
+	Txt = "&"
+	Hint = "number of milliseconds will pause before moving to next waypoint."
+      }
+      delay: =
+      {
+	Txt = "&"
+	Hint = "The time (milliseconds) it will take to get to the next waypoint."
+      }
+    }
+    worldspawn:form =
+    {
+      Help = "This is used for the world only need one."
+      message: =
+      {
+        Txt = "&"
+        Hint = "This is the message it prints to the screen when a player ente"
+         "rs this map."
+      }
+      music: =
+      {
+        Txt = "&"
+        Hint = "This is the path and file name of a looping wav file to play i"
+         "n this map."
+      }
+      ambient: =
+      {
+        Txt = "&"
+        Hint = "This is the levels ambient light value"
+      }
+      _color: =
+      {
+        Txt = "&"
+        Typ = "LN"
+        Hint = "light color (not the intensity, only the color) used for the a"
+         "mbient light."
+      }
+      gravity: =
+      {
+        Txt = "&"
+        Hint = "This is the levels gravity setting. The default is 800."
+      }
+      _keeplights: =
+      {
+        Txt = "&"
+        Hint = "We ALWAYS want this to be 1"
+      }
+      blocksize: =
+      {
+        Txt = "&"
+        Hint = "The gridsize to split the portals (default: 1024 1024 1024)"
+      }
+      _noshadersun: =
+      {
+        Txt = "&"
+        Hint = "This is to suppress q3map_sun in your sky shaders so you can use entity sun. (0 or 1)"
+      }
+      skyBox: =
+      {
+        t_modelbrowser = !
+        Txt = "&"
+        Hint = "Skybox Model"
+      }
+      fogParam: =
+      {
+        Txt = "&"
+        Hint = "The fog range [<min> <max>].  Leave this blank for no fog."
+      }
+      fogColor: =
+      {
+        Txt = "&"
+        Typ = "LN"
+        Hint = "the fog color, if fog is enabled."
+      }
+    }
+  }
+  NewMap:incl =
+  {
+    Game = "Mahatta"
+    Root = "worldspawn:b"
+    worldspawn:b =
+    {
+      _keeplights = "1"
+      skyBox = "Models\skybox\hemisphere\hemisphere.x"
+      Border walls:g =
+      {
+        East wall:p =
+        {
+          west:f =
+          {
+            v = '256 0 272 256 -128 272 256 0 400'
+            tex = "boisTranche"
+          }
+          east:f =
+          {
+            v = '272 0 272 272 128 272 272 0 400'
+            tex = "common/caulk"
+          }
+          south:f =
+          {
+            v = '432 -192 272 560 -192 272 432 -192 400'
+            tex = "common/caulk"
+          }
+          north:f =
+          {
+            v = '432 192 272 304 192 272 432 192 400'
+            tex = "common/caulk"
+          }
+          down:f =
+          {
+            v = '432 0 -96 560 0 -96 432 -128 -96'
+            tex = "common/caulk"
+          }
+          up:f =
+          {
+            v = '432 0 96 560 0 96 432 128 96'
+            tex = "common/caulk"
+          }
+        }
+        West wall:p =
+        {
+          west:f =
+          {
+            v = '-272 0 272 -272 -128 272 -272 0 400'
+            tex = "common/caulk"
+          }
+          east:f =
+          {
+            v = '-256 0 272 -256 128 272 -256 0 400'
+            tex = "boisTranche"
+          }
+          south:f =
+          {
+            v = '432 -192 272 560 -192 272 432 -192 400'
+            tex = "common/caulk"
+          }
+          north:f =
+          {
+            v = '432 192 272 304 192 272 432 192 400'
+            tex = "common/caulk"
+          }
+          down:f =
+          {
+            v = '432 0 -96 560 0 -96 432 -128 -96'
+            tex = "common/caulk"
+          }
+          up:f =
+          {
+            v = '432 0 96 560 0 96 432 128 96'
+            tex = "common/caulk"
+          }
+        }
+        North wall:p =
+        {
+          west:f =
+          {
+            v = '-256 0 272 -256 -128 272 -256 0 400'
+            tex = "common/caulk"
+          }
+          east:f =
+          {
+            v = '256 0 272 256 128 272 256 0 400'
+            tex = "common/caulk"
+          }
+          south:f =
+          {
+            v = '432 192 272 560 192 272 432 192 400'
+            tex = "boisTranche"
+          }
+          north:f =
+          {
+            v = '432 208 272 304 208 272 432 208 400'
+            tex = "common/caulk"
+          }
+          down:f =
+          {
+            v = '432 0 -96 560 0 -96 432 -128 -96'
+            tex = "common/caulk"
+          }
+          up:f =
+          {
+            v = '432 0 96 560 0 96 432 128 96'
+            tex = "common/caulk"
+          }
+        }
+        South wall:p =
+        {
+          west:f =
+          {
+            v = '-256 0 272 -256 -128 272 -256 0 400'
+            tex = "common/caulk"
+          }
+          east:f =
+          {
+            v = '256 0 272 256 128 272 256 0 400'
+            tex = "common/caulk"
+          }
+          south:f =
+          {
+            v = '432 -208 272 560 -208 272 432 -208 400'
+            tex = "common/caulk"
+          }
+          north:f =
+          {
+            v = '432 -192 272 304 -192 272 432 -192 400'
+            tex = "boisTranche"
+          }
+          down:f =
+          {
+            v = '432 0 -96 560 0 -96 432 -128 -96'
+            tex = "common/caulk"
+          }
+          up:f =
+          {
+            v = '432 0 96 560 0 96 432 128 96'
+            tex = "common/caulk"
+          }
+        }
+        Sky:p =
+        {
+          west:f =
+          {
+            v = '-256 0 272 -256 -128 272 -256 0 400'
+            tex = "common/invisible"
+          }
+          east:f =
+          {
+            v = '256 0 272 256 128 272 256 0 400'
+            tex = "common/invisible"
+          }
+          south:f =
+          {
+            v = '432 -192 272 560 -192 272 432 -192 400'
+            tex = "common/invisible"
+          }
+          north:f =
+          {
+            v = '432 192 272 304 192 272 432 192 400'
+            tex = "common/invisible"
+          }
+          down:f =
+          {
+            v = '432 0 96 560 0 96 432 -128 96'
+            tex = "common/invisible"
+          }
+          up:f =
+          {
+            v = '432 0 112 560 0 112 432 128 112'
+            tex = "common/invisible"
+          }
+        }
+        Floor:p =
+        {
+          west:f =
+          {
+            v = '-256 0 272 -256 -128 272 -256 0 400'
+            tex = "common/caulk"
+          }
+          east:f =
+          {
+            v = '256 0 272 256 128 272 256 0 400'
+            tex = "common/caulk"
+          }
+          south:f =
+          {
+            v = '432 -192 272 560 -192 272 432 -192 400'
+            tex = "common/caulk"
+          }
+          north:f =
+          {
+            v = '432 192 272 304 192 272 432 192 400'
+            tex = "common/caulk"
+          }
+          down:f =
+          {
+            v = '432 0 -112 560 0 -112 432 -128 -112'
+            tex = "common/caulk"
+          }
+          up:f =
+          {
+            v = '432 0 -96 560 0 -96 432 128 -96'
+            tex = "boisTranche"
+          }
+        }
+      }
+      info_player_start:e =
+      {
+        origin = "-144 0 -64"
+        angle = "360"
+      }
+      light:e =
+      {
+        origin = "0 0 0"
+        light = "300"
+        _color = "1 1 1"
+      }
+    }
+  }
+}

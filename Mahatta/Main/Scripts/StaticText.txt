@@ -1,0 +1,16 @@
+-----------------------------------------------------
+-- StaticText class definition; inherits from Widget
+-----------------------------------------------------
+class.define("StaticText", {},
+
+-- New
+-- state: State handle
+-----------------------
+function(S, state)
+	class.scons("Widget", state);
+
+	-- Methods --
+	S:SetMethod("render", function(S, x, y, w, h)
+		S:DrawString(S:GetString(), "vo", x, y, w, h);
+	end);
+end, { base = "Widget" });

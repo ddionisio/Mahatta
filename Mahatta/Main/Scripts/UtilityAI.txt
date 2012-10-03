@@ -1,0 +1,71 @@
+-----------------------------------
+-- PickBestPlayer
+-- Picks the best available player
+-- players: Available players
+-- best: Rating routine
+-- data: Rating data
+-- Returns: Player handle
+-----------------------------------
+function PickBestPlayer (players, best, data)
+	-- Choose the best available player.
+	local ckey, cplayer;
+	for key, player in pairs(players) do
+		if best(player, data) then
+			ckey = key;
+		end
+	end
+
+	-- Supply the player, removing it from the choices.
+	cplayer, players[ckey] = players[ckey];
+	return cplayer;
+end
+
+-------------------------------------------
+-- PlayersAreAway
+-- Indicates whether some players are away
+-- teams: Teams to test
+-- Returns: If true, some players are away
+-------------------------------------------
+function PlayersAreAway (teams)
+	for _, team in ipairs(teams) do
+		for index = 1, #team do
+			local player = team:getPlayer(index - 1);
+			if vec3D.LenSQXZ(player:GetEnt().loc - player:GetOrigin()) > player:GetEnt().boundRadius^2 then
+				return true;
+			end
+		end
+	end
+end
+
+------------------------------------------------
+-- RotatePlayer
+-- Rotates the player toward a given direction
+-- pEnt: Player entity
+-- tdir: Target direction
+-- da: Angle increment (absolute value)
+-- atoler: Tolerance at which angle is lined up
+-- onDone: Optional function to call afterward
+------------------------------------------------
+function RotatePlayer (pEnt, tdir, da, atoler, onDone)
+	local diff, dir = vec3D.NormalXZ(tdir), pEnt.dir:Dup();
+	local angle, cura = math.acos(dir * diff), 0;
+	local side = diff.x * dir.z - diff.z * dir.x < 0 and Vec3D(-dir.z, 0, dir.x) or Vec3D(dir.z, 0, -dir.x);
+	repeat
+		pEnt.dir, cura = dir * math.cos(cura) + side * math.sin(cura), cura + da;
+		coroutine.yield();
+	until math.abs(angle - cura) < atoler;
+	Call_(onDone);
+end
+
+---------------------------------------------------
+-- WaitForContact
+-- Waits for two entities to come near one another
+-- ent1, ent2: Entities
+-- onDone: Optional function to call afterward
+---------------------------------------------------
+function WaitForContact (ent1, ent2, onDone)
+	repeat
+		coroutine.yield();
+	until vec3D.LenSQXZ(ent1.loc - ent2.loc) < (ent1.boundRadius + ent2.boundRadius)^2;
+	Call_(onDone);
+end

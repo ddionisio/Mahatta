@@ -1,0 +1,105 @@
+---------------------------------
+-- ActorCore
+-- Common actor logic body
+-- actions: Optional actions
+-- update: Optional update logic
+-- done: Loop completion logic
+-- Returns: If true, success
+---------------------------------
+local function ActorCore (actions, update, done)
+	actions = actions or {};		
+	repeat
+		if Call_(actions.abort, actions.data) then
+			return false;
+		end
+		Call_(actions.preUpdate, actions.data);
+		Call_(update);
+		Call_(actions.postUpdate, actions.data);
+		coroutine.yield();
+	until done();
+	Call_(actions.onDone, actions.data);
+	return true;
+end
+
+----------------------------------------
+-- Moves an entity toward a given point
+-- ent: Entity to move
+-- steering: Entity steering handle
+-- point: Target point
+-- actions: Optional actions
+-- Returns: If true, point was reached
+----------------------------------------
+function GoToPoint (ent, steering, point, actions)
+	steering:SetTarget(point);
+	return ActorCore(actions, nil, function()
+		return (point - ent.loc):LenSQXZ() < ent.boundRadius^2
+	end);
+end
+
+--------------------------------------------
+-- Moves an entity toward a roving point
+-- ent: Entity to move
+-- steering: Entity steering handle
+-- point: Function which supplies point
+-- dtoler: Distance at which entity arrives
+-- actions: Optional actions
+-- Returns: If true, point was reached
+--------------------------------------------
+function GoToRovingPoint (ent, steering, point, dtoler, actions)
+	local target;
+	return ActorCore(actions, function()
+		target = point();
+		steering:SetTarget(target);
+	end, function()
+		return (target - ent.loc):LenSQXZ() < dtoler^2
+	end);
+end
+
+----------------------------------------------
+-- RotateToward
+-- Rotates an entity toward a given direction
+-- ent: Entity
+-- tdir: Target direction
+-- da: Angle increment (absolute value)
+-- atoler: Tolerance in which angle lines up
+-- actions: Optional actions
+-- Returns: If true, rotation was completed
+----------------------------------------------
+function RotateToward (ent, tdir, da, atoler, actions)
+	local from, to, cura = ent.dir:Dup(), tdir:NormalXZ(), 0;
+	local angle, side = math.acos(from * to), (from ^ to).y < 0 and Vec3D(-from.z, 0, from.x) or Vec3D(from.z, 0, -from.x);
+	return ActorCore(actions, function()
+		ent.dir, cura = from * math.cos(cura) + side * math.sin(cura), cura + da;
+	end, function()
+		return math.abs(angle - cura) < atoler;
+	end);
+end
+
+---------------------------------------------------
+-- WaitForContact
+-- Waits for two entities to come near one another
+-- ent1, ent2: Entities
+-- actions: Optional actions
+-- Returns: If true, contact was made
+---------------------------------------------------
+function WaitForContact (ent1, ent2, actions)
+	return ActorCore(actions, nil, function()
+		return (ent1.loc - ent2.loc):LenSQXZ() < (ent1.boundRadius + ent2.boundRadius)^2
+	end);
+end
+
+---------------------------------------------------
+-- WaitUntilLevelWith
+-- Waits for one entity to draw level with another
+-- fEnt: Fixed entity
+-- mEnt: Moving entity
+-- rdist: Height level relative to fixed entity
+-- dtoler: Tolerance in which entities draw level
+-- actions: Optional actions
+-- Returns: If true, entities drew level
+---------------------------------------------------
+function WaitUntilLevelWith (fEnt, mEnt, rdist, dtoler, actions)
+	return ActorCore(actions, nil, function()
+		return math.abs(mEnt.loc.y - (fEnt.loc.y + rdist)) < dtoler;
+	end);
+end

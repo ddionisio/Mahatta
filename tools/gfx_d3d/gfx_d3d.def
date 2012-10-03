@@ -1,0 +1,203 @@
+LIBRARY	gfx_d3d
+
+EXPORTS
+	GFXSetProj
+	GFXSetProjMtx
+	GFXGetProjMtx
+	GFXGetViewMtx
+	GFXGetViewProjMtx
+	
+	GFXSetFS
+	GFXGetModeCount
+	GFXEnumMode
+	GFXInit
+	GFXGetMode
+	GFXSetMode
+	GFXReset
+	GFXDestroy
+	GFXClear
+	GFXBegin
+	GFXEnd
+	GFXPresent
+	GFXUpdate
+	GFXPickRay
+	GFXProjectPt
+	GFXUpdateClientRect
+	GFXRenderBoundBox
+	GFXSetTextureLimit
+	
+	Vec2DCatMullRom
+	Vec2DHermite
+	Vec2DNormal
+	Vec2DTransform
+	Vec2DTransformCoord
+	Vec2DTransformNormal
+	Vec2DGetAngle
+	
+	Vec3DCatMullRom
+	Vec3DHermite
+	Vec3DNormal
+	Vec3DTransform
+	Vec3DTransformCoord
+	Vec3DTransformNormal
+	Vec3DPerpendicular
+	Vec3DMakeNormalVectors
+	Vec3DRotatePointAroundVector
+	
+	Vec4DCross
+	Vec4DCatMullRom
+	Vec4DHermite
+	Vec4DNormal
+	Vec4DTransform
+	
+	QuatLN
+	QuatExp
+	QuatNorm
+	QuatInv
+	QuatRotAxis
+	QuatRotEuler
+	QuatRotMtx
+	QuatToAxisAngle
+	QuatSlerp
+	QuatBaryCentric
+	QuatSquadSetup
+	QuatSquad
+	
+	PlaneFromPoints
+	PlaneNormalize
+	PlaneTransform
+	ProjectPointOnPlane
+	
+	PlaneCategorize
+	PlaneTypeForNormal
+	SignbitsForPlane
+	BoxOnPlaneSide
+	
+	MtxInverse
+	MtxDeterminant
+	MtxTranspose
+	MtxTranslate
+	MtxScale
+	MtxRotateX
+	MtxRotateY
+	MtxRotateZ
+	MtxYawPitchRoll
+	MtxAxisRotation
+	MtxQuaternion
+	MtxOrtho
+	MtxOrthoOffCenter
+	MtxPerspective
+	MtxPerspectiveOffCenter
+	MtxPerspectiveFOV
+	MtxLookAt
+	
+	RandDouble
+	RandRngFloat
+	RandRngInt
+	
+	RayIntersectBox
+	
+	BoundsIntersect
+	BoundsClear
+	BoundsAddPoint
+	
+	CameraInit
+	CameraSetScene
+	CameraMov
+	CameraSet
+	CameraSetTarget
+	CameraMovDir
+	CameraYawPitchRoll
+	
+	FrustrumCheckPoint
+	FrustrumCheckSphere
+	FrustrumCheckCube
+	FrustrumCheckBox
+	FrustrumCheckBoxEX
+	
+	TextureCreate
+	TextureLoad
+	TextureSearchName
+	TextureSet
+	TextureBegin
+	TextureEnd
+	
+	SpriteCreate
+	SpriteLoad
+	
+	FontCreateIndirect
+	FontCreate
+	
+	EffectCreate
+	EffectLoad
+	EffectSearchName
+	
+	LightEnableRender
+	LightSetAmbient
+	LightGetAmbient
+	LightAdd
+	LightGetDat
+	LightSetDat
+	LightSetPriority
+	LightRemove
+	LightRemoveAll
+	LightGetNum
+	LightSetCullCallback
+	
+	MDLLoad
+	MDLSearchName
+	
+	OBJCreate
+	
+	QBSPIsValid
+	QBSPLoad
+	
+	GFXSceneGetNumTri
+	GFXSceneClear
+	GFXSceneRender
+	
+	SkyBoxBegin
+	SkyBoxEnd
+	
+	FogEnable
+	FogIsEnable
+	FogSetMode
+	FogSetColor
+	FogSetStart
+	FogSetEnd
+	FogSetDensity
+	
+	GFXScreenCapture
+	GFXScreenDisplay
+	
+	BKFXCreate
+	BKFXUpdate
+	BKFXDisplay
+	BKFXDestroy
+	
+	ParSysSetCollisionFunc
+	ParSysExist
+	ParSysLoad
+	ParSysShutdown
+	ParSysRender
+	ParSysClear
+	ParSysUpdate
+	ParSysStart
+	ParSysGetBound
+	ParSysSetDir
+	
+	GFXShadowSetShade
+	
+	GFXVideoPlay
+	
+	LineDraw
+	LineDraw3D
+	LineGetAntiAlias
+	LineSetAntiAlias
+	LineGetPattern
+	LineSetPattern
+	LineGetPatternScale
+	LineSetPatternScale
+	LineGetWidth
+	LineSetWidth
+		

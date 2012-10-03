@@ -1,0 +1,77 @@
+-----------------------------------------------
+-- Pane class definition; inherits from Widget
+-----------------------------------------------
+class.define("Pane", {
+	-- Sets up the pane so that it becomes top-level on grabs of it or its child widgets
+	-------------------------------------------------------------------------------------
+	Bubble = function(P)
+		-- After Event --
+		local function ae (event)
+			if event == WE.Grab or event == WE.GrabPart then
+				P:PromoteToDockHead();
+				for pane in P:SnapChain() do
+					pane:PromoteToDockHead();
+				end
+			end
+		end;
+
+		-- Embed routine --
+		local function embed (W)
+			for paneitem in W:Iter() do
+				paneitem:SetAfterMethod("event", ae);
+				
+				-- Recursely embed the method into child panes.
+				CallIf(class.istype(paneitem, "Pane"), embed, paneitem);
+			end
+		end
+	
+		-- Embed the method in this pane and all members of its snap chain.
+		P:SetAfterMethod("event", ae);
+		embed(P);
+		for pane in P:SnapChain() do
+			pane:SetAfterMethod("event", ae);
+			embed(pane);
+		end
+	end,
+
+	-- Loads the pane into the frame
+	-- x, y: Pane coordinates
+	-- w, h: Pane dimensions
+	---------------------------------
+	Frame = function(P, x, y, w, h)
+		P:AddToFrame();
+		P:PromoteToFrameHead();
+		P:SetRect("xywh", x, y, w, h);
+		P:Call("onFrame");
+	end,
+
+	-- Gets a pane's view
+	-- Returns: View coordinates
+	-----------------------------
+	GetView = function(P)
+		return P.vx or 0, P.vy or 0;
+	end,
+
+	-- Builds an iterator over the pane
+	-- Returns: Iterator which returns widget handle
+	-------------------------------------------------
+	Iter = function(P)
+		return function(_, paneitem)
+			return paneitem and paneitem:GetNextDockLink() or P:GetDockHead();
+		end;
+	end,
+
+	-- Sets a pane's view
+	-- x, y: View coordinates
+	--------------------------
+	SetView = function(P, x, y)
+		P.vx, P.vy = x, y;
+	end
+},
+
+-- New
+-- state: State handle
+-----------------------
+function(P, state)
+	class.scons("Widget", state);
+end, { base = "Widget" });

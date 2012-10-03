@@ -1,0 +1,30 @@
+------------------------------
+-- RegisterMatch (temporary)
+-- Registers match types
+-- type: Match type
+-- match: Match configuration
+------------------------------
+local _Matches = {};
+function RegisterMatch (type, match)
+	_Matches[type] = match;
+end
+
+-------------------------------
+-- LoadMatch
+-- Loads a given type of match
+-- type: Match type
+-- Returns: Match handle
+-------------------------------
+function LoadMatch (type)
+	local match, config = class.new("Match"), _Matches[type];
+	for _, name in ipairs{ "Begin", "Serve", "Play", "Score", "End" } do
+		match["Enter" .. name], match["Do" .. name] = config["Enter" .. name], config["Do" .. name];
+	end
+	return match;
+end
+
+-- Register the match types. Disallow further loading.
+LoadRoutines{
+	"Config/Match/SinglePlayerStory.txt"
+};
+RegisterMatch = nil;

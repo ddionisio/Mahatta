@@ -1,0 +1,55 @@
+-----------------------------------------------------------
+-- ScrollButton class definition; inherits from PushButton
+-----------------------------------------------------------
+class.define("ScrollButton", {	
+	-- Gets the scroll button's target
+	-- Returns: Target and up scroll boolean
+	-----------------------------------------
+	GetTarget = function(S)
+		return S.target, S.bUp;
+	end,
+		
+	-- Binds a target to the scroll button
+	-- target: Target handle
+	-- bUp: Up scroll boolean
+	---------------------------------------
+	SetTarget = function(S, target, bUp)
+		-- Unbind any current target. Bind the new target.
+		Invoke(S.target, "Call", "onUnbind", S.bUp);
+		Invoke(target, "Call", "onBind", S, bUp);
+		
+		-- Store the properties.
+		S.target, S.bUp = target, bUp;
+	end
+},
+
+-- New
+-- state: State handle
+-----------------------
+function(S, state)
+	class.scons("PushButton", state);
+
+	-- Counter used to time scrolling when the button is held.
+	S.counter = class.new("Timer", function()
+		local target, bUp = S:GetTarget();
+		if target then
+			target:Call("onScroll", bUp, S.amount);
+		end			
+	end);
+
+	-- Methods --
+	S:SetMethod("event", function(event)
+		-- On grabs, enable the timer, executing immediately.
+		if event == WE.Grab then
+			S.counter:SetTimeout(S.timeout, true);
+			
+		-- On drops, disable the timer.
+		elseif event == WE.Drop then
+			S.counter:SetTimeout(nil);
+		
+		-- Update the timer.
+		elseif event == WE.PostUpkeep then
+			S.counter:Update();
+		end
+	end);
+end, { base = "PushButton" });

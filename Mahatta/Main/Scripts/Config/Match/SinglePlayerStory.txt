@@ -1,0 +1,46 @@
+-- Register single player story mode.
+RegisterMatch("SinglePlayerStory", {
+	-- Routines --
+	EnterBegin = function()
+		-- Disable team 1 AI.
+		team1.Defense, team1.Offense = nil, nil;
+	end,
+	EnterServe = function()
+		--	Put the ball somewhere.
+		ball:setPos((team1:getPlayer(0):GetEnt().loc + team2:getPlayer(0):GetEnt().loc) / 2 + Vec3D(0, 100, 0))
+		
+		--	Ready, set, go/launch ball
+		--	Let players loose
+	end,
+--	EnterPlay = ?
+	--	Anything?
+
+--	EnterScore = ?
+	--	Wait for everybody to get home
+
+--	EnterEnd = ?
+	--	Cue victory/loss things
+	--	Other fancy stuff
+
+	DoServe = function()
+		--
+
+		--
+		match.bInPlay = true;
+		repeat
+			coroutine.yield();
+		until ball.hitter;
+	end,
+	DoPlay = function()
+		repeat
+			coroutine.yield();
+		until ball.hitter or match.scorer;
+	end,
+	DoScore = function()
+		repeat
+			coroutine.yield();	
+		until not PlayersAreAway{ team1, team2 };
+	end
+--	DoEnd = ?
+	-- DONE = match:IsOver();
+});

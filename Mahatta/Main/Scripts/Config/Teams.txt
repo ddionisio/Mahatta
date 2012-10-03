@@ -1,0 +1,61 @@
+---------------------------------
+-- RegisterTeam (temporary)
+-- Registers team configurations
+-- name: Team name
+-- team: Team configuration
+---------------------------------
+local _Teams = {};
+function RegisterTeam (name, team)
+	_Teams[name] = team;
+end
+
+--------------------------------
+-- GetTeamConfig
+-- Gets team configuration data
+-- name: Team name
+-- Returns: Configuration data
+--------------------------------
+function GetTeamConfig (name)
+	-- Copy the configuration entry and convert to Unicode.
+	for key, team in pairs(_Teams) do
+		if WS(key) == name then
+			local config = {
+				namemodel = WS(team.namemodel),
+				nametexture = WS(team.nametexture)
+			};
+			for _, name in ipairs{ "Begin", "Serve", "Defense", "Offense", "GainPoint", "LosePoint", "Win", "Lose" } do
+				config[name] = team[name];
+			end
+			for _, entry in ipairs(team) do
+				config[#config + 1] = {
+					name = WS(entry.name),
+					file = WS(entry.file)
+				};
+			end
+			return config;
+		end
+	end
+end
+
+------------------------------------------
+-- GetTeamNames 
+-- Gets an iterator over the team names
+-- Returns: Iterator which supplies names
+------------------------------------------
+function GetTeamNames ()
+	local key;
+	return function ()
+		key = next(_Teams, key);
+		if key then
+			return WS(key);
+		end
+	end
+end
+
+-- Register the teams. Disallow further loading.
+LoadRoutines{
+	"Config/Team/DaughtersOfXibalba.txt",
+	"Config/Team/Elites.txt",
+	"Config/Team/Twins.txt"
+};
+RegisterTeam = nil;

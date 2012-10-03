@@ -1,0 +1,66 @@
+--------------------------
+-- Timer class definition
+--------------------------
+class.define("Timer", {
+	-- Gets the time lapse
+	-- Returns: Time lapse
+	-----------------------
+	GetCounter = function(T)
+		return T.counter;
+	end,
+	
+	-- Gets the duration
+	-- Returns: Duration
+	---------------------
+	GetDuration = function(T)
+		return T.duration;
+	end,
+
+	-- Indicates whether the timer is paused
+	-- Returns: If true, timer is paused
+	-----------------------------------------
+	IsPaused = function(T)
+		return T.bPaused;
+	end,
+
+	-- Configures the timer for a given duration
+	-- duration: Duration to assign
+	-- bImmediate: If true, execute action immediately
+	---------------------------------------------------
+	SetDuration = function(T, duration, bImmediate)
+		T.counter, T.duration = 0, duration;
+		
+		-- Invoke the action.
+		T:SetPause(not duration);
+		CallIf(duration and bImmediate, T.action);
+	end,
+
+	-- Pauses or resumes the timer
+	-- bPause: If true, pause the timer
+	------------------------------------
+	SetPause = function(T, bPause)
+		T.bPaused = bPause;
+	end,
+	
+	-- Updates the timer and performs actions on timeout
+	-----------------------------------------------------
+	Update = function(T)
+		-- On a timeout, perform the action and update the timer.
+		if T.duration then
+			if T.counter >= T.duration then
+				T.counter = T.counter % T.duration;
+				T.action();
+			end
+			T.counter = T.counter + game.GetTick();
+		end	
+	end
+},
+
+-- New
+-- action: Action to perform on timeout
+-- duration: Duration, in seconds
+----------------------------------------
+function(T, action, duration)
+	T.action = action;
+	T:SetDuration(duration);
+end);

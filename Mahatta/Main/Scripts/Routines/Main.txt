@@ -1,0 +1,65 @@
+----------------------------
+-- CloseLua
+-- Scripted closedown logic
+----------------------------
+function CloseLua ()
+	-- Perform close tasks.
+	CloseTasks:Run();
+end
+
+----------------------------
+-- RenderLua
+-- Scripted rendering logic
+----------------------------
+function RenderLua ()
+	Invoke(match, "Render");
+
+	-- Render 2-D objects.
+	gfx.TextureBegin();
+	UI:Render();
+	CurrentSection:Render();
+	if Cursor then
+		Cursor:StretchBlt(cx, cy, Cursor:GetWidth(), Cursor:GetHeight());
+	end
+	gfx.TextureEnd();
+
+	-- Perform render tasks.
+	RenderTasks:Run();
+
+	-- Debug text.
+	printf_draw(Font, { x = 25, y = 110 }, 25);
+end
+
+-------------------------
+-- UpdateLua
+-- Scripted update logic
+-------------------------
+function UpdateLua ()
+	-- Trap events to the section.
+	for _, key in ipairs(inp.GetKeyBuffer()) do	-- TODO: Replace with GetBuffer() [alternatively, sabotage the key buffer when necessary]
+		CurrentSection:Trap(key.bDown and "keydown" or "keyup", key.ofs);
+	end
+	local dx, dy, dz = inp.MouseGetMove();	-- TODO: Replace with GetMove()	[see above]
+	CurrentSection:InvokeIf(dx ~= 0 or dy ~= 0 or dz ~= 0, "Trap", "mousemove", dx, dy, dz);
+
+	-- Direct input to the user interface.
+	UI:PropagateSignal(inp.IsPressed(inp.Mouse, 0));-- TODO: replace with GetPress() [see above]
+
+	-- Update objects.
+	UI:Update();
+	CurrentSection:Update();
+
+	-- Update the camera.
+	game.UpdateCamera();
+
+	-- Perform update tasks.
+	UpdateTasks:Run();
+end
+
+-- Install message pumps for tasks.
+for _, type in ipairs{ "Close", "Render", "Update" } do
+	local pump = class.new("Pump");
+	BindGlobal(type .. "Tasks", function()
+		return pump;
+	end, function() end);
+end

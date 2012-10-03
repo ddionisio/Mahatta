@@ -1,0 +1,541 @@
+----------------------------
+-- Backdrop
+-- Builds a backdrop
+-- bBlock: Blocking boolean
+-- Returns: Net handle
+----------------------------
+function Backdrop (bBlock)
+	return Net(function()
+		return bBlock;
+	end, function() end);
+end
+--[[
+----------------------------------------
+-- Cancel
+-- Builds a Cancel button
+-- section: Section cancelled by button
+-- Returns: PushButton handle
+----------------------------------------
+function Cancel (section)
+	return PushButton("Cancel", SectionClose(section, true));
+end
+
+----------------------------
+-- Checkbox
+-- Checkbox setup procedure
+-- Returns: Checkbox handle
+----------------------------
+function Checkbox ()
+	local C = class.new("Checkbox", UI);
+		C:SetPicture{
+			D = PictureC.white,
+			C = PictureC.C_c
+		};
+		C:SetColor("f_D", 1, 0, 0);
+	return C;
+end
+
+-------------------------------
+-- Combobox
+-- Combobox setup procedure
+-- capacity: Combobox capacity
+-- Returns: Combobox handle
+-------------------------------
+function Combobox (capacity)
+	local C = class.new("Combobox", UI, capacity);
+		C:SetPicture{
+			H = PictureC.blue,
+			B = PictureC.gray,
+			S = PictureC.purple
+		};
+		C:SetText("T18", 16);
+	return C;
+end
+
+---------------------------------------
+-- EditboxBasic
+-- Basic editbox setup procedure
+-- string: String to assign to editbox
+-- textset: Text set to use
+-- filter: Text filter
+-- blinktime: Cursor blink timeout
+-- presstime: Key press timeout
+-- Returns: Basic editbox handle
+---------------------------------------
+function EditboxBasic (string, textset, filter, blinktime, presstime)
+	local E = class.new("EditboxBasic", UI, filter, blinktime, presstime);
+		E:SetPicture{
+			B = PictureC.clear,
+			S = PictureC.blue,
+			C = PictureC.white,
+			F = PictureC.purple
+		};
+		E:SetText(textset);
+		E:SetString(string);
+	return E;
+end
+
+-------------------------------------------------
+-- FilterString
+-- Builds a closure to filter string characters
+-- maxlen: Maximum string length allowable
+-- bLeadingDigits: If true, allow leading digits
+-------------------------------------------------
+function FilterString (maxlen, bLeadingDigits)
+	return function(E, where, input)
+		-- If the string is full, disallow the character.
+		if #E:GetString() == maxlen then
+			return true;
+		
+		-- Disallow leading numbers if requested.
+		elseif input >= "0" and input <= "9" then
+			if not bLeadingDigits and where == 0 then
+				return true;
+			end
+		end
+	end
+end
+
+------------------------------------------------
+-- FilterUnsigned
+-- Builds a closure to filter unsigned integers
+-- max: Maximum number allowable
+------------------------------------------------
+function FilterUnsigned (max)
+	return function(E, where, input)
+		-- Make sure the input is a number.
+		if input < "0" or input > "9" then
+			return true;
+		end
+		
+		-- Disallow leading zeroes on non-empty strings.
+		local text = E:GetString();
+		if text:sub(1, 1) == "0" and where ~= 0 then
+			return true;
+		elseif input == "0" and text ~= "" and where == 0 then
+			return true;
+		end
+		
+		-- Disallow integers greater than the maximum.
+		if tonumber(text:sub(1, where) .. input .. text:sub(where + 1)) > max then
+			return true;
+		end 
+	end
+end
+
+-------------------------------------------
+-- Grid
+-- Grid setup procedure
+-- set: Method used to set a cell
+-- used: Method used to indicate cell use
+-- draw: Method used to draw a cell
+-- hCuts, vCuts: Horizontal, vertical cuts
+-- Returns: Grid handle
+-------------------------------------------
+function Grid (set, used, draw, hCuts, vCuts)
+	local G = class.new("Grid", UI, set, used, draw);
+		G:SetCuts(hCuts, vCuts);
+	return G;
+end
+]]
+-------------------------
+-- Image
+-- Image setup procedure
+-- image: Image texture
+-- Returns: Image handle
+-------------------------
+function Image (image)
+	local I = class.new("Image", UI);
+		I:SetPicture("default", class.new("Picture", hTXT(image)));
+	return I;
+end
+
+----------------------------------
+-- ImageDynamic
+-- Dynamic image setup procedure
+-- supply: Picture supply routine
+-- Returns: Image handle
+----------------------------------
+function ImageDynamic (supply)
+	return class.new("Image", UI, supply);
+end
+--[[
+---------------------------------
+-- ListboxBasic
+-- Basic listbox setup procedure
+-- capacity: Listbox capacity
+-- Returns: Basic listbox handle
+---------------------------------
+function ListboxBasic (capacity)
+	local L = class.new("ListboxBasic", UI, capacity);
+		L:SetPicture{
+			B = PictureC.black,
+			S = PictureC.blue
+		};
+		L:SetText("T18", 16);
+	return L;
+end
+
+--------------------------------
+-- Marquee
+-- Marquee setup procedure
+-- textset: Text set to use
+-- offset: Text offset
+-- timeout: Text scroll timeout
+-- Returns: Marquee handle
+--------------------------------
+function Marquee (textset, offset, timeout)
+	local M = class.new("Marquee", UI, timeout);
+		M:SetPicture("B", PictureC.blue);
+		M:SetText(textset, offset);
+	return M;
+end
+
+------------------------------
+-- Minimize
+-- Builds a minimize button
+-- pane: Pane handle
+-- Returns: PushButton handle
+------------------------------
+function Minimize (pane)
+	return PushButton("-", function()
+		pane:Minimize();
+	end);
+end
+]]
+----------------------------------------
+-- Net
+-- Net setup procedure
+-- persist: Method used to maintain net
+-- catch: Method to invoke on a catch
+-- Returns: Net handle
+----------------------------------------
+function Net (persist, catch)
+	return class.new("Net", UI, persist, catch);
+end
+--[[
+-------------------------------------
+-- OK
+-- Builds an OK button
+-- section: Section exited by button
+-- Returns: PushButton handle
+-------------------------------------
+function OK (section)
+	return PushButton("OK", SectionClose(section, false));
+end
+
+-------------------------
+-- Popup
+-- Popup setup procedure
+-- Returns: Popup handle
+-------------------------
+function Popup ()
+	local P = class.new("Popup", UI);
+		P:SetPicture("B", PictureC.black);
+	return P;
+end
+]]
+-------------------------------------
+-- PushButton
+-- Push button setup utility
+-- action: Push button action
+-- off, on: Off and on texture files
+-- Returns: PushButton handle
+-------------------------------------
+function PushButton (action, off, on)
+	local P = class.new("PushButton", UI);
+		local onP = class.new("Picture", hTXT(on));
+		P:SetAction(action);
+		P:SetPicture{
+			default = class.new("Picture", hTXT(off)),
+			entered = onP,
+			grabbed = onP
+		};
+	return P;
+end
+--[[
+-----------------------------
+-- Radiobox
+-- Radiobox setup procedure
+-- ow, oh: Option dimensions
+-- bFrame: Frame boolean
+-- Returns: Radiobox handle
+-----------------------------
+function Radiobox (ow, oh, bFrame)
+	local R = class.new("Radiobox", UI, ow, oh, bFrame);
+		R:SetPicture{
+			B = PictureC.clear,
+			C = PictureC.RO_c,
+			O = PictureC.RO_o
+		};
+	return R;
+end
+]]
+-------------------------------------------
+-- Ring
+-- Ring setup utility
+-- distance: Eye-ring center distance
+-- radius: Ring circle radius
+-- turntime: Time to turn through the ring
+-- objects: Object files
+-- Returns: Ring handle
+-------------------------------------------
+function Ring (distance, radius, turntime, objects)
+	local R = class.new("Ring", UI, distance, radius, turntime);
+		for _, file in ipairs(objects) do
+			R:AddObject(hOBJ(hMDL(file)));
+		end
+	return R;
+end
+--[[
+-----------------------------------------
+-- ScrollBarHorz
+-- Horizontal scroll bar setup procedure
+-- Returns: Horizontal scroll bar handle
+-----------------------------------------
+function ScrollBarHorz ()
+	local S = class.new("ScrollBar", UI);
+
+	return S;
+end
+
+---------------------------------------
+-- ScrollBarVert
+-- Vertical scroll bar setup procedure
+-- as: Arrow size
+-- ms: Minimum bar size
+-- Returns: Vertical scroll bar handle
+---------------------------------------
+function ScrollBarVert (as, ms)
+	local S = class.new("ScrollBar", UI, as, ms);
+		S:SetPicture{
+			B = PictureC.S_b,
+			barD = PictureC.ST_n,
+			barE = PictureC.ST_e,
+			barG = PictureC.ST_g,
+			larrowD = PictureC.B_nlu,
+			larrowE = PictureC.B_elu,
+			larrowG = PictureC.B_glu,
+			garrowD = PictureC.B_nld,
+			garrowE = PictureC.B_eld,
+			garrowG = PictureC.B_gld
+		};
+	return S;
+end
+
+----------------------------------
+-- ScrollButton
+-- Scroll button setup procedure
+-- target: Target handle
+-- bUp: Up scroll boolean
+-- timeout: Scroll repeat timeout
+-- amount: Scroll amount
+-- Returns: Scroll button handle
+----------------------------------
+function ScrollButton (target, bUp, timeout, amount)
+	local S = class.new("ScrollButton", UI);
+		S.amount, S.timeout = amount or 1, timeout;
+		S:SetPicture{
+			D = PictureC[bUp and "B_nlu" or "B_nld"],
+			E = PictureC[bUp and "B_elu" or "B_eld"],
+			G = PictureC[bUp and "B_glu" or "B_gld"]
+		};
+		S:SetTarget(target, bUp);
+	return S;
+end
+
+---------------------------------------
+-- ScrollPair
+-- Builds a scroll button pair
+-- target: Target handle
+-- timeout: Scroll repeat timeout
+-- amount: Scroll amount
+-- Returns: Up and down button handles
+---------------------------------------
+function ScrollPair (target, timeout, amount)
+	return ScrollButton(target, true, timeout, amount), ScrollButton(target, false, timeout, amount);
+end
+]]
+-------------------------------------
+-- SectionClose
+-- Builds a section close routine
+-- section: Section handle
+-- ...: Arguments to section close
+-- Returns: Closure to close section
+-------------------------------------
+function SectionClose (section, ...)
+	local args = { ... };
+	return function()
+		UpdateTasks:Add(function()
+			section:Close(unpack(args));
+		end);
+	end
+end
+
+----------------------------------------------
+-- SectionCloseIf
+-- Builds a conditional section close routine
+-- section: Section handle
+-- condition: Condition on which to close
+-- ...: Arguments to section close
+-- Returns: Closure to close section
+----------------------------------------------
+function SectionCloseIf (section, condition, ...)
+	local close = SectionClose(section, ...);
+	return function()
+		CallIf(condition(), close);
+	end
+end
+
+----------------------------------------
+-- SectionOpenDialog
+-- Builds a section dialog open routine
+-- name: Section name
+-- bModal: If true, dialog is modal
+-- ...: Arguments to section enter
+-- Returns: Closure to open dialog
+----------------------------------------
+function SectionOpenDialog (name, bModal, ...)
+	local args = { ... };
+	return function()
+		UpdateTasks:Add(function()
+			Dialog(name, bModal, unpack(args));
+		end);
+	end
+end
+
+----------------------------------------
+-- SectionOpenScreen
+-- Builds a section screen open routine
+-- name: Section name
+-- ...: Arguments to section enter
+-- Returns: Closure to open screen
+----------------------------------------
+function SectionOpenScreen (name, ...)
+	local args = { ... };
+	return function()
+		UpdateTasks:Add(function()
+			Screen(name, unpack(args));
+		end);
+	end
+end
+--[[
+-----------------------------------------
+-- SliderHorz
+-- Horizontal slider setup procedure
+-- sx, ex: Thumb start/end x-coordinates
+-- ty: Thumb y-coordinate
+-- tw, th: Thumb dimensions
+-- Returns: Horizontal slider handle
+-----------------------------------------
+function SliderHorz (sx, ex, ty, tw, th)
+	local S = class.new("Slider", UI, sx, ex, ty, tw, th, false);
+		S:SetPicture{
+			B = PictureC.S_b,
+			TD = PictureC.ST_n,
+			TE = PictureC.ST_e,
+			TG = PictureC.ST_g
+		};
+	return S;
+end
+
+-----------------------------------------
+-- SliderVert
+-- Vertical slider setup procedure
+-- tx: Thumb x-coordinate
+-- sy, ey: Thumb start/end y-coordinates
+-- tw, th: Thumb dimensions
+-- Returns: Vertical slider handle
+-----------------------------------------
+function SliderVert (tx, sy, ey, tw, th)
+	local S = class.new("Slider", UI, sy, ey, tx, tw, th, true);
+		S:SetPicture{
+			B = PictureC.S_b,
+			TD = PictureC.ST_n,
+			TE = PictureC.ST_e,
+			TG = PictureC.ST_g
+		};
+	return S;
+end
+
+----------------------------------
+-- Spinner
+-- Spinner setup procedure
+-- target: Target handle
+-- bUp: Up scroll boolean
+-- timeout: Scroll repeat timeout
+-- amount: Scroll amount
+-- Returns: Spinner handle
+----------------------------------
+function Spinner (target, bUp, timeout, amount)
+	local S = class.new("ScrollButton", UI);
+		S.amount, S.timeout = amount or 1, timeout;
+		S:SetPicture{
+			D = PictureC.B_n,
+			E = PictureC.B_e,
+			G = PictureC.B_g
+		};
+		S:SetText("T24");
+		S:SetString(bUp and "+" or "-");
+		S:SetTarget(target, bUp);
+	return S;
+end
+
+----------------------------------------
+-- SpinnerPair
+-- Builds a spinner pair
+-- target: Target handle
+-- timeout: Scroll repeat timeout
+-- amount: Scroll amount
+-- Returns: Up and down spinner handles
+----------------------------------------
+function SpinnerPair (target, timeout, amount)
+	return Spinner(target, true, timeout, amount), Spinner(target, false, timeout, amount);
+end
+]]
+------------------------------------
+-- StaticText
+-- Static text setup procedure
+-- string: String to assign to text
+-- Returns: Static text handle
+------------------------------------
+function StaticText (bFrame, string)
+	local S = class.new("StaticText", UI);
+		S:SetFont(Font);
+		S:SetString(string);
+	return S;
+end
+--[[
+------------------------------------------
+-- Title
+-- Builds a titled popup
+-- title: Title to assign
+-- h: Height to assign to title
+-- bMinimize: If true, allow minimization
+-- Returns: Title handle
+------------------------------------------
+function Title (title, h, bMinimize)
+	local T = class.new("Title", UI);
+		T.body, T.minimize = Backdrop(false), bMinimize and Minimize(T) or nil;
+		T:SetPicture{
+			B = PictureC.black,
+			C = PictureC.purple
+		};
+		T:SetText("T18", 16);
+		T:SetString(title);
+		T:SetTitleHeight(h);
+		T:SetColor("f_B", 1, 1, 0);
+	return T;
+end
+]]
+-------------------------------------
+-- Widget
+-- Generic widget setup procedure
+-- name, method: SetMethod arguments
+-- Returns: Widget handle
+-------------------------------------
+function Widget (name, method)
+	local W = class.new("Widget", UI);
+		W:SetMethod(name, method);
+	return W;
+end

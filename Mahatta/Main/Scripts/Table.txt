@@ -1,0 +1,196 @@
+-------------------------
+-- table.copy
+-- Duplicates a table
+-- t: Table to duplicate
+-- Returns: Table copy
+-------------------------
+function table.copy (t)
+	local copy = {};
+	for key, value in pairs(t) do
+		copy[key] = type(value) == "table" and table.copy(value) or value;
+	end
+	setmetatable(copy, getmetatable(t));
+	return copy;
+end
+
+------------------------------------------
+-- table.copyto
+-- Copies all entries into a second table
+-- t: Source table
+-- dt: Destination table
+------------------------------------------
+function table.copyto (t, dt)
+	for key, value in pairs(t) do
+		dt[key] = value;
+	end
+end
+
+--------------------------------------------------
+-- table.copytoi
+-- Copies all indexed entries into a second table
+-- t: Source table
+-- dt: Destination table
+--------------------------------------------------
+function table.copytoi (t, dt)
+	for index, value in ipairs(t) do
+		dt[index] = value;
+	end
+end
+
+-------------------------------------------
+-- Indicates whether two tables are equal
+-- t1, t2: Tables to compare
+-- bRecurse: If true, recurse on subtables
+-- Returns: If true, tables are equal
+-------------------------------------------
+function table.equal (t1, t2, bRecurse)
+	-- Iterate through the tables in parallel. By the end, the keys of both tables, if
+	-- they are equal, should both be nil.
+	local k1, k2;
+	while true do
+		k1, k2 = next(t1, k1), next(t2, k2);
+		if not k1 or not k2 then
+			break;
+		end
+
+		-- Lookup the values at the first key in both tables.
+		local v1, v2 = t1[k1], t2[k1];
+
+		-- The types of both members must match.
+		if type(v1) ~= type(v2) then
+			return false;
+		end
+
+		-- If recursion is requested, tables do not have to match by reference, but only
+		-- by content; in this case, the test is applied recursively. Otherwise, test for
+		-- equality by standard object comparisons and/or metamethods.
+		if type(v1) == "table" and bRecurse then
+			if not table.equal(v1, v2, bRecurse) then
+				return false;
+			end
+		elseif v1 ~= v2 then
+			return false;
+		end
+	end
+	return k1 == k2;
+end
+
+----------------------------------------
+-- table.find
+-- Gets the key of a value in the table
+-- t: Table to search
+-- value: Value to find
+-- Returns: Key of value
+----------------------------------------
+function table.find (t, value)
+	for key, entry in pairs(t) do
+		if entry == value then
+			return key;
+		end
+	end
+end
+
+--------------------------------------------
+-- table.each_load
+-- Builds a foreach closure to load a table
+-- t: Table to be loaded
+-- Returns: foreach closure
+--------------------------------------------
+function table.each_load (t)
+	return function(_, value)
+		t[#t + 1] = value;
+	end
+end
+
+-----------------------------
+-- table.print
+-- Used to print out a table
+-- t: Table to print
+-- indent: Indent string
+-----------------------------
+function table.print (t, indent)
+	------------------------
+	-- Tables for each type
+	------------------------
+	local types, indent = {
+		["true"] = {}, ["false"] = {},
+		number = {}, string = {},
+		["function"] = {}, thread = {}, userdata = {},
+		table = {}
+	}, indent or "";
+	
+	-- Collect the fields into the tables.
+	local index = 1;
+	for key, value in pairs(t) do
+		local typek, typev = type(key), type(value);
+		
+		-- Format the key.
+		local key = key;
+		if typek == "boolean" then
+			key = string.format("[%s]", key and "true" or "false");
+		elseif typek == "number" then
+			key = string.format("[%f]", key);
+		elseif typek ~= "string" then
+			key = "#" .. index .. string.format("(%s)", typek);
+		end
+	
+		-- Put the field into the appropriate table.
+		if typev == "boolean" then
+			table.insert(types[value and "true" or "false"], key);
+		elseif typev == "number" or typev == "string" then
+			table.insert(types[typev], { value = value, key = key });
+		elseif typev == "function" or typev == "thread" or typev == "userdata" then
+			table.insert(types[typev], key);
+		elseif typev == "table" then
+			table.insert(types.table, { table = value, key = key });
+		end
+		index = index + 1;
+	end
+	
+	-- Print the booleans.
+	for _, boolean in ipairs{ "true", "false" } do
+		if #types[boolean] > 0 then
+			local str = indent .. boolean .. ": ";
+			for index, value in ipairs(types[boolean]) do
+				str = string.format("%s%s%s", str, index == 1 and "" or ", ", value);
+			end
+			printf(str);
+		end
+	end
+	
+	-- Print the numbers and strings.
+	for _, type in ipairs{ "number", "string" } do
+		local format = indent .. (type == "number" and "%s: %f" or "%s: %s");
+		for _, value in ipairs(types[type]) do
+			printf(format, value.key, value.value);
+		end
+	end
+	
+	-- Print all the remaining non-table types.
+	for _, type in ipairs{ "function", "thread", "userdata" } do
+		if #types[type] > 0 then
+			local str = indent .. type .. ": ";
+			for index, value in ipairs(types[type]) do
+				str = string.format("%s%s%s", str, index == 1 and "" or ", ", value);
+			end
+			printf(str);
+		end
+	end
+
+	-- Print all the tables.
+	for _, value in ipairs(types.table) do
+		printf(indent .. value.key);
+		table.print(value.table, indent .. "  ");
+		printf(indent .. "/" .. value.key);
+	end
+end
+
+-------------------------------
+-- table.top
+-- Gets a table's top element
+-- t: Table from which to draw
+-- Returns: Top element
+-------------------------------
+function table.top (t)
+	return t[#t];
+end

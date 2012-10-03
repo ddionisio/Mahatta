@@ -1,0 +1,271 @@
+----------------------------------------
+-- Delete
+-- E: Editbox handle
+-- offset: Offset at which to delete
+-- count: Count of characters to delete
+----------------------------------------
+local function Delete (E, offset, count)
+	if offset >= 0 and offset < #E:GetString() then
+		E.sequence:RemoveItems(offset, count);
+		E.string = E:GetString():sub(1, offset) .. E:GetString():sub(offset + count + 1);
+	end
+end
+
+-------------------------------------------------------
+-- EditboxBasic class definition; inherits from Widget
+-------------------------------------------------------
+class.define("EditboxBasic", {	
+	-- Adds text to the basic editbox
+	-- text: Text string to add
+	----------------------------------
+	AddText = function(E, text)
+		-- If there is a selection, overwrite it.
+		E:InvokeIf(E.selection:Get(), "RemoveText", false);
+		
+		-- Add the text, filtering out unwanted characters. Put the cursor at the end.
+		local cursor = E.cursor:Get();
+		for char in tostring(text):gmatch(".") do
+			if not E:filter(cursor, char) then
+				E.sequence:InsertItems(cursor, 1);
+				E.string = E:GetString():sub(1, cursor) .. char .. E:GetString():sub(cursor + 1);
+				cursor = cursor + 1;
+			end
+		end
+	end,
+
+	-- Gets the item that fits a given position
+	-- where: Position to fit
+	-- Returns: Item that fits position
+	--------------------------------------------
+	GetFitItem = function(E, where)
+		local x, w = E:GetRect("xw");
+
+		-- If the cursor is left of the editbox, fit it to the editbox offset.
+		local offset = E.offset:Get() or 0;
+		if where < x then
+			return offset;
+		end
+		
+		-- Assume the character at the editbox offset to be flush with the left edge, and
+		-- run from there through the characters. If the cursor is over one of those
+		-- characters, fit it to that spot. If the cursor goes past the right edge of the
+		-- editbox, fit it to the last visible spot in the string.
+		local ew, str, textset = x + w, E:GetString(), E:GetText();
+		for index = offset + 1, #str do
+			local dw = textset:GetWidth(str:sub(index, index), 1, 1);
+			if (where >= x and where < x + dw) or x + dw > ew then
+				return index - 1;
+			end
+			x = x + dw;
+		end
+
+		-- If the cursor is right of the end of the string, fit to the length. 
+		return #str;
+	end,
+
+	-- Removes text from the basic editbox
+	-- bBack: If true, backspace
+	---------------------------------------
+	RemoveText = function(E, bBack)
+		-- If there is a selection, delete it and put the cursor at the start of where it
+		-- was. Otherwise, delete the character at the cursor position, noting that the
+		-- cursor is first moved back one spot for a backspace.
+		local start, count = E.selection:Get();
+		if start then
+			Delete(E, start, count);
+			E.cursor:Set(start);
+		else
+			local cursor = E.cursor:Get();
+			Delete(E, bBack and cursor - 1 or cursor, 1); 
+		end
+	end,
+	
+	-- Assigns a string to the basic editbox
+	-- string: String to assign
+	-----------------------------------------
+	SetString = function(E, string)
+		E.selection:Set(0, #E:GetString());
+		E:AddText(string);
+	end
+},
+
+-- New
+-- state: State handle
+-- filter: Text filter
+-- blinktime: Cursor blink timeout
+-- presstime: Key press timeout
+-----------------------------------
+function(E, state, filter, blinktime, presstime)
+	class.scons("Widget", state);
+
+	-- Character filter.
+	E.filter = filter;
+
+	-- Character sequence.
+	E.sequence = class.new("Sequence");
+
+	-- Cursor position.
+	E.cursor = E.sequence:CreateSpot(true, true);
+
+	-- Offset where editbox is grabbed.
+	E.grabbed = E.sequence:CreateSpot(true, false);
+
+	-- Offset from which to begin rendering.
+	E.offset = E.sequence:CreateSpot(false, false);
+	
+	-- Selected text.
+	E.selection = E.sequence:CreateInterval();
+	
+	-- Blink timer.
+	E.blink = class.new("Timer", function()
+		E.bBlink = not E.bBlink;
+	end, blinktime);
+	
+	-- Key press timer.
+	E.press = class.new("Timer", function()
+		-- On a copy or cut, apply the action to the selected text. If the text is not the
+		-- empty string, put it in the clipboard.
+		local start, count = E.selection:Get();
+		if E.action == "copy" or E.action == "cut" then
+			if start then
+				ClipText = E:GetString():sub(start + 1, start + count);
+				E:InvokeIf(E.action == "cut", "RemoveText", false);
+			end
+			
+		-- On a paste, paste in any clipboard text.
+		elseif E.action == "paste" then
+			E:AddText(ClipText or "");
+			
+		-- On a backspace or delete, remove the selection if it exists. Do so before the
+		-- cursor on backspace, and on it otherwise.
+		elseif E.action == "backspace" or E.action == "delete" then
+			E:RemoveText(E.action == "backspace");
+			
+		-- On left, move the cursor back once if no selection exists; otherwise, put the
+		-- cursor at the start of it and clear the selection.
+		elseif E.action == "left" then
+			E.selection:Clear();
+			E.cursor:Set(start or E.cursor:Get() - 1);
+			
+		-- On right, move the cursor ahead once if no selection exists; otherwise, put the
+		-- cursor after it and clear the selection.
+		elseif E.action == "right" then
+			E.selection:Clear();
+			E.cursor:Set(start and start + count or E.cursor:Get() + 1);
+			
+		-- Otherwise, add a character to the text.
+		elseif type(E.action) == "string" then
+			E:AddText(E.action);
+		end		
+	end);
+	
+	-- Methods --
+	E:SetMethod{
+		event = function(event)
+			-- If the editbox is clicked, remove any selection from it. Place the cursor over
+			-- and grab the appropriate character. Indicate that no drag has occurred. If the
+			-- editbox is in a focus chain, give it the focus.
+			if event == WE.Grab then
+				E.selection:Clear();
+				E.cursor:Set(E.over);
+				E.grabbed:Set(E.over);
+				E.bVary = false;
+				CurrentSection:InvokeIf(CurrentSection:IsFocusItem(E), "SetFocus", E);
+			
+			-- Clear the grab on a drop.	
+			elseif event == WE.Drop then
+				E.grabbed:Clear();
+				
+			-- If the text is dragged over, select the drag range; a drag has occurred if the
+			-- cursor fits to an item other than the grabbed one or has already done so. This
+			-- event is ignored if the editbox is in a focus chain and has lost focus.
+			elseif event == WE.PostUpkeep then
+				local grabbed = E.grabbed:Get();
+				if grabbed and (not CurrentSection:IsFocusItem(E) or E:IsFocus()) then
+					local fit = E:GetFitItem(cx);
+					E.bVary = E.bVary or fit ~= grabbed;
+					grabbed, fit = SwapIf(fit < grabbed, grabbed, fit);
+					E.selection:InvokeIf(E.bVary, "Set", grabbed, fit - grabbed + 1);
+				end
+			end
+		end,		
+		signal = function(cx, cy, x, y, w, h)
+			if PointInBox(cx, cy, x, y, w, h) then
+				E:Signal();
+				E.over = E:GetFitItem(cx);
+			end
+		end,
+		update = function(x, y, w, h)
+			E:DrawPicture(E:IsFocus() and "F" or "B", x, y, w, h);
+			
+			-- Update the key press timer.
+			E.press:Update();
+			
+			-- If the string is not empty, proceed to draw it.
+			local string, textset = E:GetString(), E:GetText();
+			local offset, start, count = E.offset:Get() or 0, E.selection:Get();
+			if string ~= "" then
+				if start and start + count > offset then
+					-- If the selection begins after the offset, find the text width leading up
+					-- to it, and move ahead that far. Otherwise, reduce the selection to
+					-- account for entries before the offset.
+					local sx, begin = x, 0;
+					if start > offset then
+						begin = start - offset;
+						sx = sx + textset:GetWidth(string, 1, begin);
+					else
+						count = count + start - offset;
+					end
+					
+					-- If the selection begins within the visible region, get the clipped width
+					-- of the selected text and draw a box.
+					if sx < x + w then
+						local sw = textset:GetWidth(string, begin + 1, begin + count);
+						if sx + sw > x + w then
+							sw = x + w - sx;
+						end
+						E:DrawPicture("S", sx, y, sw, h);
+					end
+				end
+				
+				-- Draw the visible portion of the string.
+				E:StringF(string, "v", x, y, w, h);
+			end
+			
+			-- Draw the cursor if it is not blinked and there is no selection.
+			E.blink:Update();
+			local cursor = E.cursor:Get();
+			if not E.bBlink and cursor >= offset then
+				local delta = cursor - offset;
+				local cx = x + textset:GetWidth(string, 1, delta);
+				if cx < x + w and not start then
+					if cursor == #E:GetString() then
+						string, delta = " ", 0;
+					end
+					local cw = textset:GetWidth(string, delta + 1, delta + 1);
+					if cx + cw > x + w then
+						cw = x + w - cx;
+					end
+					E:DrawPicture("C", cx, y, cw, h);
+				end
+			end
+			
+			-- Frame the editbox.
+			E:DrawFrame("D", x, y, w, h);
+		end,
+		onFocus = function(bGain)
+			if not bGain then
+				E.selection:Clear();
+				E.action = nil;
+			end
+		end,
+		onKeyTrap = function(action, bPress)
+			if bPress then
+				E.action = action;
+				E.press:SetTimeout(presstime, true);
+			else
+				E.action = nil;
+			end
+		end
+	};
+end, { base = "Widget" });

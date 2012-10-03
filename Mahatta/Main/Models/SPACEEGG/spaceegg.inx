@@ -1,0 +1,6 @@
+shadow=none
+rotate=0,0,0
+scale=290,290,290
+LOD_Begin=500
+LOD_Distance=2000
+LOD_ShadowDistance=1000

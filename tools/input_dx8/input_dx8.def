@@ -1,0 +1,55 @@
+LIBRARY	input_dx8
+
+EXPORTS
+	INPInit
+	INPReInit
+	INPDestroy
+
+	INPKBInit
+	INPKBDestroy
+	INPKBUpdate
+	INPKBGetBufferStates
+	INPKBAnyKeyPressed
+	INPKBAnyKeyReleased
+	INPKBIsPressed
+	INPKBIsReleased
+	INPKBClear
+	INPKBGetAscii
+	INPKBGetStrReleased
+	INPKBGetKeyName
+	INPKBToStr
+	INPKBToCode	
+	INPKBExist
+	
+	INPMouseInit
+	INPMouseSetBound
+	INPMouseDestroy
+	INPMouseUpdate
+	INPMouseGetMove
+	INPMouseGetLoc
+	INPMouseAnyBtnPressed
+	INPMouseAnyBtnReleased
+	INPMouseIsPressed
+	INPMouseIsReleased
+	INPMouseClear
+	INPMouseExist
+	INPMouseIsExclusive
+	
+	INPJoystickEnum
+	INPJoystickGetNumEnum
+	INPJoystickGetNameEnum
+	INPJoystickGetIndEnumStr
+	INPJoystickGetIndEnum
+	INPJoystickInit
+	INPJoystickDestroy
+	INPJoystickAddRef
+	INPJoystickUpdate
+	INPJoystickAnyBtnPressed
+	INPJoystickAnyBtnReleased
+	INPJoystickIsBtnPressed
+	INPJoystickIsBtnReleased
+	INPJoystickAnyArrowPressed
+	INPJoystickAnyArrowReleased
+	INPJoystickIsArrowPressed
+	INPJoystickIsArrowReleased
+	INPJoystickClear

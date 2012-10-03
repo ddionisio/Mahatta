@@ -1,0 +1,199 @@
+QQRKSRC1
+//
+// Textures definitions ********************************************************
+//
+{
+  QuArKProtected = "1"
+  Description = "Base Mahatta texture"
+
+  Textures.qtx =
+  {
+    Toolbox = "Texture Browser..."
+    Root = "Mahatta Textures.qtxfolder"
+
+    t_q3:incl =      { a = "Main" }
+    t_q3cs:incl =    { a = "Main" b = "common" }
+
+    // Notice! The b="<filename>" specifies which shaderfile the shader exists in
+    t_q3shader_common:incl              = { a="Main" b="common.shader" }
+    t_q3shader_skies:incl                 = { a="Main" b="skies.shader" }
+
+    Mahatta Textures.qtxfolder =
+    {
+      Common.txlist =
+      {
+        common/areaportal.wl                      = { t_q3shader_common=! }
+        common/caulk.wl                           = { t_q3shader_common=! }
+        common/clip.wl                            = { t_q3shader_common=! }
+        common/clusterportal.wl                   = { t_q3shader_common=! }
+        common/cushion.wl                         = { t_q3shader_common=! }
+        common/donotenter.wl                      = { t_q3shader_common=! }
+        common/energypad.wl                       = { t_q3shader_common=! }
+        common/full_clip.wl                       = { t_q3shader_common=! }
+        common/hint.wl                            = { t_q3shader_common=! }
+        common/invisible.wl                       = { t_q3shader_common=! }
+        common/mirror1.wl                         = { t_q3shader_common=! }
+        common/mirror2.wl                         = { t_q3shader_common=! }
+        common/missileclip.wl                     = { t_q3shader_common=! }
+        common/nodraw.wl                          = { t_q3shader_common=! }
+        common/nodrawnonsolid.wl                  = { t_q3shader_common=! }
+        common/nodrop.wl                          = { t_q3shader_common=! }
+        common/noimpact.wl                        = { t_q3shader_common=! }
+        common/nolightmap.wl                      = { t_q3shader_common=! }
+        common/origin.wl                          = { t_q3shader_common=! }
+        common/portal.wl                          = { t_q3shader_common=! }
+        common/skip.wl                            = { t_q3shader_common=! }
+        common/slick.wl                           = { t_q3shader_common=! }
+        common/teleporter.wl                      = { t_q3shader_common=! }
+        common/timportal.wl                       = { t_q3shader_common=! }
+        common/trigger.wl                         = { t_q3shader_common=! }
+        common/weapclip.wl                        = { t_q3shader_common=! }
+      }
+
+      Skies.txlist =
+      {
+        skies/blacksky.wl                         = { t_q3shader_skies=! }
+        skies/nullsky.wl                          = { t_q3shader_skies=! }
+      }
+
+      Demo_MonkeyShip.txlist =
+      {
+        bomb_anim.wl       	                  = { t_q3=! }
+        bcama.wl       	                          = { t_q3=! }
+	black.wl				  = { t_q3=! }
+        boisTranche.wl				  = { t_q3=! }
+        books.wl				  = { t_q3=! }
+        books_2.wl				  = { t_q3=! }
+        bordu.wl				  = { t_q3=! }
+        cajaarr.wl				  = { t_q3=! }
+        cajacara.wl				  = { t_q3=! }
+        cama2.wl				  = { t_q3=! }
+	carton.wl				  = { t_q3=! }
+        chair_base.wl				  = { t_q3=! }
+        chair_cushion.wl			  = { t_q3=! }
+        chair_cushion_half.wl			  = { t_q3=! }
+        chest_base.wl				  = { t_q3=! }
+        chest_front.wl				  = { t_q3=! }
+        cockpit_back.wl				  = { t_q3=! }
+        cockpit_front.wl			  = { t_q3=! }
+        cockpit_jazz.wl				  = { t_q3=! }
+        cockpit_main.wl				  = { t_q3=! }
+        cockpit_stuff.wl			  = { t_q3=! }
+	compware_1_front.wl			  = { t_q3=! }
+	compware_1_side.wl			  = { t_q3=! }
+	compware_1_top.wl			  = { t_q3=! }
+	ctrlpanel.wl				  = { t_q3=! }
+        cuero.wl				  = { t_q3=! }
+        cushion.wl				  = { t_q3=! }
+	detail.wl				  = { t_q3=! }
+	door_base.wl				  = { t_q3=! }
+	door_edge.wl				  = { t_q3=! }
+	door_edge_2.wl				  = { t_q3=! }
+	dust_puppy2.wl				  = { t_q3=! }
+	filter_front.wl				  = { t_q3=! }
+	filter_side.wl				  = { t_q3=! }
+	floor_bridge.wl				  = { t_q3=! }
+	floor_metal.wl				  = { t_q3=! }
+	headlight.wl				  = { t_q3=! }
+	hammock.wl				  = { t_q3=! }
+	leaves.wl				  = { t_q3=! }
+	metal.wl				  = { t_q3=! }
+	metal_shiny.wl				  = { t_q3=! }
+	metal_shiny_nolight.wl			  = { t_q3=! }
+	metalEAU.wl				  = { t_q3=! }
+	metaltechfloor01final.wl		  = { t_q3=! }
+	metfloor1.wl				  = { t_q3=! }
+	monitor.wl				  = { t_q3=! }
+	monitor_2.wl				  = { t_q3=! }
+	monitor_3.wl				  = { t_q3=! }
+	paper_tatacliff.wl			  = { t_q3=! }
+	pared.wl				  = { t_q3=! }
+	pared_2.wl				  = { t_q3=! }
+	pipe.wl					  = { t_q3=! }
+	planetas.wl				  = { t_q3=! }
+	poster_xs.wl				  = { t_q3=! }
+	proto_comp2.wl				  = { t_q3=! }
+	quake3sign.wl				  = { t_q3=! }
+	socleoumurBoiscool.wl			  = { t_q3=! }
+	stair_grip.wl				  = { t_q3=! }
+	stair_step.wl				  = { t_q3=! }
+	stair_step_side.wl			  = { t_q3=! }
+	stair_support.wl			  = { t_q3=! }
+	steed2f.wl				  = { t_q3=! }
+	swamp_purple_crystal.wl			  = { t_q3=! }
+	swamp_purple_funky.wl			  = { t_q3=! }
+	table_base.wl				  = { t_q3=! }
+	table_side.wl				  = { t_q3=! }
+	teclado.wl				  = { t_q3=! }
+	texamiarillo.wl				  = { t_q3=! }
+	textcaja.wl				  = { t_q3=! }
+	textura.wl				  = { t_q3=! }
+	texturaa.wl				  = { t_q3=! }
+	tv_base.wl				  = { t_q3=! }
+	tv_support.wl				  = { t_q3=! }
+	upside.wl				  = { t_q3=! }
+	ventana.wl				  = { t_q3=! }
+	ventana_2.wl				  = { t_q3=! }
+	ventana_edge.wl				  = { t_q3=! }
+	wetwallfx.wl				  = { t_q3=! }
+	whiteboard_base.wl			  = { t_q3=! }
+	winter_ice.wl				  = { t_q3=! }
+	windshield.wl				  = { t_q3=! }
+	window.wl				  = { t_q3=! }
+	wire.wl					  = { t_q3=! }
+	wood.wl					  = { t_q3=! }
+	wood_2.wl				  = { t_q3=! }
+	wood_purple.wl				  = { t_q3=! }
+      }
+      Demo_SpaceGasStation.txlist =
+      {
+	adscroller.wl				  = { t_q3=! }
+	concrete.wl				  = { t_q3=! }
+	concrete2.wl				  = { t_q3=! }
+	crazy_FRGRT.wl				  = { t_q3=! }
+	crazy_FRGRT2.wl				  = { t_q3=! }
+	doubledoor.wl				  = { t_q3=! }
+	elec.wl					  = { t_q3=! }
+	hobo_can.wl				  = { t_q3=! }
+	floor_metal2.wl				  = { t_q3=! }
+	floor_metal3.wl				  = { t_q3=! }
+	floor_metal4.wl				  = { t_q3=! }
+	freeway.wl				  = { t_q3=! }
+	ground.wl				  = { t_q3=! }
+	gas_statn_floor.wl			  = { t_q3=! }
+	hangers.wl				  = { t_q3=! }
+	house_roof.wl				  = { t_q3=! }
+	house_wall.wl				  = { t_q3=! }
+	house_wall_2.wl				  = { t_q3=! }
+	house_wall_3.wl				  = { t_q3=! }
+	metal_pillar.wl				  = { t_q3=! }
+	metal_tech.wl				  = { t_q3=! }
+	milkyway.wl				  = { t_q3=! }
+	litrod.wl				  = { t_q3=! }
+	light_beam.wl				  = { t_q3=! }
+	panel.wl				  = { t_q3=! }
+	panel2.wl				  = { t_q3=! }
+	poster1.wl				  = { t_q3=! }
+	poster2.wl				  = { t_q3=! }
+	poster3.wl				  = { t_q3=! }
+	poster4.wl				  = { t_q3=! }
+	poster5.wl				  = { t_q3=! }
+	restrooms01.wl				  = { t_q3=! }
+	restrooms02.wl				  = { t_q3=! }
+	rock1.wl				  = { t_q3=! }
+	rock2.wl				  = { t_q3=! }
+	ropes.wl				  = { t_q3=! }
+	ring1.wl				  = { t_q3=! }
+	ring2.wl				  = { t_q3=! }
+	ring23.wl				  = { t_q3=! }
+	trash.wl				  = { t_q3=! }
+	trash_2.wl				  = { t_q3=! }
+	trash_3.wl				  = { t_q3=! }
+	trash_4.wl				  = { t_q3=! }
+	small_ring.wl				  = { t_q3=! }
+	wndw01.wl				  = { t_q3=! }
+	wndw02.wl				  = { t_q3=! }
+      }
+    }
+  }
+}

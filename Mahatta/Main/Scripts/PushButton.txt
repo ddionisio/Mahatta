@@ -1,0 +1,38 @@
+-----------------------------------------------------
+-- PushButton class definition; inherits from Widget
+-----------------------------------------------------
+class.define("PushButton", {
+	-- Assigns the button action
+	-- action: Push button action
+	------------------------------
+	SetAction = function(P, action)
+		P.action = action;
+	end
+},
+
+-- New
+-- state: State handle
+-----------------------
+function(P, state)
+	class.scons("Widget", state);
+
+	-- Methods --
+	P:SetMethod{
+		onDrop = function(P)
+			CallIf(P.action and P:IsEntered(), P.action);
+		end,
+		render = function(P, x, y, w, h)
+			-- Draw the button graphic.
+			local picture, bGrabbed, bEntered = "default", P:IsGrabbed(), P:IsEntered();
+			if bGrabbed and bEntered then
+				picture = "grabbed";
+			elseif bGrabbed or bEntered then
+				picture = "entered";
+			end
+			P:DrawPicture(picture, x, y, w, h);
+
+			-- Draw the button string.
+--			P:DrawString(P:GetString(), "hv", x, y, w, h);		
+		end
+	};
+end, { base = "Widget" });

@@ -1,0 +1,79 @@
+-----------------------------
+-- Interval class definition
+-----------------------------
+class.define("Interval", {
+	-- Clears the selection
+	------------------------
+	Clear = function(I)
+		I.count = 0;
+	end,
+
+	-- Gets the starting position and select count
+	-- Returns: If non-empty, start; select count
+	-----------------------------------------------
+	Get = function(I)
+		return I.count > 0 and I.start or nil, I.count;
+	end,
+
+	-- Selects a range
+	-- start: Start index of select range
+	-- count: Select count
+	--------------------------------------
+	Set = function(I, start, count)
+		I.start, I.count = start, I.sequnce:Trim(start, count);
+	end
+},
+
+-- New
+-- sequence: Manager sequence
+------------------------------
+function(I, sequence)
+	I.sequence, I.count = sequence, 0;
+
+	-- Put into sequence's control.
+	table.insert(sequence.intervals, I);
+end);
+
+------------------------------------
+-- Updates an interval on insertion
+-- I: Interval handle
+-- index: Insert index
+-- count: Insert count
+------------------------------------
+local function AdjustAfterInsert (I, index, count)
+	if I.count > 0 then
+		-- If insertion occurred before the interval, move ahead by the insert count.
+		if index < I.start then
+			I.start = I.start + count;
+
+		-- Otherwise, if inserting into the interval, augment it by the insert count.
+		elseif index >= I.start and index < I.start + I.count then
+			I.count = I.count + count;
+		end
+	end
+end
+
+----------------------------------
+-- Updates an interval on removal
+-- I: Interval handle
+-- index: Remove index
+-- count: Remove count
+----------------------------------
+local function AdjustAfterRemove (I, index, count)
+	if I.count > 0 then
+		-- Reduce the interval count by its overlap with the removal.
+		local endr, endi = index + count, I.start + I.count;
+		if endr > I.start && index < endi then
+			I.count = I.count - math.min(endr, endi) + math.max(index, I.start);
+		end
+
+		-- If the interval follows the point of removal, it must be moved back. Reduce its
+		-- index by the lesser of the count and the point of removal-to-start distance.
+		if I.start > index then
+			I.start = I.start - math.min(I.start - index, count);
+		end
+	end
+end
+
+-- Supply internal functions to the sequence class.
+return AdjustAfterInsert, AdjustAfterRemove;

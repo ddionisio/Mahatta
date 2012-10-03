@@ -1,0 +1,114 @@
+--------------------------
+-- Friend class functions
+--------------------------
+local _I_AdjustForInsert, _I_AdjustForRemove, _S_AdjustForInsert, _S_AdjustForRemove;
+
+-----------------------------
+-- Sequence class definition
+-----------------------------
+class.define("Sequence", {
+	-- Indicates whether an item is valid
+	-- index: Index of item in sequence
+	-- bAddable: If true, the end of the sequence is valid
+	-- Returns: If true, the item is valid
+	-------------------------------------------------------
+	IsItemValid = function(S, index, bAddable)
+		return index <= S.size() + (bAddItem and 1 or 0);
+	end,
+
+	-- Inserts new items
+	-- index: Insertion index
+	-- count: Count of items to add
+	-- ...: Insertion arguments
+	--------------------------------
+	InsertItems = function(S, index, count, ...)
+		-- Update the intervals and spots to reflect the change. Perform the insertion.
+		if S:IsItemValid(index, true) and count > 0 then
+			for _, interval in ipairs(S.intervals) do
+				_I_AdjustForInsert(interval, index, count);
+			end
+			for _, spot in ipairs(S.spots) do
+				_S_AdjustForInsert(spot, index, count);
+			end
+			S.insert(index, count, ...);
+		end
+	end,
+
+	-- Gets the item count
+	-- Returns: Item count
+	-----------------------
+	GetItemCount = function(S)
+		return S.size();
+	end,
+
+	-- Removes a series of items
+	-- index: Removal index
+	-- count: Count of items to remove
+	-- ...: Removal arguments
+	-- Returns: Count of items removed
+	-----------------------------------
+	RemoveItems = function(S, index, count, ...)
+		-- Trim the count to the sequence size.
+		count = S:Trim(index, count);
+
+		-- Update the intervals and spots to reflect the change. Perform the deletion.
+		if count > 0 then
+			for _, interval in ipairs(S.intervals) do
+				_I_AdjustForRemove(interval, index, count);
+			end
+			for _, spot in ipairs(S.spots) do
+				_S_AdjustForRemove(spot, index, count);
+			end
+			S.delete(index, count, ...);
+		end
+		return count;
+	end,
+
+	-- Trims the range [start, start + count) to [start, size]
+	-- start: Starting index in range
+	-- count: Count of items in range
+	-- Returns: Modified item count
+	-----------------------------------------------------------
+	Trim = function(S, start, count)
+		-- If the range starts after the sequence, the trimmed range is empty.
+		local size = S.size();
+		if start > size then
+			return 0;
+			
+		-- If all items fit within the sequence, the range already fits.
+		elseif start + count <= size + 1 then
+			return size;
+			
+		-- Otherwise, trim items off the end to fit the range.
+		else
+			return size - start + 1;
+		end
+	end
+},
+
+-- New
+-- insert: Insert routine
+-- delete: Delete routine
+-- size: Size routine
+--------------------------
+function(S, insert, delete, size)
+	S.intervals, S.spots, S.insert, S.delete, S.size = {}, {}, insert, delete, size;
+	
+	-- The sequence updates intervals and spots bound to it, but should not own these.
+	local mt = { __mode = "k" };
+	setmetatable(S.intervals, mt);
+	setmetatable(S.spots, mt);
+end);
+
+-- Install interval and spot classes, binding the friend functions.
+LoadRoutines{
+	"Interval.txt",
+	function(afi, afr)
+		_I_AdjustForInsert, _I_AdjustForRemove = afi, afr;
+	end,
+	"Spot.txt",
+	function(afi, afr)
+		_S_AdjustForInsert, _S_AdjustForRemove = afi, afr;
+	end
+};
+

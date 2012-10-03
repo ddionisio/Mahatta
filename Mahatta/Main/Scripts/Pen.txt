@@ -1,0 +1,116 @@
+------------------------
+-- Pen class definition
+------------------------
+class.define("Pen", {
+	-- Advance the pen a given distance horizontally
+	-- dx: Advance amount
+	-- bSpace: If true, follow with a space
+	-------------------------------------------------
+	AdvanceX = function(P, dx, bSpace)
+		P.x = P.x + dx + (bSpace and P:GetSpaceX() or 0);
+	end,
+
+	-- Advance the pen a given distance vertically
+	-- dy: Advance amount
+	-- bSpace: If true, follow with a space
+	------------------------------------------------
+	AdvanceY = function(P, dy, bSpace)
+		P.y = P.y + dy + (bSpace and P:GetSpaceY() or 0);
+	end,
+
+	-- Get the advance direction
+	-- Returns: If true, pen proceeds vertically
+	---------------------------------------------
+	GetDirection = function(P)
+		return P.bVert;
+	end,
+
+	-- Gets the per-entry height
+	-- Returns: height
+	-----------------------------
+	GetHeight = function(P)
+		return P.h;
+	end,
+
+	-- Gets the inter-entry x space amount
+	-- Returns: Amount of space
+	---------------------------------------
+	GetSpaceX = function(P)
+		return P.spacex or 0;
+	end,
+
+	-- Gets the inter-entry y space amount
+	-- Returns: Amount of space
+	---------------------------------------
+	GetSpaceY = function(P)
+		return P.spacey or 0;
+	end,
+
+	-- Gets the per-entry width
+	-- Returns: width
+	----------------------------
+	GetWidth = function(P)
+		return P.w;
+	end,
+
+	-- Gets the entry rectangle and advances the pen
+	-- bAdvance: If true, advance
+	-- extra: Extra advance amount
+	-- w, h: Optional replacements for pen dimensions
+	--------------------------------------------------
+	Plot = function(P, bAdvance, extra, w, h)
+		-- Pad the appropriate dimension with any extra amount, and if requested, advance
+		-- along the corresponding axis by this amount plus any space. Return this region.
+		local x, y, w, h = P.x, P.y, w or P.w, h or P.h;
+		if P.bVert then
+			h = h + extra;
+			P:InvokeIf(bAdvance, "AdvanceY", h, true);
+		else
+			w = w + extra;
+			P:InvokeIf(bAdvance, "AdvanceX", w, true);
+		end
+		return x, y, w, h;
+	end,
+
+	-- Puts the pen flush against the base x coordinate
+	----------------------------------------------------
+	ResetX = function(P)
+		P.x = P.basex;
+	end,
+
+	-- Puts the pen flush against the base y coordinate
+	----------------------------------------------------
+	ResetY = function(P)
+		P.y = P.basey;
+	end,
+
+	-- Set the advance direction
+	-- bVert: If true, pen proceeds vertically
+	-------------------------------------------
+	SetDirection = function(P, bVert)
+		P.bVert = bVert;
+	end,
+
+	-- Sets the inter-entry x space amount
+	-- space: Amount of space
+	---------------------------------------
+	SetSpaceX = function(P, space)
+		P.spacex = space;
+	end,
+
+	-- Sets the inter-entry y space amount
+	-- space: Amount of space
+	---------------------------------------
+	SetSpaceY = function(P, space)
+		P.spacey = space;
+	end
+},
+
+-- New
+-- x, y: Initial pen coordinates
+-- w, h: General rectangle dimensions
+--------------------------------------
+function (P, x, y, w, h)
+	P.basex, P.basey = x, y;
+	P.x, P.y, P.w, P.h = x, y, w, h;
+end);

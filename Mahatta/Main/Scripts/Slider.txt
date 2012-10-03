@@ -1,0 +1,106 @@
+--------------------------------------
+-- GetThumbPosition
+-- Gets the local thumb coordinates
+-- S: Slider handle
+-- bVert: If true, slider is vertical
+-- Returns: Thumb coordinates
+--------------------------------------
+local function GetThumbPosition (S, bVert)
+	return SwapIf(bVert, S.sc + S:GetOffset() * (S.ec - S.sc), S.fc);
+end
+
+--------------------------------------
+-- Offset
+-- Computes the offset
+-- S: Slider handle
+-- factor: Offset factor
+-- bVert: If true, slider is vertical
+-- Returns: Computed offset
+--------------------------------------
+local function Offset (S, factor, bVert)
+	return ((bVert and (cy - S:GetRect("y")) or (cx - S:GetRect("x"))) - factor) / (S.ec - S.sc);
+end
+
+-------------------------------------------------
+-- Slider class definition; inherits from Widget
+-------------------------------------------------
+class.define("Slider", {	
+	-- Gets the slider offset
+	-- Returns: Slider offset
+	--------------------------
+	GetOffset = function(S)
+		return S.offset or 0;
+	end,
+			
+	-- Sets the slider offset
+	-- offset: Offset to assign
+	-- bForceRefresh: If true, refresh unconditionally
+	---------------------------------------------------
+	SetOffset = function(S, offset, bForceRefresh)
+		-- Clamp and set the offset. Call a refresh if it changes.
+		offset = ClampIn(offset, 0, 1);
+		if offset ~= S:GetOffset() or bForceRefresh then
+			S:RefreshAction(function()
+				S.offset = offset;
+			end);
+		end
+	end
+},
+
+-- New
+-- state: State handle
+-- sc, ec: Thumb start/end coordinates
+-- fc: Fixed-coordinate
+-- tw, th: Thumb dimensions
+-- bVert: If true, this is a vertical slider
+---------------------------------------------
+function(S, state, sc, ec, fc, tw, th, bVert)
+	class.scons("Widget", state);
+
+	-- Assign format parameters.
+	S.sc, S.ec, S.fc, S.tw, S.th = sc, ec, fc, tw, th;
+	
+	-- Thumb used to manipulate slider.
+	S.thumb = S:CreatePart();
+			
+	-- Methods --
+	S:SetMethod{
+		event = function(event)
+			-- Snap the offset on grabs.
+			if event == WE.Grab then
+				S:SetOffset(Offset(S, S.sc, bVert));
+						
+			-- Get the off-center position on thumb grabs.	
+			elseif event == WE.GrabPart then
+				S.dOffset = Offset(S, GetThumbPosition(S, bVert), bVert)
+						
+			-- Fit the offset to account for drags.
+			elseif event == WE.PostUpkeep and S.thumb:IsGrabbed() then
+				S:SetOffset(Offset(S, S.sc, bVert) - S.dOffset);
+			end		
+		end,
+		signal = function(cx, cy, x, y, w, h)
+			-- If the cursor hits the slider, find the box centered at the current offset. If
+			-- the cursor hits this box as well, it is over the thumb.
+			if PointInBox(cx, cy, x, y, w, h) then
+				S:Signal();
+				local tx, ty = GetThumbPosition(S, bVert);
+				if PointInBox(cx, cy, x + tx, y + ty, S.tw, S.th) then
+					S.thumb:Signal();
+				end
+			end
+		end,
+		update = function(x, y, w, h)
+			S:DrawPicture("B", x, y, w, h);
+			
+			-- Draw the thumb graphic.
+			local picture, bG, bE, tx, ty = "TD", S.thumb:IsGrabbed(), S.thumb:IsEntered(), GetThumbPosition(S, bVert);
+			if bG and bE then
+				picture = "TG";
+			elseif bG or bE then
+				picture = "TE";
+			end
+			S:DrawPicture(picture, x + tx, y + ty, S.tw, S.th);
+		end
+	};
+end, { base = "Widget" });

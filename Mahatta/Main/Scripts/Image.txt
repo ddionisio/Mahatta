@@ -1,0 +1,34 @@
+------------------------------------------------
+-- Image class definition; inherits from Widget
+------------------------------------------------
+class.define("Image", {
+	-- Gets the current picture
+	-- Returns: Picture handle
+	----------------------------
+	Current = function(I)
+		return Call_(I.supply) or I:GetPicture("default");
+	end,
+
+	-- Assigns a supply routine
+	-- supply: Routine to assign
+	-----------------------------
+	SetSupply = function(I, supply)
+		I.supply = supply;
+	end
+},
+
+-- New
+-- state: State handle
+-- supply: Optional picture supply routine
+-------------------------------------------
+function(I, state, supply)
+	class.scons("Widget", state);
+
+	-- Provide a supply routine.
+	I:SetSupply(supply);
+
+	-- Methods --
+	I:SetMethod("render", function(I, x, y, w, h)
+		Invoke(I:Current(), "Draw", x, y, w, h);
+	end);
+end, { base = "Widget" });

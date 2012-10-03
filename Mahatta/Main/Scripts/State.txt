@@ -1,0 +1,345 @@
+---------------
+-- State modes
+---------------
+local _Normal, _SignalTesting, _IssuingEvents, _Rendering, _Updating = 1, 2, 3, 4, 5;
+
+-- Enter
+-- Performs enter logic
+-- S: State handle
+------------------------
+local function Enter (S)
+	if S.entered ~= S.signaled then
+		S.entered = S.signaled;
+		S.choice:Call("onEnter");
+	end
+end
+
+-- Grab
+-- Performs grab logic
+-- S: State handle
+-----------------------
+local function Grab (S)
+	if not S.grabbed then
+		S.grabbed = S.signaled;
+		S.choice:Call("onGrab");
+	end
+end
+
+-- ResolveSignal
+-- Updates the state according to the signal
+-- S: State handle
+---------------------------------------------
+local function ResolveSignal (S)
+	-- Indicate that the system is issuing events.
+	S.mode = _IssuingEvents;
+
+	-- There may have been a press while no widget was entered. If there is still a press,
+	-- there is then no meaningful way to interact with the interface.
+	if not S.bWasPressed or S.choice then
+		-- If there is a choice, perform upkeep on it.
+		if S.choice then
+			local choice = S.choice;
+			
+			-- Pre-process the widget.
+			choice:Call("onPreUpkeep");
+
+			-- Perform leave logic.
+			if S.entered and S.entered ~= S.signaled then
+				choice:Call("onLeave");
+				S.entered = nil;
+			end
+
+			-- If the widget is signaled, perform enter logic; on a press, perform grab logic.
+			if choice:IsSignaled() then
+				Enter(S);
+				CallIf(S.bIsPressed, Grab, S);
+			end
+
+			-- If there is no press, perform drop logic.
+			if not S.bIsPressed and S.grabbed then
+				choice:Call("onDrop");
+				S.grabbed = nil;
+			end
+
+			-- If the widget remains chosen, post-process it; otherwise, abandon it.
+			if not choice:IsSignaled() and S:GetGrabbed() ~= choice then
+				S.choice = nil;
+				choice:Call("onAbandon");
+			else
+				choice:Call("onPostUpkeep");
+			end		
+		end
+
+		-- If there is a valid signal but no choice, choose it.
+		if S.signaled and not S.choice then
+			S.choice = S.signaled;
+			
+			-- Pre-process the widget.
+			S.choice:Call("onPreChoose");
+
+			-- Perform enter logic.
+			Enter(S);
+			CallIf(S.bIsPressed, Grab, S);
+
+			-- Post-process the widget.
+			S.choice:Call("onPostChoose");
+		end
+	end
+
+	-- Prepare for the next propagation.
+	S.bWasPressed, S.mode = S.bIsPressed, _Normal;
+	S:Unsignal();
+end
+
+-- Render
+-- Performs a render on the widget and through its dock
+-- S: State handle
+-- widget: Widget handle
+--------------------------------------------------------
+local function Render (S, widget)
+	if not widget.bCannotRender then
+		local view = widget:GetViewRect();
+		if view then
+			widget:Call("render", widget:GetRect("xywh"));
+		end
+	end
+
+	-- Iterate backward through the dock, recursing on each widget.
+	local dw = BackOfList(widget.dock);
+	while dw and not dw.bCannotDockRender do
+		Render(S, dw);
+		dw = dw.prev;
+	end
+end
+
+-- SignalTest
+-- Runs a signal test on the widget and through its dock
+-- S: State handle
+-- widget: Widget handle
+---------------------------------------------------------
+local function SignalTest (S, widget)
+	-- Iterate through the dock, recursing on each widget.
+	local dw = widget.dock;
+	while dw and not dw.bCannotDockSignal do
+		SignalTest(S, dw);
+		dw = dw.next;
+	end
+
+	-- Perform the signal test.
+	if not widget.bCannotSignal then
+		local view = widget:GetViewRect();
+		if view and PointInBox(cx, cy, view.x, view.y, view.w, view.h) then
+			widget:Call("signal", cx, cy, widget:GetRect("xywh"));
+		end
+	end
+
+	-- Quit signaling if a signal is obtained or an abort was triggered.
+	CallIf(S.signaled or S.mode == _Normal, error);
+end
+
+-- Update
+-- Performs an update on the widget and through its dock
+-- S: State handle
+-- widget: Widget handle
+---------------------------------------------------------
+local function Update (S, widget)
+	widget:InvokeIf(not widget.bCannotUpdate, "Call", "update");
+
+	-- Iterate backward through the dock, recursing on each widget.
+	local dw = BackOfList(widget.dock);
+	while dw and not dw.bCannotDockUpdate do
+		Update(S, dw);
+		dw = dw.prev;
+	end
+end
+
+--------------------------
+-- State class definition
+--------------------------
+class.define("State", {
+	-- Aborts a signal propagation in progress
+	-- Note: NOP if not invoked during a signal callback
+	-----------------------------------------------------
+	AbortSignals = function(S)
+		if S.mode == _SignalTesting then
+			S:Unsignal();
+			S.mode = _Normal;
+		end
+	end,
+
+	-- Clears the input state
+	-- Note: NOP if invoked during signal propagation
+	--------------------------------------------------
+	ClearInput = function(S)
+		if not S:IsSignalPropagating() then
+			S.bWasPressed, S.choice = false;
+		end
+	end,
+
+	-- Gets the chosen widget
+	-- Returns: Widget handle
+	--------------------------
+	GetChoice = function(S)
+		return S.choice;
+	end,
+
+	-- Gets the entered widget
+	-- Returns: Widget handle
+	---------------------------
+	GetEntered = function(S)
+		return S.entered;
+	end,
+
+	-- Gets the frame back
+	-- Returns: Widget handle
+	--------------------------
+	GetFrameBack = function(S)
+		return BackOfList(S.frame);
+	end,
+
+	-- Gets the frame head
+	-- Returns: Widget handle
+	--------------------------
+	GetFrameHead = function(S)
+		return S.frame;
+	end,
+
+	-- Gets the grabbed widget
+	-- Returns: Widget handle
+	---------------------------
+	GetGrabbed = function(S)
+		return S.grabbed;
+	end,
+
+	-- Gets the current press state
+	-- Returns: Press state
+	-- Note: false if not invoked during signal propagation
+	--------------------------------------------------------
+	GetPress = function(S)
+		return S:IsSignalPropagating() and S.bIsPressed;
+	end,
+
+	-- Gets the signaled widget
+	-- Returns: Widget handle
+	----------------------------
+	GetSignaled = function(S)
+		return S.signaled;
+	end,
+
+	-- Indicates whether events are being issued
+	-- Returns: If true, events are being issued
+	---------------------------------------------
+	IsIssuingEvents = function(S)
+		return S.mode == _IssuingEvents;
+	end,
+
+	-- Indicates whether the state is normal
+	-- Returns: If true, the state is normal
+	-----------------------------------------
+	IsNormal = function(S)
+		return S.mode == _Normal;
+	end,
+
+	-- Indicates whether the state is rendering
+	-- Returns: If true, state is rendering
+	-------------------------------------------
+	IsRendering = function(S)
+		return S.mode == _Rendering;
+	end,
+
+	-- Indicates whether callbacks are being run
+	-- Returns: If true, callbacks are being run
+	---------------------------------------------
+	IsRunningCallbacks = function(S)
+		return S.mode == _Rendering or S.mode == _SignalTesting or S.mode == _Updating;
+	end,
+
+	-- Indicates whether a signal is propagating
+	-- Returns: If true, signal is propagating
+	---------------------------------------------
+	IsSignalPropagating = function(S)
+		return S.mode == _SignalTesting or S.mode == _IssuingEvents;
+	end,
+
+	-- Indicates whether the state is signal testing
+	-- Returns: If true, state is signal testing
+	-------------------------------------------------
+	IsSignalTesting = function(S)
+		return S.mode == _SignalTesting;
+	end,
+
+	-- Indicates whether the state is updating
+	-- Returns: If true, state is updating
+	-------------------------------------------
+	IsUpdating = function(S)
+		return S.mode == _Updating;
+	end,
+
+	-- Propagates input through the state and issues events in response
+	-- bPressed: If true, there is a press
+	-- Note: NOP if invoked from a callback or during event issues
+	--------------------------------------------------------------------
+	PropagateSignal = function(S, bPressed)
+		if S.mode == _Normal then
+			-- Cache the press state. Prepare to signal.
+			S.bIsPressed, S.mode = bPressed, _SignalTesting;
+
+			-- Scan the frame front to back for a signal. If found, resolve it.
+			pcall(function()
+				local widget = S.frame;
+				while widget do
+					SignalTest(S, widget);
+					widget = widget.next;
+				end
+			end);
+			CallIf(S.mode ~= _Normal, ResolveSignal, S);
+		end
+	end,
+
+	-- Renders the state
+	-- Note: NOP if invoked from a callback or during event issues
+	---------------------------------------------------------------
+	Render = function(S)
+		if S.mode == _Normal then
+			-- Render the frame back to front.
+			S.mode = _Rendering;
+			local widget = BackOfList(S.frame);
+			while widget do
+				Render(S, widget);
+				widget = widget.prev;
+			end
+			S.mode = _Normal;
+		end
+	end,
+
+	-- Clears the signaled widget
+	-- Note: NOP if invoked during event issues
+	--------------------------------------------
+	Unsignal = function(S)
+		if S.mode ~= _IssuingEvents then
+			S.signaled = nil;
+		end
+	end,
+
+	-- Updates the state
+	-- Note: NOP if invoked from a callback or during event issues
+	---------------------------------------------------------------
+	Update = function(S)
+		if S.mode == _Normal then
+			-- Update the frame back to front.
+			S.mode = _Updating;
+			local widget = BackOfList(S.frame);
+			while widget do
+				Update(S, widget);
+				widget = widget.prev;
+			end
+			S.mode = _Normal;
+		end
+	end
+},
+
+-- New
+-------
+function (S)
+	S.mode = _Normal;
+end);

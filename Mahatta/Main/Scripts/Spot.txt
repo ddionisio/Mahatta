@@ -1,0 +1,106 @@
+-- Indicates spot validity
+-- S: Spot handle
+-- Returns: If true, spot is valid
+-----------------------------------
+local function IsValid (S)
+	return (S.bMigrate or S.bValid) and S.sequence:IsItemValid(S.index, S.bAddSpot);
+end
+
+-------------------------
+-- Spot class definition
+-------------------------
+class.define("Spot", {
+	-- Invalidates the spot
+	------------------------
+	Clear = function(S)
+		S.bValid = false;
+	end,
+
+	-- Gets the position of a spot
+	-- Returns: If valid, spot index
+	---------------------------------
+	Get = function(S)
+		if IsValid(S) then
+			return S.index;
+		end
+	end,
+
+	-- Assigns the spot's position
+	-- index: Position index
+	-------------------------------
+	Set = function(S, index)
+		if S.sequence:IsItemValid(index, S.bAddSpot) then
+			S.index, S.bValid = index, true;
+		end
+	end
+},
+
+-- New
+-- sequence: Manager sequence
+-- bAddSpot: If true, spot can occupy the end of the sequence
+-- bMigrate: If true, spot can migrate on removal
+--------------------------------------------------------------
+function(S, sequence, bAddSpot, bMigrate)
+	S.sequence, S.index, S.bAddSpot, S.bMigrate = sequence, 1, bAddSpot, bMigrate;
+
+	--
+	S.bValid = IsValid(S);
+
+	-- Put into sequence's control.
+	table.insert(sequence.spots, S);
+end);
+
+-------------------------------
+-- Updates a spot on insertion
+-- S: Spot handle
+-- index: Insert index
+-- count: Insert count
+-------------------------------
+local function AdjustAfterInsert (S, index, count)
+	if IsValid(S) then
+		-- Move the spot up if it is not before the insertion.
+		if S.index >= index then
+			S.index = S.index + count;
+		end
+
+		-- If the sequence is empty, the spot will be after it. Back up if this is illegal.
+		if S.sequence:ItemCount() == 0 and not S.bAddSpot then
+			S.index = S.index - 1;
+		end
+	end
+end
+
+-----------------------------
+-- Updates a spot on removal
+-- S: Spot handle
+-- index: Remove index
+-- count: Remove count
+-----------------------------
+local function AdjustAfterRemove (S, index, count)
+	if IsValid(S) then
+		-- If a migratory spot follows the removal, it must be moved back. Reduce its index
+		-- by the lesser of the count and the point of removal-to-index distance.
+		if S.bMigrate then
+			if S.index > index then
+				S.index = S.index - math.min(S.index - index, count);
+			end
+
+			-- If a block was removed at the end of the items, and it included the spot,
+			-- the spot will now be after the items. Back up if this is illegal.
+			if S.index + count == S.sequence:ItemCount() + 1 and not S.bAddSpot then
+				S.index = math.max(S.index - 1, 1);
+			end
+
+		-- If a non-migratory spot follows the interval, back up by the remove count.
+		elseif S.index >= index + count then
+			S.index = S.index - count;
+
+		-- Clear any non-migratory spot within the interval.
+		elseif S.index >= index then
+			S:Clear();
+		end
+	end
+end
+
+-- Supply internal functions to the sequence class.
+return AdjustAfterInsert, AdjustAfterRemove;

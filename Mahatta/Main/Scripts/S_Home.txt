@@ -1,0 +1,47 @@
+-- Install the home dialog.
+local data = {};
+LoadSection("Home", class.new("Section", function(S, state, ...)
+	-- Load --
+	if state == "load" then
+		-- Install widgets.
+		data.pane = Backdrop(true);
+		data.start = PushButton(SectionClose(S), L"Textures/start_off.tga", L"Textures/start_on.tga");
+		data.ring = Ring(-250, 50, 1.8, {
+			L"Models/monkey/monkey.cfg",
+			L"Models/alien/alien.cfg",
+			L"Models/alien/alien_bum.cfg"
+		});
+
+		-- Dock widgets.
+		data.pane:DockIn(data.start, .775 * vw, 0.7 * vh, 0.2 * vw, 0.1333 * vh);
+		data.pane:DockIn(data.ring, 0, 0, vw, vh);
+
+		-- Configure the ring.
+		data.ring:SetIncline(-.25);
+
+		-- Load the focus chain.
+		S:LoadFocusChain(data.ring);
+
+	-- Enter --
+	elseif state == "enter" then
+		data.pane:Frame(0, 0, vw, vh);
+
+		-- Enable the cursor.
+		Cursor = hTXT(L"Textures/MonkeyCursor.tga");
+
+	-- Close / Pop --
+	elseif state == "close" or state == "pop" then
+		data.pane:Unload();
+
+	-- Trap --
+	elseif state == "trap" then
+		local event, key = ...;
+		if event == "keyup" then
+			if inp._left == key then
+				return "left";
+			elseif inp._right == key then
+				return "right";
+			end
+		end
+	end
+end));

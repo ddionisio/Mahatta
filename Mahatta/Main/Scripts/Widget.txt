@@ -1,0 +1,508 @@
+---------------------------
+-- Widget class definition
+---------------------------
+class.define("Widget", {
+	-- Adds a widget to the frame
+	-- Note: NOP if invoked from a callback or during event issues
+	---------------------------------------------------------------
+	AddToFrame = function(W)
+		if W.state:IsNormal() then
+			-- Unload the widget if it is already loaded.
+			W:Unload();
+
+			-- Put the widget in the frame. Indicate that it is framed.
+			W.state.frame, W.bFramed = AppendToList(W.state.frame, W), true;
+		end
+	end,
+
+	-- Allows or disallows signaling docked widgets
+	-- bAllow: If true, allow signaling
+	------------------------------------------------
+	AllowDockSignal = function(W, bAllow)
+		W.bCannotDockSignal = not bAllow;
+	end,
+
+	-- Allows or disallows updating loaded widgets
+	-- bAllow: If true, allow updating
+	-----------------------------------------------
+	AllowDockUpdate = function(W, bAllow)
+		W.bCannotDockUpdate = not bAllow;
+	end,
+
+	-- Allows or disallows signaling this widget
+	-- bAllow: If true, allow signaling
+	---------------------------------------------
+	AllowSignal = function(W, bAllow)
+		W.bCannotSignal = not bAllow;
+	end,
+
+	-- Allows or disallows updating this widget
+	-- bAllow: If true, allow updating
+	--------------------------------------------
+	AllowUpdate = function(W, bAllow)
+		W.bCannotUpdate = not bAllow;
+	end,
+
+	-- Calls the widget's method
+	-- type: Method type
+	-- ...: Arguments to method
+	-- Returns: Results of call
+	-----------------------------
+	Call = function(W, type, ...)
+		return Call_(W.methods[type], W, ...);
+	end,
+
+	-- Calls the widget's method if a condition holds
+	-- condition: Condition to test
+	-- type: Method type
+	-- ...: Arguments to method
+	-- Returns: Results of call
+	-----------------------------	
+	CallIf = function(W, condition, type, ...)
+		if condition then
+			return W:Call(type, ...);
+		end
+	end,
+
+	-- Builds an iterator up the dock chain
+	-- Returns: Iterator which returns widget handle
+	-------------------------------------------------
+	Chain = function(W)
+		return function(_, widget)
+			if widget then
+				return widget:GetParent();
+			end
+			return W;
+		end;		
+	end,
+
+	-- Docks a widget
+	-- widget: Widget handle
+	-- Note: NOP if invoked from a callback
+	----------------------------------------
+	Dock = function(W, widget)
+		if W ~= widget and W.state == widget.state and W.state:IsNormal() then
+			-- Unload the widget if it is already loaded. Dock it and cache the parent.
+			widget:Unload();
+			W.dock, widget.parent = AppendToList(W.dock, widget), W;
+
+			-- Invoke any dock events.
+			widget:Call("onDock");
+			W:Call("onDockedTo");
+		end
+	end,
+
+	-- Docks a widget in a given region
+	-- widget: Widget handle
+	-- x, y: Widget coordinates
+	-- w, h: Widget dimensions
+	------------------------------------
+	DockIn = function(W, widget, x, y, w, h)
+		widget:SetRect("xywh", x, y, w, h);
+		W:Dock(widget);
+	end,
+	
+	-- Draws a widget frame
+	-- x, y: Frame cooordinates
+	-- w, h: Frame dimensions
+	----------------------------
+	DrawFrame = function(W, x, y, w, h)
+		gfx.DrawBox(W:GetColor("frame"), x, y, w, h);
+	end,
+	
+	-- Draws a widget picture
+	-- name: Picture name
+	-- x, y: Picture coordinates
+	-- w, h: Picture dimensions
+	-----------------------------
+	DrawPicture = function(W, name, x, y, w, h)
+		Invoke(W.pictures[name], "Draw", x, y, w, h, { clr = W:GetColor(name) });
+	end,
+
+	-- Draws a formatted string
+	-- string: String to draw
+	-- options: Format options
+	-- x, y: Widget coordinates
+	-- w, h: Widget dimensions
+	----------------------------
+	DrawString = function(W, string, options, x, y, w, h)
+		local textset, offset = W:GetText();
+		if textset then
+--			W:ApplyColor("S");
+			local add, cw, ch = { x = 0, y = 0 }, textset:GetSize(string);
+			local features = {
+				h = { which = "x", amount = (w - cw) / 2, },
+				v = { which = "y", amount = (h - ch) / 2, },
+				o = { which = "x", amount = offset or 0 }
+			};
+			for what in options:gmatch(".") do
+				local choice = features[what];
+				if choice then
+					add[choice.which] = add[choice.which] + choice.amount;
+					features[what] = nil;
+				end
+			end
+			textset:DrawString(string, x + add.x, y + add.y);
+		end
+	end,
+
+	-- Gets the given widget color
+	-- name: Color name
+	-- Returns: Color value
+	-------------------------------
+	GetColor = function(W, name)
+		return W.colors[color] or bit.Not(0);
+	end,
+
+	-- Gets the back of the dock
+	-- Returns: Widget handle
+	-----------------------------
+	GetDockBack = function(W)
+		return BackOfList(W.dock);
+	end,
+
+	-- Gets the head of the dock
+	-- Returns: Widget handle
+	-----------------------------
+	GetDockHead = function(W)
+		return W.dock;
+	end,
+
+	-- Gets the widget font
+	-- Returns: Font handle
+	------------------------
+	GetFont = function(W)
+		return W.font;
+	end,
+
+	-- Gets the widget's local rectangle
+	-- Returns: Widget coordinates, dimensions
+	-------------------------------------------
+	GetLocalRect = function(W)
+		return W.x, W.y, W.w, W.h;
+	end,
+
+	-- Gets the widget's method
+	-- type: Method type
+	-- Returns: Widget method
+	----------------------------
+	GetMethod = function(W, type)
+		return W.methods[type];
+	end,
+
+	-- Gets the next widget in its parent's dock
+	-- Returns: Widget handle
+	---------------------------------------------
+	GetNextDockLink = function(W)
+		return W:IsDocked() and W.next or nil;
+	end,
+
+	-- Gets the next widget in the frame
+	-- Returns: Widget handle
+	-------------------------------------
+	GetNextFrameLink = function(W)
+		return W:IsFramed() and W.next or nil;
+	end,
+
+	-- Gets the parent in which the widget is docked
+	-- Returns: Widget handle
+	-------------------------------------------------
+	GetParent = function(W)
+		return W.parent;
+	end,
+
+	-- Gets a widget picture
+	-- name: Picture name
+	-- Returns: Widget picture
+	---------------------------
+	GetPicture = function(W, name)
+		return W.pictures[name];
+	end,
+
+	-- Gets the widget's absolute rectangle
+	-- format: Format string for return values
+	-- Returns: Widget coordinates, dimensions in format order
+	-----------------------------------------------------------
+	GetRect = function(W, format)
+		local x, y = 0, 0;
+		for widget in W:Chain() do
+			x, y = x + widget.x, y + widget.y;
+		end
+		
+		-- Return the desired fields.
+		local values, choices = {}, { x = x, y = y, w = W.w, h = W.h };
+		for which in format:gmatch(".") do
+			table.insert(values, choices[which]);
+		end
+		return unpack(values);
+	end,
+
+	-- Gets the owner state
+	-- Returns: State handle
+	-------------------------
+	GetState = function(W)
+		return W.state;
+	end,
+
+ 	-- Gets the widget string
+	-- Returns: Widget string
+	--------------------------
+	GetString = function(W)
+		return W.string or L"";
+	end,
+
+	-- Gets the widget text set and offset
+	-- Returns: The widget text set and offset
+	-------------------------------------------
+	GetText = function(W)
+		return TextC[W.textSet], W.textOffset or 0;
+	end,
+	
+	-- Gets the widget's visible absolute rectangle
+	-- Returns: If visible, view rectangle
+	------------------------------------------------
+	GetViewRect = function(W)
+		local x, y, w, h = W:GetLocalRect();
+		for widget in W:Chain() do
+			-- If this is not the top of the chain, translate with respect to the parent.
+			-- Otherwise, base the calculations on the frame.
+			local parent, px, py, pw, ph = widget:GetParent();
+			if parent then
+				local vx, vy = parent:GetView();
+				x, y = x - vx, y - vy;
+
+				-- Get the parent dimensions.
+				px, py, pw, ph = parent:GetLocalRect();
+			else
+				px, py, pw, ph = 0, 0, vw, vh;
+			end
+
+			-- Map the region into the widget frame; quit if it goes out of view.
+			if x >= pw or x + w <= 0 or y >= ph or y + h <= 0 then
+				return;
+			end
+	
+			-- Clamp the region as necessary. Compute the new region.
+			x, y = px + math.max(x, 0), py + math.max(y, 0);
+			w, h = math.min(px + pw, x + w) - x, math.min(py + ph, y + h) - y;
+		end
+		return { x = x, y = y, w = w, h = h };
+	end,
+
+	-- Indicates whether the widget is docked
+	-- Returns: If true, the widget is docked
+	------------------------------------------
+	IsDocked = function(W)
+		return W.parent ~= nil;
+	end,
+
+	-- Indicates whether widget is entered
+	-- Returns: If true, widget is entered
+	---------------------------------------
+	IsEntered = function(W)
+		return W.state:GetEntered() == W;
+	end,
+
+	-- Indicates whether the widget is the focus
+	-- Returns: If true, it is the focus
+	---------------------------------------------
+	IsFocus = function(W)
+		return CurrentSection:GetFocus() == W;
+	end,
+
+	-- Indicates whether the widget is set in a frame
+	-- Returns: If true, the widget is framed
+	--------------------------------------------------
+	IsFramed = function(W)
+		return W.bFramed;
+	end,
+
+	-- Indicates whether widget is grabbed
+	-- Returns: If true, widget is grabbed
+	---------------------------------------
+	IsGrabbed = function(W)
+		return W.state:GetGrabbed() == W;
+	end,
+
+	-- Indicates whether the widget is docked or framed
+	-- Returns: If true, the widget is loaded
+	----------------------------------------------------
+	IsLoaded = function(W)
+		return W:IsDocked() or W:IsFramed();
+	end,
+
+	-- Indicates whether the widget can be signaled
+	-- Returns: If true, the widget can be signaled
+	------------------------------------------------
+	IsSignalAllowed = function(W)
+		-- A widget can be signaled if it is loaded and all its parents allow it.
+		if W:IsLoaded() and not W.bCannotSignal then
+			while W:IsDocked() do
+				W = W.parent;
+				if W.bCannotDockSignal then
+					return false;
+				end
+			end
+			return true;
+		end
+		return false;
+	end,
+
+	-- Indicates whether widget is signaled
+	-- Returns: If true, widget is signaled
+	----------------------------------------
+	IsSignaled = function(W)
+		return W.state:GetSignaled() == W;
+	end,
+
+	-- Indicates whether the widget can be updated
+	-- Returns: If true, the widget can be updated
+	-----------------------------------------------
+	IsUpdateAllowed = function(W)
+		-- A widget can be updated if it is loaded and all its parents allow it.
+		if W:IsLoaded() and not W.bCannotUpdate then
+			while W:IsDocked() do
+				W = W.parent;
+				if W.bCannotDockUpdate then
+					return false;
+				end
+			end
+			return true;
+		end
+		return false;
+	end,
+
+	-- Puts the widget at the head of its parent's dock
+	-- Note: NOP if invoked from a callback
+	----------------------------------------------------
+	PromoteToDockHead = function(W)
+		if not W.state:IsRunningCallbacks() and W:IsDocked() then 
+			W.parent.dock = AddToListAfter(W.parent.dock, nil, W);
+		end
+	end,
+
+	-- Puts the widget at the head of its frame
+	-- Note: NOP if invoked from a callback
+	--------------------------------------------
+	PromoteToFrameHead = function(W)
+		if not W.state:IsRunningCallbacks() and W:IsFramed() then
+			W.state.frame = AddToListAfter(W.state.frame, nil, W);
+		end
+	end,
+	
+	-- Sets one or more colors
+	-- name: Color name or table
+	-- color: Color to assign
+	-----------------------------
+	SetColor = function(W, name, color)
+		table.copyto(type(name) == "table" and name or { [name] = color }, W.colors);
+	end,
+
+	-- Sets the widget font
+	-- font: Font to assign
+	------------------------
+	SetFont = function(W, font)
+		W.font = font;
+	end,
+
+	-- Sets one or more methods
+	-- name: Method name or table
+	-- method: Method to assign
+	------------------------------
+	SetMethod = function(W, name, method)
+		table.copyto(type(name) == "table" and name or { [name] = method }, W.methods);
+	end,
+
+	-- Sets one or more pictures
+	-- name: Picture name or table
+	-- picture: Picture to assign
+	-------------------------------
+	SetPicture = function(W, name, picture)
+		table.copyto(type(name) == "table" and name or { [name] = picture }, W.pictures);
+	end,
+	
+	-- Sets the widget's local rectangle
+	-- format: Format string used to assign fields
+	-- ...: Coordinates, dimensions in format order
+	------------------------------------------------
+	SetRect = function(W, format, ...)
+		local args, index = { ... }, 1;
+		for which in format:gmatch(".") do
+			W[which], index = args[index], index + 1;
+		end
+	end,
+	
+	-- Sets the widget string
+	-- string: String to assign
+	----------------------------
+	SetString = function(W, string)
+		W.string = class.istype(string, "WS") and string or WS(tostring(string));
+	end,
+	
+	-- Sets the widget text set and offset
+	-- textset: Text set to assign
+	-- offset: Offset of text
+	---------------------------------------
+	SetText = function(W, textset, offset)
+		W.textSet, W.textOffset = textset, offset;
+	end,
+
+	-- Signals a given widget
+	-- Note: NOP if not invoked from a signal callback
+	---------------------------------------------------
+	Signal = function(W)
+		if W.state:IsSignalTesting() then
+			W.state.signaled = W;
+		end
+	end,
+
+	-- Performs an action embedded in a state switch
+	-- action: Action to perform
+	-------------------------------------------------
+	SwitchAction = function(W, action)
+		W:Call("onSwitchFrom");
+		Call_(action);
+		W:Call("onSwitchTo");
+	end,
+
+	-- Removes the widget from its parent or the frame
+	-- Note: NOP if invoked from a callback
+	---------------------------------------------------
+	Unload = function(W)
+		if not W.state:IsRunningCallbacks() and W:IsLoaded() then
+			-- Clear the choice if it is this widget.
+			if W.state:GetChoice() == W then
+				W.state.choice = nil;
+			end
+
+			-- Remove if active in the state.
+			if W.state:GetEntered() == W then
+				W.state.entered = nil;
+			end
+			if W.state:GetGrabbed() == W then
+				W.state.grabbed = nil;
+			end
+
+			-- If the widget is docked, unbind it from the parent.
+			if W:IsDocked() then
+				W.parent.dock, W.parent = RemoveFromList(W.parent.dock, W);
+
+			-- Otherwise, remove the widget from the frame.
+			else
+				W.state.frame, W.bFramed = RemoveFromList(W.state.frame, W), false;
+			end
+		end
+	end
+},
+
+-- New
+-- state: State handle
+-----------------------
+function(W, state)
+	W.colors, W.methods, W.pictures, W.state = {}, {}, {}, state;
+
+	-- Methods --
+	W:SetMethod("signal", function(W, cx, cy, x, y, w, h)
+		W:InvokeIf(PointInBox(cx, cy, x, y, w, h), "Signal");
+	end);
+end);

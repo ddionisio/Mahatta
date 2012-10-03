@@ -1,0 +1,2699 @@
+// Q3Radiant Map created by MilkShape 3D
+// Plugin from Jochen Winzen (c) 2003
+// Scaling model from 16.790156 to size 1000 (factor 59.558707).
+{
+"classname" "worldspawn"
+}
+{
+"classname" "func_group"
+// Mesh: "spaceeggSh" with Texture: "spaceegg/spaceegg_texture"
+// Mesh has 336 Brushes
+// local brush 0
+{
+( 223 117 0 ) ( 223 117 23 ) ( 213 134 23 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 205 134 23 ) ( 215 117 23 ) ( 215 117 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 213 134 23 ) ( 223 117 23 ) ( 215 117 23 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 223 117 23 ) ( 223 117 0 ) ( 215 117 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 223 117 0 ) ( 213 134 23 ) ( 205 134 23 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 1
+{
+( 213 134 0 ) ( 223 117 0 ) ( 213 134 23 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 205 134 23 ) ( 215 117 0 ) ( 205 134 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 213 134 23 ) ( 223 117 0 ) ( 215 117 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 223 117 0 ) ( 213 134 0 ) ( 205 134 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 213 134 0 ) ( 213 134 23 ) ( 205 134 23 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 2
+{
+( 188 86 42 ) ( 188 86 362 ) ( 169 119 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 161 119 362 ) ( 180 86 362 ) ( 180 86 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 169 119 362 ) ( 188 86 362 ) ( 180 86 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 188 86 362 ) ( 188 86 42 ) ( 180 86 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 188 86 42 ) ( 169 119 362 ) ( 161 119 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 3
+{
+( 169 119 42 ) ( 188 86 42 ) ( 169 119 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 161 119 362 ) ( 180 86 42 ) ( 161 119 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 169 119 362 ) ( 188 86 42 ) ( 180 86 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 188 86 42 ) ( 169 119 42 ) ( 161 119 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 169 119 42 ) ( 169 119 362 ) ( 161 119 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 4
+{
+( 155 67 362 ) ( 155 67 42 ) ( 136 100 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 144 100 42 ) ( 163 67 42 ) ( 163 67 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 136 100 42 ) ( 155 67 42 ) ( 163 67 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 155 67 42 ) ( 155 67 362 ) ( 163 67 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 155 67 362 ) ( 136 100 42 ) ( 144 100 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 5
+{
+( 136 100 362 ) ( 155 67 362 ) ( 136 100 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 144 100 42 ) ( 163 67 362 ) ( 144 100 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 136 100 42 ) ( 155 67 362 ) ( 163 67 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 155 67 362 ) ( 136 100 362 ) ( 144 100 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 136 100 362 ) ( 136 100 42 ) ( 144 100 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 6
+{
+( 155 67 42 ) ( 155 67 0 ) ( 136 100 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 144 100 0 ) ( 163 67 0 ) ( 163 67 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 136 100 0 ) ( 155 67 0 ) ( 163 67 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 155 67 0 ) ( 155 67 42 ) ( 163 67 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 155 67 42 ) ( 136 100 0 ) ( 144 100 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 7
+{
+( 136 100 42 ) ( 155 67 42 ) ( 136 100 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 144 100 0 ) ( 163 67 42 ) ( 144 100 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 136 100 0 ) ( 155 67 42 ) ( 163 67 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 155 67 42 ) ( 136 100 42 ) ( 144 100 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 136 100 42 ) ( 136 100 0 ) ( 144 100 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 8
+{
+( 155 67 0 ) ( 188 86 0 ) ( 169 119 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 169 119 8 ) ( 188 86 8 ) ( 155 67 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 169 119 0 ) ( 188 86 0 ) ( 188 86 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 188 86 0 ) ( 155 67 0 ) ( 155 67 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 155 67 0 ) ( 169 119 0 ) ( 169 119 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 9
+{
+( 136 100 0 ) ( 155 67 0 ) ( 169 119 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 169 119 8 ) ( 155 67 8 ) ( 136 100 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 169 119 0 ) ( 155 67 0 ) ( 155 67 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 155 67 0 ) ( 136 100 0 ) ( 136 100 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 136 100 0 ) ( 169 119 0 ) ( 169 119 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 10
+{
+( 155 67 0 ) ( 155 67 42 ) ( 188 86 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 188 94 42 ) ( 155 75 42 ) ( 155 75 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 188 86 42 ) ( 155 67 42 ) ( 155 75 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 155 67 42 ) ( 155 67 0 ) ( 155 75 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 155 67 0 ) ( 188 86 42 ) ( 188 94 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 11
+{
+( 188 86 0 ) ( 155 67 0 ) ( 188 86 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 188 94 42 ) ( 155 75 0 ) ( 188 94 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 188 86 42 ) ( 155 67 0 ) ( 155 75 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 155 67 0 ) ( 188 86 0 ) ( 188 94 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 188 86 0 ) ( 188 86 42 ) ( 188 94 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 12
+{
+( 155 67 42 ) ( 155 67 362 ) ( 188 86 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 188 94 362 ) ( 155 75 362 ) ( 155 75 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 188 86 362 ) ( 155 67 362 ) ( 155 75 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 155 67 362 ) ( 155 67 42 ) ( 155 75 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 155 67 42 ) ( 188 86 362 ) ( 188 94 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 13
+{
+( 188 86 42 ) ( 155 67 42 ) ( 188 86 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 188 94 362 ) ( 155 75 42 ) ( 188 94 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 188 86 362 ) ( 155 67 42 ) ( 155 75 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 155 67 42 ) ( 188 86 42 ) ( 188 94 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 188 86 42 ) ( 188 86 362 ) ( 188 94 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 14
+{
+( 169 119 0 ) ( 169 119 42 ) ( 136 100 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 136 92 42 ) ( 169 111 42 ) ( 169 111 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 136 100 42 ) ( 169 119 42 ) ( 169 111 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 169 119 42 ) ( 169 119 0 ) ( 169 111 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 169 119 0 ) ( 136 100 42 ) ( 136 92 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 15
+{
+( 136 100 0 ) ( 169 119 0 ) ( 136 100 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 136 92 42 ) ( 169 111 0 ) ( 136 92 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 136 100 42 ) ( 169 119 0 ) ( 169 111 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 169 119 0 ) ( 136 100 0 ) ( 136 92 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 136 100 0 ) ( 136 100 42 ) ( 136 92 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 16
+{
+( 169 119 42 ) ( 169 119 362 ) ( 136 100 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 136 92 362 ) ( 169 111 362 ) ( 169 111 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 136 100 362 ) ( 169 119 362 ) ( 169 111 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 169 119 362 ) ( 169 119 42 ) ( 169 111 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 169 119 42 ) ( 136 100 362 ) ( 136 92 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 17
+{
+( 136 100 42 ) ( 169 119 42 ) ( 136 100 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 136 92 362 ) ( 169 111 42 ) ( 136 92 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 136 100 362 ) ( 169 119 42 ) ( 169 111 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 169 119 42 ) ( 136 100 42 ) ( 136 92 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 136 100 42 ) ( 136 100 362 ) ( 136 92 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 18
+{
+( 188 86 0 ) ( 207 101 0 ) ( 191 129 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 191 129 8 ) ( 207 101 8 ) ( 188 86 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 191 129 0 ) ( 207 101 0 ) ( 207 101 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 207 101 0 ) ( 188 86 0 ) ( 188 86 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 188 86 0 ) ( 191 129 0 ) ( 191 129 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 19
+{
+( 169 119 0 ) ( 188 86 0 ) ( 191 129 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 191 129 8 ) ( 188 86 8 ) ( 169 119 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 191 129 0 ) ( 188 86 0 ) ( 188 86 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 188 86 0 ) ( 169 119 0 ) ( 169 119 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 169 119 0 ) ( 191 129 0 ) ( 191 129 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 20
+{
+( 188 86 42 ) ( 207 101 36 ) ( 207 101 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 207 109 0 ) ( 207 109 36 ) ( 188 94 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 207 101 0 ) ( 207 101 36 ) ( 207 109 36 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 207 101 36 ) ( 188 86 42 ) ( 188 94 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 188 86 42 ) ( 207 101 0 ) ( 207 109 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 21
+{
+( 188 86 0 ) ( 188 86 42 ) ( 207 101 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 207 109 0 ) ( 188 94 42 ) ( 188 94 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 207 101 0 ) ( 188 86 42 ) ( 188 94 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 188 86 42 ) ( 188 86 0 ) ( 188 94 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 188 86 0 ) ( 207 101 0 ) ( 207 109 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 22
+{
+( 169 119 42 ) ( 191 129 36 ) ( 207 101 36 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 207 101 28 ) ( 191 129 28 ) ( 169 119 34 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 207 101 36 ) ( 191 129 36 ) ( 191 129 28 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 191 129 36 ) ( 169 119 42 ) ( 169 119 34 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 169 119 42 ) ( 207 101 36 ) ( 207 101 28 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 23
+{
+( 188 86 42 ) ( 169 119 42 ) ( 207 101 36 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 207 101 28 ) ( 169 119 34 ) ( 188 86 34 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 207 101 36 ) ( 169 119 42 ) ( 169 119 34 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 169 119 42 ) ( 188 86 42 ) ( 188 86 34 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 188 86 42 ) ( 207 101 36 ) ( 207 101 28 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 24
+{
+( 169 119 0 ) ( 191 129 0 ) ( 191 129 36 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 191 121 36 ) ( 191 121 0 ) ( 169 111 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 191 129 36 ) ( 191 129 0 ) ( 191 121 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 191 129 0 ) ( 169 119 0 ) ( 169 111 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 169 119 0 ) ( 191 129 36 ) ( 191 121 36 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 25
+{
+( 169 119 42 ) ( 169 119 0 ) ( 191 129 36 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 191 121 36 ) ( 169 111 0 ) ( 169 111 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 191 129 36 ) ( 169 119 0 ) ( 169 111 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 169 119 0 ) ( 169 119 42 ) ( 169 111 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 169 119 42 ) ( 191 129 36 ) ( 191 121 36 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 26
+{
+( 207 101 0 ) ( 223 117 0 ) ( 213 134 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 213 134 8 ) ( 223 117 8 ) ( 207 101 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 213 134 0 ) ( 223 117 0 ) ( 223 117 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 223 117 0 ) ( 207 101 0 ) ( 207 101 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 207 101 0 ) ( 213 134 0 ) ( 213 134 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 27
+{
+( 191 129 0 ) ( 207 101 0 ) ( 213 134 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 213 134 8 ) ( 207 101 8 ) ( 191 129 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 213 134 0 ) ( 207 101 0 ) ( 207 101 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 207 101 0 ) ( 191 129 0 ) ( 191 129 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 191 129 0 ) ( 213 134 0 ) ( 213 134 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 28
+{
+( 207 101 36 ) ( 223 117 23 ) ( 223 117 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 215 117 0 ) ( 215 117 23 ) ( 199 101 36 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 223 117 0 ) ( 223 117 23 ) ( 215 117 23 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 223 117 23 ) ( 207 101 36 ) ( 199 101 36 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 207 101 36 ) ( 223 117 0 ) ( 215 117 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 29
+{
+( 207 101 0 ) ( 207 101 36 ) ( 223 117 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 215 117 0 ) ( 199 101 36 ) ( 199 101 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 223 117 0 ) ( 207 101 36 ) ( 199 101 36 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 207 101 36 ) ( 207 101 0 ) ( 199 101 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 207 101 0 ) ( 223 117 0 ) ( 215 117 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 30
+{
+( 191 129 36 ) ( 213 134 23 ) ( 223 117 23 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 223 117 15 ) ( 213 134 15 ) ( 191 129 28 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 223 117 23 ) ( 213 134 23 ) ( 213 134 15 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 213 134 23 ) ( 191 129 36 ) ( 191 129 28 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 191 129 36 ) ( 223 117 23 ) ( 223 117 15 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 31
+{
+( 207 101 36 ) ( 191 129 36 ) ( 223 117 23 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 223 117 15 ) ( 191 129 28 ) ( 207 101 28 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 223 117 23 ) ( 191 129 36 ) ( 191 129 28 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 191 129 36 ) ( 207 101 36 ) ( 207 101 28 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 207 101 36 ) ( 223 117 23 ) ( 223 117 15 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 32
+{
+( 191 129 0 ) ( 213 134 0 ) ( 213 134 23 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 213 126 23 ) ( 213 126 0 ) ( 191 121 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 213 134 23 ) ( 213 134 0 ) ( 213 126 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 213 134 0 ) ( 191 129 0 ) ( 191 121 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 191 129 0 ) ( 213 134 23 ) ( 213 126 23 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 33
+{
+( 191 129 36 ) ( 191 129 0 ) ( 213 134 23 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 213 126 23 ) ( 191 121 0 ) ( 191 121 36 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 213 134 23 ) ( 191 129 0 ) ( 191 121 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 191 129 0 ) ( 191 129 36 ) ( 191 121 36 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 191 129 36 ) ( 213 134 23 ) ( 213 126 23 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 34
+{
+( -10 -251 0 ) ( -10 -251 23 ) ( 10 -251 23 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 10 -243 23 ) ( -10 -243 23 ) ( -10 -243 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 10 -251 23 ) ( -10 -251 23 ) ( -10 -243 23 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -10 -251 23 ) ( -10 -251 0 ) ( -10 -243 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -10 -251 0 ) ( 10 -251 23 ) ( 10 -243 23 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 35
+{
+( 10 -251 0 ) ( -10 -251 0 ) ( 10 -251 23 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 10 -243 23 ) ( -10 -243 0 ) ( 10 -243 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 10 -251 23 ) ( -10 -251 0 ) ( -10 -243 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -10 -251 0 ) ( 10 -251 0 ) ( 10 -243 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 10 -251 0 ) ( 10 -251 23 ) ( 10 -243 23 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 36
+{
+( -19 -206 42 ) ( -19 -206 362 ) ( 18 -206 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 18 -198 362 ) ( -19 -198 362 ) ( -19 -198 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 18 -206 362 ) ( -19 -206 362 ) ( -19 -198 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -19 -206 362 ) ( -19 -206 42 ) ( -19 -198 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -19 -206 42 ) ( 18 -206 362 ) ( 18 -198 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 37
+{
+( 18 -206 42 ) ( -19 -206 42 ) ( 18 -206 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 18 -198 362 ) ( -19 -198 42 ) ( 18 -198 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 18 -206 362 ) ( -19 -206 42 ) ( -19 -198 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -19 -206 42 ) ( 18 -206 42 ) ( 18 -198 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 18 -206 42 ) ( 18 -206 362 ) ( 18 -198 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 38
+{
+( -19 -168 362 ) ( -19 -168 42 ) ( 18 -168 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 18 -176 42 ) ( -19 -176 42 ) ( -19 -176 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 18 -168 42 ) ( -19 -168 42 ) ( -19 -176 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -19 -168 42 ) ( -19 -168 362 ) ( -19 -176 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -19 -168 362 ) ( 18 -168 42 ) ( 18 -176 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 39
+{
+( 18 -168 362 ) ( -19 -168 362 ) ( 18 -168 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 18 -176 42 ) ( -19 -176 362 ) ( 18 -176 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 18 -168 42 ) ( -19 -168 362 ) ( -19 -176 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -19 -168 362 ) ( 18 -168 362 ) ( 18 -176 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 18 -168 362 ) ( 18 -168 42 ) ( 18 -176 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 40
+{
+( -19 -168 42 ) ( -19 -168 0 ) ( 18 -168 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 18 -176 0 ) ( -19 -176 0 ) ( -19 -176 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 18 -168 0 ) ( -19 -168 0 ) ( -19 -176 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -19 -168 0 ) ( -19 -168 42 ) ( -19 -176 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -19 -168 42 ) ( 18 -168 0 ) ( 18 -176 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 41
+{
+( 18 -168 42 ) ( -19 -168 42 ) ( 18 -168 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 18 -176 0 ) ( -19 -176 42 ) ( 18 -176 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 18 -168 0 ) ( -19 -168 42 ) ( -19 -176 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -19 -168 42 ) ( 18 -168 42 ) ( 18 -176 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 18 -168 42 ) ( 18 -168 0 ) ( 18 -176 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 42
+{
+( -19 -168 0 ) ( -19 -206 0 ) ( 18 -206 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 18 -206 8 ) ( -19 -206 8 ) ( -19 -168 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 18 -206 0 ) ( -19 -206 0 ) ( -19 -206 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -19 -206 0 ) ( -19 -168 0 ) ( -19 -168 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -19 -168 0 ) ( 18 -206 0 ) ( 18 -206 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 43
+{
+( 18 -168 0 ) ( -19 -168 0 ) ( 18 -206 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 18 -206 8 ) ( -19 -168 8 ) ( 18 -168 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 18 -206 0 ) ( -19 -168 0 ) ( -19 -168 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -19 -168 0 ) ( 18 -168 0 ) ( 18 -168 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 18 -168 0 ) ( 18 -206 0 ) ( 18 -206 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 44
+{
+( -19 -168 0 ) ( -19 -168 42 ) ( -19 -206 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -11 -206 42 ) ( -11 -168 42 ) ( -11 -168 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -19 -206 42 ) ( -19 -168 42 ) ( -11 -168 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -19 -168 42 ) ( -19 -168 0 ) ( -11 -168 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -19 -168 0 ) ( -19 -206 42 ) ( -11 -206 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 45
+{
+( -19 -206 0 ) ( -19 -168 0 ) ( -19 -206 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -11 -206 42 ) ( -11 -168 0 ) ( -11 -206 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -19 -206 42 ) ( -19 -168 0 ) ( -11 -168 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -19 -168 0 ) ( -19 -206 0 ) ( -11 -206 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -19 -206 0 ) ( -19 -206 42 ) ( -11 -206 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 46
+{
+( -19 -168 42 ) ( -19 -168 362 ) ( -19 -206 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -11 -206 362 ) ( -11 -168 362 ) ( -11 -168 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -19 -206 362 ) ( -19 -168 362 ) ( -11 -168 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -19 -168 362 ) ( -19 -168 42 ) ( -11 -168 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -19 -168 42 ) ( -19 -206 362 ) ( -11 -206 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 47
+{
+( -19 -206 42 ) ( -19 -168 42 ) ( -19 -206 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -11 -206 362 ) ( -11 -168 42 ) ( -11 -206 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -19 -206 362 ) ( -19 -168 42 ) ( -11 -168 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -19 -168 42 ) ( -19 -206 42 ) ( -11 -206 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -19 -206 42 ) ( -19 -206 362 ) ( -11 -206 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 48
+{
+( 18 -206 0 ) ( 18 -206 42 ) ( 18 -168 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 10 -168 42 ) ( 10 -206 42 ) ( 10 -206 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 18 -168 42 ) ( 18 -206 42 ) ( 10 -206 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 18 -206 42 ) ( 18 -206 0 ) ( 10 -206 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 18 -206 0 ) ( 18 -168 42 ) ( 10 -168 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 49
+{
+( 18 -168 0 ) ( 18 -206 0 ) ( 18 -168 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 10 -168 42 ) ( 10 -206 0 ) ( 10 -168 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 18 -168 42 ) ( 18 -206 0 ) ( 10 -206 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 18 -206 0 ) ( 18 -168 0 ) ( 10 -168 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 18 -168 0 ) ( 18 -168 42 ) ( 10 -168 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 50
+{
+( 18 -206 42 ) ( 18 -206 362 ) ( 18 -168 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 10 -168 362 ) ( 10 -206 362 ) ( 10 -206 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 18 -168 362 ) ( 18 -206 362 ) ( 10 -206 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 18 -206 362 ) ( 18 -206 42 ) ( 10 -206 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 18 -206 42 ) ( 18 -168 362 ) ( 10 -168 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 51
+{
+( 18 -168 42 ) ( 18 -206 42 ) ( 18 -168 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 10 -168 362 ) ( 10 -206 42 ) ( 10 -168 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 18 -168 362 ) ( 18 -206 42 ) ( 10 -206 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 18 -206 42 ) ( 18 -168 42 ) ( 10 -168 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 18 -168 42 ) ( 18 -168 362 ) ( 10 -168 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 52
+{
+( -19 -206 0 ) ( -16 -230 0 ) ( 16 -230 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 16 -230 8 ) ( -16 -230 8 ) ( -19 -206 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 16 -230 0 ) ( -16 -230 0 ) ( -16 -230 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -16 -230 0 ) ( -19 -206 0 ) ( -19 -206 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -19 -206 0 ) ( 16 -230 0 ) ( 16 -230 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 53
+{
+( 18 -206 0 ) ( -19 -206 0 ) ( 16 -230 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 16 -230 8 ) ( -19 -206 8 ) ( 18 -206 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 16 -230 0 ) ( -19 -206 0 ) ( -19 -206 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -19 -206 0 ) ( 18 -206 0 ) ( 18 -206 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 18 -206 0 ) ( 16 -230 0 ) ( 16 -230 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 54
+{
+( -19 -206 42 ) ( -16 -230 36 ) ( -16 -230 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -8 -230 0 ) ( -8 -230 36 ) ( -11 -206 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -16 -230 0 ) ( -16 -230 36 ) ( -8 -230 36 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -16 -230 36 ) ( -19 -206 42 ) ( -11 -206 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -19 -206 42 ) ( -16 -230 0 ) ( -8 -230 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 55
+{
+( -19 -206 0 ) ( -19 -206 42 ) ( -16 -230 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -8 -230 0 ) ( -11 -206 42 ) ( -11 -206 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -16 -230 0 ) ( -19 -206 42 ) ( -11 -206 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -19 -206 42 ) ( -19 -206 0 ) ( -11 -206 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -19 -206 0 ) ( -16 -230 0 ) ( -8 -230 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 56
+{
+( 18 -206 42 ) ( 16 -230 36 ) ( -16 -230 36 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -16 -230 28 ) ( 16 -230 28 ) ( 18 -206 34 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -16 -230 36 ) ( 16 -230 36 ) ( 16 -230 28 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 16 -230 36 ) ( 18 -206 42 ) ( 18 -206 34 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 18 -206 42 ) ( -16 -230 36 ) ( -16 -230 28 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 57
+{
+( -19 -206 42 ) ( 18 -206 42 ) ( -16 -230 36 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -16 -230 28 ) ( 18 -206 34 ) ( -19 -206 34 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -16 -230 36 ) ( 18 -206 42 ) ( 18 -206 34 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 18 -206 42 ) ( -19 -206 42 ) ( -19 -206 34 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -19 -206 42 ) ( -16 -230 36 ) ( -16 -230 28 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 58
+{
+( 18 -206 0 ) ( 16 -230 0 ) ( 16 -230 36 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 8 -230 36 ) ( 8 -230 0 ) ( 10 -206 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 16 -230 36 ) ( 16 -230 0 ) ( 8 -230 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 16 -230 0 ) ( 18 -206 0 ) ( 10 -206 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 18 -206 0 ) ( 16 -230 36 ) ( 8 -230 36 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 59
+{
+( 18 -206 42 ) ( 18 -206 0 ) ( 16 -230 36 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 8 -230 36 ) ( 10 -206 0 ) ( 10 -206 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 16 -230 36 ) ( 18 -206 0 ) ( 10 -206 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 18 -206 0 ) ( 18 -206 42 ) ( 10 -206 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 18 -206 42 ) ( 16 -230 36 ) ( 8 -230 36 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 60
+{
+( -16 -230 0 ) ( -10 -251 0 ) ( 10 -251 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 10 -251 8 ) ( -10 -251 8 ) ( -16 -230 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 10 -251 0 ) ( -10 -251 0 ) ( -10 -251 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -10 -251 0 ) ( -16 -230 0 ) ( -16 -230 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -16 -230 0 ) ( 10 -251 0 ) ( 10 -251 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 61
+{
+( 16 -230 0 ) ( -16 -230 0 ) ( 10 -251 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 10 -251 8 ) ( -16 -230 8 ) ( 16 -230 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 10 -251 0 ) ( -16 -230 0 ) ( -16 -230 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -16 -230 0 ) ( 16 -230 0 ) ( 16 -230 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 16 -230 0 ) ( 10 -251 0 ) ( 10 -251 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 62
+{
+( -16 -230 36 ) ( -10 -251 23 ) ( -10 -251 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -2 -251 0 ) ( -2 -251 23 ) ( -8 -230 36 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -10 -251 0 ) ( -10 -251 23 ) ( -2 -251 23 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -10 -251 23 ) ( -16 -230 36 ) ( -8 -230 36 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -16 -230 36 ) ( -10 -251 0 ) ( -2 -251 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 63
+{
+( -16 -230 0 ) ( -16 -230 36 ) ( -10 -251 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -2 -251 0 ) ( -8 -230 36 ) ( -8 -230 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -10 -251 0 ) ( -16 -230 36 ) ( -8 -230 36 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -16 -230 36 ) ( -16 -230 0 ) ( -8 -230 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -16 -230 0 ) ( -10 -251 0 ) ( -2 -251 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 64
+{
+( 16 -230 36 ) ( 10 -251 23 ) ( -10 -251 23 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -10 -251 15 ) ( 10 -251 15 ) ( 16 -230 28 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -10 -251 23 ) ( 10 -251 23 ) ( 10 -251 15 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 10 -251 23 ) ( 16 -230 36 ) ( 16 -230 28 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 16 -230 36 ) ( -10 -251 23 ) ( -10 -251 15 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 65
+{
+( -16 -230 36 ) ( 16 -230 36 ) ( -10 -251 23 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -10 -251 15 ) ( 16 -230 28 ) ( -16 -230 28 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -10 -251 23 ) ( 16 -230 36 ) ( 16 -230 28 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 16 -230 36 ) ( -16 -230 36 ) ( -16 -230 28 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -16 -230 36 ) ( -10 -251 23 ) ( -10 -251 15 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 66
+{
+( 16 -230 0 ) ( 10 -251 0 ) ( 10 -251 23 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 2 -251 23 ) ( 2 -251 0 ) ( 8 -230 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 10 -251 23 ) ( 10 -251 0 ) ( 2 -251 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 10 -251 0 ) ( 16 -230 0 ) ( 8 -230 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 16 -230 0 ) ( 10 -251 23 ) ( 2 -251 23 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 67
+{
+( 16 -230 36 ) ( 16 -230 0 ) ( 10 -251 23 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 2 -251 23 ) ( 8 -230 0 ) ( 8 -230 36 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 10 -251 23 ) ( 16 -230 0 ) ( 8 -230 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 16 -230 0 ) ( 16 -230 36 ) ( 8 -230 36 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 16 -230 36 ) ( 10 -251 23 ) ( 2 -251 23 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 68
+{
+( -213 134 0 ) ( -213 134 23 ) ( -223 117 23 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -215 117 23 ) ( -205 134 23 ) ( -205 134 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -223 117 23 ) ( -213 134 23 ) ( -205 134 23 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -213 134 23 ) ( -213 134 0 ) ( -205 134 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -213 134 0 ) ( -223 117 23 ) ( -215 117 23 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 69
+{
+( -223 117 0 ) ( -213 134 0 ) ( -223 117 23 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -215 117 23 ) ( -205 134 0 ) ( -215 117 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -223 117 23 ) ( -213 134 0 ) ( -205 134 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -213 134 0 ) ( -223 117 0 ) ( -215 117 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -223 117 0 ) ( -223 117 23 ) ( -215 117 23 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 70
+{
+( -169 119 42 ) ( -169 119 362 ) ( -188 86 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -180 86 362 ) ( -161 119 362 ) ( -161 119 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -188 86 362 ) ( -169 119 362 ) ( -161 119 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -169 119 362 ) ( -169 119 42 ) ( -161 119 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -169 119 42 ) ( -188 86 362 ) ( -180 86 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 71
+{
+( -188 86 42 ) ( -169 119 42 ) ( -188 86 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -180 86 362 ) ( -161 119 42 ) ( -180 86 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -188 86 362 ) ( -169 119 42 ) ( -161 119 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -169 119 42 ) ( -188 86 42 ) ( -180 86 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -188 86 42 ) ( -188 86 362 ) ( -180 86 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 72
+{
+( -136 100 362 ) ( -136 100 42 ) ( -155 67 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -163 67 42 ) ( -144 100 42 ) ( -144 100 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -155 67 42 ) ( -136 100 42 ) ( -144 100 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -136 100 42 ) ( -136 100 362 ) ( -144 100 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -136 100 362 ) ( -155 67 42 ) ( -163 67 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 73
+{
+( -155 67 362 ) ( -136 100 362 ) ( -155 67 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -163 67 42 ) ( -144 100 362 ) ( -163 67 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -155 67 42 ) ( -136 100 362 ) ( -144 100 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -136 100 362 ) ( -155 67 362 ) ( -163 67 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -155 67 362 ) ( -155 67 42 ) ( -163 67 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 74
+{
+( -136 100 42 ) ( -136 100 0 ) ( -155 67 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -163 67 0 ) ( -144 100 0 ) ( -144 100 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -155 67 0 ) ( -136 100 0 ) ( -144 100 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -136 100 0 ) ( -136 100 42 ) ( -144 100 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -136 100 42 ) ( -155 67 0 ) ( -163 67 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 75
+{
+( -155 67 42 ) ( -136 100 42 ) ( -155 67 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -163 67 0 ) ( -144 100 42 ) ( -163 67 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -155 67 0 ) ( -136 100 42 ) ( -144 100 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -136 100 42 ) ( -155 67 42 ) ( -163 67 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -155 67 42 ) ( -155 67 0 ) ( -163 67 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 76
+{
+( -136 100 0 ) ( -169 119 0 ) ( -188 86 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -188 86 8 ) ( -169 119 8 ) ( -136 100 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -188 86 0 ) ( -169 119 0 ) ( -169 119 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -169 119 0 ) ( -136 100 0 ) ( -136 100 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -136 100 0 ) ( -188 86 0 ) ( -188 86 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 77
+{
+( -155 67 0 ) ( -136 100 0 ) ( -188 86 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -188 86 8 ) ( -136 100 8 ) ( -155 67 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -188 86 0 ) ( -136 100 0 ) ( -136 100 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -136 100 0 ) ( -155 67 0 ) ( -155 67 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -155 67 0 ) ( -188 86 0 ) ( -188 86 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 78
+{
+( -136 100 0 ) ( -136 100 42 ) ( -169 119 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -169 111 42 ) ( -136 92 42 ) ( -136 92 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -169 119 42 ) ( -136 100 42 ) ( -136 92 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -136 100 42 ) ( -136 100 0 ) ( -136 92 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -136 100 0 ) ( -169 119 42 ) ( -169 111 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 79
+{
+( -169 119 0 ) ( -136 100 0 ) ( -169 119 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -169 111 42 ) ( -136 92 0 ) ( -169 111 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -169 119 42 ) ( -136 100 0 ) ( -136 92 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -136 100 0 ) ( -169 119 0 ) ( -169 111 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -169 119 0 ) ( -169 119 42 ) ( -169 111 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 80
+{
+( -136 100 42 ) ( -136 100 362 ) ( -169 119 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -169 111 362 ) ( -136 92 362 ) ( -136 92 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -169 119 362 ) ( -136 100 362 ) ( -136 92 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -136 100 362 ) ( -136 100 42 ) ( -136 92 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -136 100 42 ) ( -169 119 362 ) ( -169 111 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 81
+{
+( -169 119 42 ) ( -136 100 42 ) ( -169 119 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -169 111 362 ) ( -136 92 42 ) ( -169 111 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -169 119 362 ) ( -136 100 42 ) ( -136 92 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -136 100 42 ) ( -169 119 42 ) ( -169 111 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -169 119 42 ) ( -169 119 362 ) ( -169 111 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 82
+{
+( -188 86 0 ) ( -188 86 42 ) ( -155 67 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -155 75 42 ) ( -188 94 42 ) ( -188 94 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -155 67 42 ) ( -188 86 42 ) ( -188 94 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -188 86 42 ) ( -188 86 0 ) ( -188 94 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -188 86 0 ) ( -155 67 42 ) ( -155 75 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 83
+{
+( -155 67 0 ) ( -188 86 0 ) ( -155 67 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -155 75 42 ) ( -188 94 0 ) ( -155 75 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -155 67 42 ) ( -188 86 0 ) ( -188 94 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -188 86 0 ) ( -155 67 0 ) ( -155 75 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -155 67 0 ) ( -155 67 42 ) ( -155 75 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 84
+{
+( -188 86 42 ) ( -188 86 362 ) ( -155 67 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -155 75 362 ) ( -188 94 362 ) ( -188 94 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -155 67 362 ) ( -188 86 362 ) ( -188 94 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -188 86 362 ) ( -188 86 42 ) ( -188 94 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -188 86 42 ) ( -155 67 362 ) ( -155 75 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 85
+{
+( -155 67 42 ) ( -188 86 42 ) ( -155 67 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -155 75 362 ) ( -188 94 42 ) ( -155 75 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -155 67 362 ) ( -188 86 42 ) ( -188 94 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -188 86 42 ) ( -155 67 42 ) ( -155 75 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -155 67 42 ) ( -155 67 362 ) ( -155 75 362 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 86
+{
+( -169 119 0 ) ( -191 129 0 ) ( -208 101 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -208 101 8 ) ( -191 129 8 ) ( -169 119 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -208 101 0 ) ( -191 129 0 ) ( -191 129 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -191 129 0 ) ( -169 119 0 ) ( -169 119 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -169 119 0 ) ( -208 101 0 ) ( -208 101 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 87
+{
+( -188 86 0 ) ( -169 119 0 ) ( -208 101 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -208 101 8 ) ( -169 119 8 ) ( -188 86 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -208 101 0 ) ( -169 119 0 ) ( -169 119 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -169 119 0 ) ( -188 86 0 ) ( -188 86 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -188 86 0 ) ( -208 101 0 ) ( -208 101 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 88
+{
+( -169 119 42 ) ( -191 129 36 ) ( -191 129 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -191 121 0 ) ( -191 121 36 ) ( -169 111 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -191 129 0 ) ( -191 129 36 ) ( -191 121 36 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -191 129 36 ) ( -169 119 42 ) ( -169 111 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -169 119 42 ) ( -191 129 0 ) ( -191 121 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 89
+{
+( -169 119 0 ) ( -169 119 42 ) ( -191 129 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -191 121 0 ) ( -169 111 42 ) ( -169 111 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -191 129 0 ) ( -169 119 42 ) ( -169 111 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -169 119 42 ) ( -169 119 0 ) ( -169 111 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -169 119 0 ) ( -191 129 0 ) ( -191 121 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 90
+{
+( -188 86 42 ) ( -208 101 36 ) ( -191 129 36 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -191 129 28 ) ( -208 101 28 ) ( -188 86 34 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -191 129 36 ) ( -208 101 36 ) ( -208 101 28 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -208 101 36 ) ( -188 86 42 ) ( -188 86 34 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -188 86 42 ) ( -191 129 36 ) ( -191 129 28 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 91
+{
+( -169 119 42 ) ( -188 86 42 ) ( -191 129 36 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -191 129 28 ) ( -188 86 34 ) ( -169 119 34 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -191 129 36 ) ( -188 86 42 ) ( -188 86 34 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -188 86 42 ) ( -169 119 42 ) ( -169 119 34 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -169 119 42 ) ( -191 129 36 ) ( -191 129 28 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 92
+{
+( -188 86 0 ) ( -208 101 0 ) ( -208 101 36 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -208 109 36 ) ( -208 109 0 ) ( -188 94 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -208 101 36 ) ( -208 101 0 ) ( -208 109 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -208 101 0 ) ( -188 86 0 ) ( -188 94 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -188 86 0 ) ( -208 101 36 ) ( -208 109 36 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 93
+{
+( -188 86 42 ) ( -188 86 0 ) ( -208 101 36 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -208 109 36 ) ( -188 94 0 ) ( -188 94 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -208 101 36 ) ( -188 86 0 ) ( -188 94 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -188 86 0 ) ( -188 86 42 ) ( -188 94 42 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -188 86 42 ) ( -208 101 36 ) ( -208 109 36 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 94
+{
+( -191 129 0 ) ( -213 134 0 ) ( -223 117 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -223 117 8 ) ( -213 134 8 ) ( -191 129 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -223 117 0 ) ( -213 134 0 ) ( -213 134 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -213 134 0 ) ( -191 129 0 ) ( -191 129 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -191 129 0 ) ( -223 117 0 ) ( -223 117 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 95
+{
+( -208 101 0 ) ( -191 129 0 ) ( -223 117 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -223 117 8 ) ( -191 129 8 ) ( -208 101 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -223 117 0 ) ( -191 129 0 ) ( -191 129 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -191 129 0 ) ( -208 101 0 ) ( -208 101 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -208 101 0 ) ( -223 117 0 ) ( -223 117 8 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 96
+{
+( -191 129 36 ) ( -213 134 23 ) ( -213 134 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -213 126 0 ) ( -213 126 23 ) ( -191 121 36 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -213 134 0 ) ( -213 134 23 ) ( -213 126 23 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -213 134 23 ) ( -191 129 36 ) ( -191 121 36 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -191 129 36 ) ( -213 134 0 ) ( -213 126 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 97
+{
+( -191 129 0 ) ( -191 129 36 ) ( -213 134 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -213 126 0 ) ( -191 121 36 ) ( -191 121 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -213 134 0 ) ( -191 129 36 ) ( -191 121 36 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -191 129 36 ) ( -191 129 0 ) ( -191 121 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -191 129 0 ) ( -213 134 0 ) ( -213 126 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 98
+{
+( -208 101 36 ) ( -223 117 23 ) ( -213 134 23 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -213 134 15 ) ( -223 117 15 ) ( -208 101 28 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -213 134 23 ) ( -223 117 23 ) ( -223 117 15 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -223 117 23 ) ( -208 101 36 ) ( -208 101 28 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -208 101 36 ) ( -213 134 23 ) ( -213 134 15 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 99
+{
+( -191 129 36 ) ( -208 101 36 ) ( -213 134 23 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -213 134 15 ) ( -208 101 28 ) ( -191 129 28 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -213 134 23 ) ( -208 101 36 ) ( -208 101 28 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -208 101 36 ) ( -191 129 36 ) ( -191 129 28 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -191 129 36 ) ( -213 134 23 ) ( -213 134 15 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 100
+{
+( -208 101 0 ) ( -223 117 0 ) ( -223 117 23 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -215 117 23 ) ( -215 117 0 ) ( -200 101 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -223 117 23 ) ( -223 117 0 ) ( -215 117 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -223 117 0 ) ( -208 101 0 ) ( -200 101 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -208 101 0 ) ( -223 117 23 ) ( -215 117 23 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 101
+{
+( -208 101 36 ) ( -208 101 0 ) ( -223 117 23 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -215 117 23 ) ( -200 101 0 ) ( -200 101 36 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -223 117 23 ) ( -208 101 0 ) ( -200 101 0 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -208 101 0 ) ( -208 101 36 ) ( -200 101 36 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -208 101 36 ) ( -223 117 23 ) ( -215 117 23 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 102
+{
+( 64 -198 367 ) ( 61 -188 432 ) ( 160 -116 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 160 -108 432 ) ( 61 -180 432 ) ( 64 -190 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 160 -116 432 ) ( 61 -188 432 ) ( 61 -180 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 61 -188 432 ) ( 64 -198 367 ) ( 64 -190 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 64 -198 367 ) ( 160 -116 432 ) ( 160 -108 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 103
+{
+( 168 -122 367 ) ( 64 -198 367 ) ( 160 -116 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 160 -108 432 ) ( 64 -190 367 ) ( 168 -114 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 160 -116 432 ) ( 64 -198 367 ) ( 64 -190 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 64 -198 367 ) ( 168 -122 367 ) ( 168 -114 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 168 -122 367 ) ( 160 -116 432 ) ( 160 -108 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 104
+{
+( -64 -198 367 ) ( -61 -188 432 ) ( 61 -188 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 61 -180 432 ) ( -61 -180 432 ) ( -64 -190 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 61 -188 432 ) ( -61 -188 432 ) ( -61 -180 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -61 -188 432 ) ( -64 -198 367 ) ( -64 -190 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -64 -198 367 ) ( 61 -188 432 ) ( 61 -180 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 105
+{
+( 64 -198 367 ) ( -64 -198 367 ) ( 61 -188 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 61 -180 432 ) ( -64 -190 367 ) ( 64 -190 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 61 -188 432 ) ( -64 -198 367 ) ( -64 -190 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -64 -198 367 ) ( 64 -198 367 ) ( 64 -190 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 64 -198 367 ) ( 61 -188 432 ) ( 61 -180 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 106
+{
+( -168 -122 367 ) ( -160 -116 432 ) ( -61 -188 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -61 -180 432 ) ( -160 -108 432 ) ( -168 -114 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -61 -188 432 ) ( -160 -116 432 ) ( -160 -108 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -160 -116 432 ) ( -168 -122 367 ) ( -168 -114 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -168 -122 367 ) ( -61 -188 432 ) ( -61 -180 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 107
+{
+( -64 -198 367 ) ( -168 -122 367 ) ( -61 -188 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -61 -180 432 ) ( -168 -114 367 ) ( -64 -190 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -61 -188 432 ) ( -168 -122 367 ) ( -168 -114 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -168 -122 367 ) ( -64 -198 367 ) ( -64 -190 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -64 -198 367 ) ( -61 -188 432 ) ( -61 -180 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 108
+{
+( -208 0 367 ) ( -198 0 432 ) ( -160 -116 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -152 -116 432 ) ( -190 0 432 ) ( -200 0 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -160 -116 432 ) ( -198 0 432 ) ( -190 0 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -198 0 432 ) ( -208 0 367 ) ( -200 0 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -208 0 367 ) ( -160 -116 432 ) ( -152 -116 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 109
+{
+( -168 -122 367 ) ( -208 0 367 ) ( -160 -116 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -152 -116 432 ) ( -200 0 367 ) ( -160 -122 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -160 -116 432 ) ( -208 0 367 ) ( -200 0 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -208 0 367 ) ( -168 -122 367 ) ( -160 -122 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -168 -122 367 ) ( -160 -116 432 ) ( -152 -116 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 110
+{
+( -168 122 367 ) ( -160 116 432 ) ( -198 0 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -190 0 432 ) ( -152 116 432 ) ( -160 122 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -198 0 432 ) ( -160 116 432 ) ( -152 116 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -160 116 432 ) ( -168 122 367 ) ( -160 122 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -168 122 367 ) ( -198 0 432 ) ( -190 0 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 111
+{
+( -208 0 367 ) ( -168 122 367 ) ( -198 0 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -190 0 432 ) ( -160 122 367 ) ( -200 0 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -198 0 432 ) ( -168 122 367 ) ( -160 122 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -168 122 367 ) ( -208 0 367 ) ( -200 0 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -208 0 367 ) ( -198 0 432 ) ( -190 0 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 112
+{
+( -64 198 367 ) ( -61 188 432 ) ( -160 116 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -160 108 432 ) ( -61 180 432 ) ( -64 190 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -160 116 432 ) ( -61 188 432 ) ( -61 180 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -61 188 432 ) ( -64 198 367 ) ( -64 190 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -64 198 367 ) ( -160 116 432 ) ( -160 108 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 113
+{
+( -168 122 367 ) ( -64 198 367 ) ( -160 116 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -160 108 432 ) ( -64 190 367 ) ( -168 114 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -160 116 432 ) ( -64 198 367 ) ( -64 190 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -64 198 367 ) ( -168 122 367 ) ( -168 114 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -168 122 367 ) ( -160 116 432 ) ( -160 108 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 114
+{
+( 64 198 367 ) ( 61 188 432 ) ( -61 188 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -61 180 432 ) ( 61 180 432 ) ( 64 190 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -61 188 432 ) ( 61 188 432 ) ( 61 180 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 61 188 432 ) ( 64 198 367 ) ( 64 190 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 64 198 367 ) ( -61 188 432 ) ( -61 180 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 115
+{
+( -64 198 367 ) ( 64 198 367 ) ( -61 188 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -61 180 432 ) ( 64 190 367 ) ( -64 190 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -61 188 432 ) ( 64 198 367 ) ( 64 190 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 64 198 367 ) ( -64 198 367 ) ( -64 190 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -64 198 367 ) ( -61 188 432 ) ( -61 180 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 116
+{
+( 168 122 367 ) ( 160 116 432 ) ( 61 188 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 61 180 432 ) ( 160 108 432 ) ( 168 114 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 61 188 432 ) ( 160 116 432 ) ( 160 108 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 160 116 432 ) ( 168 122 367 ) ( 168 114 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 168 122 367 ) ( 61 188 432 ) ( 61 180 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 117
+{
+( 64 198 367 ) ( 168 122 367 ) ( 61 188 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 61 180 432 ) ( 168 114 367 ) ( 64 190 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 61 188 432 ) ( 168 122 367 ) ( 168 114 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 168 122 367 ) ( 64 198 367 ) ( 64 190 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 64 198 367 ) ( 61 188 432 ) ( 61 180 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 118
+{
+( 208 0 367 ) ( 198 0 432 ) ( 160 116 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 152 116 432 ) ( 190 0 432 ) ( 200 0 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 160 116 432 ) ( 198 0 432 ) ( 190 0 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 198 0 432 ) ( 208 0 367 ) ( 200 0 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 208 0 367 ) ( 160 116 432 ) ( 152 116 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 119
+{
+( 168 122 367 ) ( 208 0 367 ) ( 160 116 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 152 116 432 ) ( 200 0 367 ) ( 160 122 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 160 116 432 ) ( 208 0 367 ) ( 200 0 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 208 0 367 ) ( 168 122 367 ) ( 160 122 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 168 122 367 ) ( 160 116 432 ) ( 152 116 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 120
+{
+( 168 -122 367 ) ( 160 -116 432 ) ( 198 0 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 190 0 432 ) ( 152 -116 432 ) ( 160 -122 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 198 0 432 ) ( 160 -116 432 ) ( 152 -116 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 160 -116 432 ) ( 168 -122 367 ) ( 160 -122 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 168 -122 367 ) ( 198 0 432 ) ( 190 0 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 121
+{
+( 208 0 367 ) ( 168 -122 367 ) ( 198 0 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 190 0 432 ) ( 160 -122 367 ) ( 200 0 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 198 0 432 ) ( 168 -122 367 ) ( 160 -122 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 168 -122 367 ) ( 208 0 367 ) ( 200 0 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 208 0 367 ) ( 198 0 432 ) ( 190 0 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 122
+{
+( 61 -188 432 ) ( 52 -160 490 ) ( 136 -98 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 136 -90 490 ) ( 52 -152 490 ) ( 61 -180 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 136 -98 490 ) ( 52 -160 490 ) ( 52 -152 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 52 -160 490 ) ( 61 -188 432 ) ( 61 -180 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 61 -188 432 ) ( 136 -98 490 ) ( 136 -90 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 123
+{
+( 160 -116 432 ) ( 61 -188 432 ) ( 136 -98 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 136 -90 490 ) ( 61 -180 432 ) ( 160 -108 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 136 -98 490 ) ( 61 -188 432 ) ( 61 -180 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 61 -188 432 ) ( 160 -116 432 ) ( 160 -108 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 160 -116 432 ) ( 136 -98 490 ) ( 136 -90 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 124
+{
+( -61 -188 432 ) ( -52 -160 490 ) ( 52 -160 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 52 -152 490 ) ( -52 -152 490 ) ( -61 -180 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 52 -160 490 ) ( -52 -160 490 ) ( -52 -152 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -52 -160 490 ) ( -61 -188 432 ) ( -61 -180 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -61 -188 432 ) ( 52 -160 490 ) ( 52 -152 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 125
+{
+( 61 -188 432 ) ( -61 -188 432 ) ( 52 -160 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 52 -152 490 ) ( -61 -180 432 ) ( 61 -180 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 52 -160 490 ) ( -61 -188 432 ) ( -61 -180 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -61 -188 432 ) ( 61 -188 432 ) ( 61 -180 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 61 -188 432 ) ( 52 -160 490 ) ( 52 -152 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 126
+{
+( -160 -116 432 ) ( -136 -98 490 ) ( -52 -160 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -52 -152 490 ) ( -136 -90 490 ) ( -160 -108 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -52 -160 490 ) ( -136 -98 490 ) ( -136 -90 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -136 -98 490 ) ( -160 -116 432 ) ( -160 -108 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -160 -116 432 ) ( -52 -160 490 ) ( -52 -152 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 127
+{
+( -61 -188 432 ) ( -160 -116 432 ) ( -52 -160 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -52 -152 490 ) ( -160 -108 432 ) ( -61 -180 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -52 -160 490 ) ( -160 -116 432 ) ( -160 -108 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -160 -116 432 ) ( -61 -188 432 ) ( -61 -180 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -61 -188 432 ) ( -52 -160 490 ) ( -52 -152 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 128
+{
+( -198 0 432 ) ( -168 0 490 ) ( -136 -98 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -128 -98 490 ) ( -160 0 490 ) ( -190 0 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -136 -98 490 ) ( -168 0 490 ) ( -160 0 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -168 0 490 ) ( -198 0 432 ) ( -190 0 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -198 0 432 ) ( -136 -98 490 ) ( -128 -98 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 129
+{
+( -160 -116 432 ) ( -198 0 432 ) ( -136 -98 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -128 -98 490 ) ( -190 0 432 ) ( -152 -116 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -136 -98 490 ) ( -198 0 432 ) ( -190 0 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -198 0 432 ) ( -160 -116 432 ) ( -152 -116 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -160 -116 432 ) ( -136 -98 490 ) ( -128 -98 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 130
+{
+( -160 116 432 ) ( -136 99 490 ) ( -168 0 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -160 0 490 ) ( -128 99 490 ) ( -152 116 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -168 0 490 ) ( -136 99 490 ) ( -128 99 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -136 99 490 ) ( -160 116 432 ) ( -152 116 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -160 116 432 ) ( -168 0 490 ) ( -160 0 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 131
+{
+( -198 0 432 ) ( -160 116 432 ) ( -168 0 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -160 0 490 ) ( -152 116 432 ) ( -190 0 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -168 0 490 ) ( -160 116 432 ) ( -152 116 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -160 116 432 ) ( -198 0 432 ) ( -190 0 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -198 0 432 ) ( -168 0 490 ) ( -160 0 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 132
+{
+( -61 188 432 ) ( -52 160 490 ) ( -136 99 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -136 91 490 ) ( -52 152 490 ) ( -61 180 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -136 99 490 ) ( -52 160 490 ) ( -52 152 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -52 160 490 ) ( -61 188 432 ) ( -61 180 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -61 188 432 ) ( -136 99 490 ) ( -136 91 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 133
+{
+( -160 116 432 ) ( -61 188 432 ) ( -136 99 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -136 91 490 ) ( -61 180 432 ) ( -160 108 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -136 99 490 ) ( -61 188 432 ) ( -61 180 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -61 188 432 ) ( -160 116 432 ) ( -160 108 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -160 116 432 ) ( -136 99 490 ) ( -136 91 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 134
+{
+( 61 188 432 ) ( 52 160 490 ) ( -52 160 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -52 152 490 ) ( 52 152 490 ) ( 61 180 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -52 160 490 ) ( 52 160 490 ) ( 52 152 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 52 160 490 ) ( 61 188 432 ) ( 61 180 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 61 188 432 ) ( -52 160 490 ) ( -52 152 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 135
+{
+( -61 188 432 ) ( 61 188 432 ) ( -52 160 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -52 152 490 ) ( 61 180 432 ) ( -61 180 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -52 160 490 ) ( 61 188 432 ) ( 61 180 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 61 188 432 ) ( -61 188 432 ) ( -61 180 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -61 188 432 ) ( -52 160 490 ) ( -52 152 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 136
+{
+( 160 116 432 ) ( 136 99 490 ) ( 52 160 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 52 152 490 ) ( 136 91 490 ) ( 160 108 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 52 160 490 ) ( 136 99 490 ) ( 136 91 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 136 99 490 ) ( 160 116 432 ) ( 160 108 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 160 116 432 ) ( 52 160 490 ) ( 52 152 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 137
+{
+( 61 188 432 ) ( 160 116 432 ) ( 52 160 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 52 152 490 ) ( 160 108 432 ) ( 61 180 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 52 160 490 ) ( 160 116 432 ) ( 160 108 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 160 116 432 ) ( 61 188 432 ) ( 61 180 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 61 188 432 ) ( 52 160 490 ) ( 52 152 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 138
+{
+( 198 0 432 ) ( 168 0 490 ) ( 136 99 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 128 99 490 ) ( 160 0 490 ) ( 190 0 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 136 99 490 ) ( 168 0 490 ) ( 160 0 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 168 0 490 ) ( 198 0 432 ) ( 190 0 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 198 0 432 ) ( 136 99 490 ) ( 128 99 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 139
+{
+( 160 116 432 ) ( 198 0 432 ) ( 136 99 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 128 99 490 ) ( 190 0 432 ) ( 152 116 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 136 99 490 ) ( 198 0 432 ) ( 190 0 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 198 0 432 ) ( 160 116 432 ) ( 152 116 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 160 116 432 ) ( 136 99 490 ) ( 128 99 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 140
+{
+( 160 -116 432 ) ( 136 -98 490 ) ( 168 0 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 160 0 490 ) ( 128 -98 490 ) ( 152 -116 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 168 0 490 ) ( 136 -98 490 ) ( 128 -98 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 136 -98 490 ) ( 160 -116 432 ) ( 152 -116 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 160 -116 432 ) ( 168 0 490 ) ( 160 0 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 141
+{
+( 198 0 432 ) ( 160 -116 432 ) ( 168 0 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 160 0 490 ) ( 152 -116 432 ) ( 190 0 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 168 0 490 ) ( 160 -116 432 ) ( 152 -116 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 160 -116 432 ) ( 198 0 432 ) ( 190 0 432 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 198 0 432 ) ( 168 0 490 ) ( 160 0 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 142
+{
+( 52 -160 490 ) ( 37 -116 536 ) ( 99 -71 536 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 99 -71 528 ) ( 37 -116 528 ) ( 52 -160 482 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 99 -71 536 ) ( 37 -116 536 ) ( 37 -116 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 37 -116 536 ) ( 52 -160 490 ) ( 52 -160 482 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 52 -160 490 ) ( 99 -71 536 ) ( 99 -71 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 143
+{
+( 136 -98 490 ) ( 52 -160 490 ) ( 99 -71 536 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 99 -71 528 ) ( 52 -160 482 ) ( 136 -98 482 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 99 -71 536 ) ( 52 -160 490 ) ( 52 -160 482 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 52 -160 490 ) ( 136 -98 490 ) ( 136 -98 482 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 136 -98 490 ) ( 99 -71 536 ) ( 99 -71 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 144
+{
+( -52 -160 490 ) ( -37 -116 536 ) ( 37 -116 536 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 37 -108 536 ) ( -37 -108 536 ) ( -52 -152 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 37 -116 536 ) ( -37 -116 536 ) ( -37 -108 536 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -37 -116 536 ) ( -52 -160 490 ) ( -52 -152 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -52 -160 490 ) ( 37 -116 536 ) ( 37 -108 536 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 145
+{
+( 52 -160 490 ) ( -52 -160 490 ) ( 37 -116 536 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 37 -108 536 ) ( -52 -152 490 ) ( 52 -152 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 37 -116 536 ) ( -52 -160 490 ) ( -52 -152 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -52 -160 490 ) ( 52 -160 490 ) ( 52 -152 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 52 -160 490 ) ( 37 -116 536 ) ( 37 -108 536 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 146
+{
+( -136 -98 490 ) ( -99 -71 536 ) ( -37 -116 536 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -37 -116 528 ) ( -99 -71 528 ) ( -136 -98 482 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -37 -116 536 ) ( -99 -71 536 ) ( -99 -71 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -99 -71 536 ) ( -136 -98 490 ) ( -136 -98 482 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -136 -98 490 ) ( -37 -116 536 ) ( -37 -116 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 147
+{
+( -52 -160 490 ) ( -136 -98 490 ) ( -37 -116 536 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -37 -116 528 ) ( -136 -98 482 ) ( -52 -160 482 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -37 -116 536 ) ( -136 -98 490 ) ( -136 -98 482 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -136 -98 490 ) ( -52 -160 490 ) ( -52 -160 482 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -52 -160 490 ) ( -37 -116 536 ) ( -37 -116 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 148
+{
+( -168 0 490 ) ( -122 0 536 ) ( -99 -71 536 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -91 -71 536 ) ( -114 0 536 ) ( -160 0 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -99 -71 536 ) ( -122 0 536 ) ( -114 0 536 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -122 0 536 ) ( -168 0 490 ) ( -160 0 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -168 0 490 ) ( -99 -71 536 ) ( -91 -71 536 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 149
+{
+( -136 -98 490 ) ( -168 0 490 ) ( -99 -71 536 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -91 -71 536 ) ( -160 0 490 ) ( -128 -98 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -99 -71 536 ) ( -168 0 490 ) ( -160 0 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -168 0 490 ) ( -136 -98 490 ) ( -128 -98 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -136 -98 490 ) ( -99 -71 536 ) ( -91 -71 536 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 150
+{
+( -136 99 490 ) ( -99 72 536 ) ( -122 0 536 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -114 0 536 ) ( -91 72 536 ) ( -128 99 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -122 0 536 ) ( -99 72 536 ) ( -91 72 536 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -99 72 536 ) ( -136 99 490 ) ( -128 99 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -136 99 490 ) ( -122 0 536 ) ( -114 0 536 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 151
+{
+( -168 0 490 ) ( -136 99 490 ) ( -122 0 536 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -114 0 536 ) ( -128 99 490 ) ( -160 0 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -122 0 536 ) ( -136 99 490 ) ( -128 99 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -136 99 490 ) ( -168 0 490 ) ( -160 0 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -168 0 490 ) ( -122 0 536 ) ( -114 0 536 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 152
+{
+( -52 160 490 ) ( -37 116 536 ) ( -99 72 536 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -99 72 528 ) ( -37 116 528 ) ( -52 160 482 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -99 72 536 ) ( -37 116 536 ) ( -37 116 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -37 116 536 ) ( -52 160 490 ) ( -52 160 482 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -52 160 490 ) ( -99 72 536 ) ( -99 72 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 153
+{
+( -136 99 490 ) ( -52 160 490 ) ( -99 72 536 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -99 72 528 ) ( -52 160 482 ) ( -136 99 482 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -99 72 536 ) ( -52 160 490 ) ( -52 160 482 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -52 160 490 ) ( -136 99 490 ) ( -136 99 482 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -136 99 490 ) ( -99 72 536 ) ( -99 72 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 154
+{
+( 52 160 490 ) ( 37 116 536 ) ( -37 116 536 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -37 108 536 ) ( 37 108 536 ) ( 52 152 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -37 116 536 ) ( 37 116 536 ) ( 37 108 536 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 37 116 536 ) ( 52 160 490 ) ( 52 152 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 52 160 490 ) ( -37 116 536 ) ( -37 108 536 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 155
+{
+( -52 160 490 ) ( 52 160 490 ) ( -37 116 536 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -37 108 536 ) ( 52 152 490 ) ( -52 152 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -37 116 536 ) ( 52 160 490 ) ( 52 152 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 52 160 490 ) ( -52 160 490 ) ( -52 152 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -52 160 490 ) ( -37 116 536 ) ( -37 108 536 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 156
+{
+( 136 99 490 ) ( 99 72 536 ) ( 37 116 536 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 37 116 528 ) ( 99 72 528 ) ( 136 99 482 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 37 116 536 ) ( 99 72 536 ) ( 99 72 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 99 72 536 ) ( 136 99 490 ) ( 136 99 482 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 136 99 490 ) ( 37 116 536 ) ( 37 116 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 157
+{
+( 52 160 490 ) ( 136 99 490 ) ( 37 116 536 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 37 116 528 ) ( 136 99 482 ) ( 52 160 482 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 37 116 536 ) ( 136 99 490 ) ( 136 99 482 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 136 99 490 ) ( 52 160 490 ) ( 52 160 482 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 52 160 490 ) ( 37 116 536 ) ( 37 116 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 158
+{
+( 168 0 490 ) ( 122 0 536 ) ( 99 72 536 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 91 72 536 ) ( 114 0 536 ) ( 160 0 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 99 72 536 ) ( 122 0 536 ) ( 114 0 536 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 122 0 536 ) ( 168 0 490 ) ( 160 0 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 168 0 490 ) ( 99 72 536 ) ( 91 72 536 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 159
+{
+( 136 99 490 ) ( 168 0 490 ) ( 99 72 536 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 91 72 536 ) ( 160 0 490 ) ( 128 99 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 99 72 536 ) ( 168 0 490 ) ( 160 0 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 168 0 490 ) ( 136 99 490 ) ( 128 99 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 136 99 490 ) ( 99 72 536 ) ( 91 72 536 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 160
+{
+( 136 -98 490 ) ( 99 -71 536 ) ( 122 0 536 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 114 0 536 ) ( 91 -71 536 ) ( 128 -98 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 122 0 536 ) ( 99 -71 536 ) ( 91 -71 536 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 99 -71 536 ) ( 136 -98 490 ) ( 128 -98 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 136 -98 490 ) ( 122 0 536 ) ( 114 0 536 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 161
+{
+( 168 0 490 ) ( 136 -98 490 ) ( 122 0 536 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 114 0 536 ) ( 128 -98 490 ) ( 160 0 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 122 0 536 ) ( 136 -98 490 ) ( 128 -98 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 136 -98 490 ) ( 168 0 490 ) ( 160 0 490 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 168 0 490 ) ( 122 0 536 ) ( 114 0 536 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 162
+{
+( 37 -116 536 ) ( 19 -61 565 ) ( 52 -37 565 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 52 -37 557 ) ( 19 -61 557 ) ( 37 -116 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 52 -37 565 ) ( 19 -61 565 ) ( 19 -61 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 19 -61 565 ) ( 37 -116 536 ) ( 37 -116 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 37 -116 536 ) ( 52 -37 565 ) ( 52 -37 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 163
+{
+( 99 -71 536 ) ( 37 -116 536 ) ( 52 -37 565 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 52 -37 557 ) ( 37 -116 528 ) ( 99 -71 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 52 -37 565 ) ( 37 -116 536 ) ( 37 -116 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 37 -116 536 ) ( 99 -71 536 ) ( 99 -71 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 99 -71 536 ) ( 52 -37 565 ) ( 52 -37 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 164
+{
+( -37 -116 536 ) ( -19 -61 565 ) ( 19 -61 565 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 19 -61 557 ) ( -19 -61 557 ) ( -37 -116 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 19 -61 565 ) ( -19 -61 565 ) ( -19 -61 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -19 -61 565 ) ( -37 -116 536 ) ( -37 -116 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -37 -116 536 ) ( 19 -61 565 ) ( 19 -61 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 165
+{
+( 37 -116 536 ) ( -37 -116 536 ) ( 19 -61 565 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 19 -61 557 ) ( -37 -116 528 ) ( 37 -116 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 19 -61 565 ) ( -37 -116 536 ) ( -37 -116 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -37 -116 536 ) ( 37 -116 536 ) ( 37 -116 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 37 -116 536 ) ( 19 -61 565 ) ( 19 -61 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 166
+{
+( -99 -71 536 ) ( -52 -37 565 ) ( -19 -61 565 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -19 -61 557 ) ( -52 -37 557 ) ( -99 -71 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -19 -61 565 ) ( -52 -37 565 ) ( -52 -37 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -52 -37 565 ) ( -99 -71 536 ) ( -99 -71 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -99 -71 536 ) ( -19 -61 565 ) ( -19 -61 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 167
+{
+( -37 -116 536 ) ( -99 -71 536 ) ( -19 -61 565 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -19 -61 557 ) ( -99 -71 528 ) ( -37 -116 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -19 -61 565 ) ( -99 -71 536 ) ( -99 -71 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -99 -71 536 ) ( -37 -116 536 ) ( -37 -116 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -37 -116 536 ) ( -19 -61 565 ) ( -19 -61 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 168
+{
+( -122 0 536 ) ( -64 0 565 ) ( -52 -37 565 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -52 -37 557 ) ( -64 0 557 ) ( -122 0 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -52 -37 565 ) ( -64 0 565 ) ( -64 0 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -64 0 565 ) ( -122 0 536 ) ( -122 0 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -122 0 536 ) ( -52 -37 565 ) ( -52 -37 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 169
+{
+( -99 -71 536 ) ( -122 0 536 ) ( -52 -37 565 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -52 -37 557 ) ( -122 0 528 ) ( -99 -71 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -52 -37 565 ) ( -122 0 536 ) ( -122 0 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -122 0 536 ) ( -99 -71 536 ) ( -99 -71 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -99 -71 536 ) ( -52 -37 565 ) ( -52 -37 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 170
+{
+( -99 72 536 ) ( -52 37 565 ) ( -64 0 565 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -64 0 557 ) ( -52 37 557 ) ( -99 72 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -64 0 565 ) ( -52 37 565 ) ( -52 37 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -52 37 565 ) ( -99 72 536 ) ( -99 72 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -99 72 536 ) ( -64 0 565 ) ( -64 0 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 171
+{
+( -122 0 536 ) ( -99 72 536 ) ( -64 0 565 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -64 0 557 ) ( -99 72 528 ) ( -122 0 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -64 0 565 ) ( -99 72 536 ) ( -99 72 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -99 72 536 ) ( -122 0 536 ) ( -122 0 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -122 0 536 ) ( -64 0 565 ) ( -64 0 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 172
+{
+( -37 116 536 ) ( -19 61 565 ) ( -52 37 565 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -52 37 557 ) ( -19 61 557 ) ( -37 116 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -52 37 565 ) ( -19 61 565 ) ( -19 61 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -19 61 565 ) ( -37 116 536 ) ( -37 116 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -37 116 536 ) ( -52 37 565 ) ( -52 37 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 173
+{
+( -99 72 536 ) ( -37 116 536 ) ( -52 37 565 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -52 37 557 ) ( -37 116 528 ) ( -99 72 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -52 37 565 ) ( -37 116 536 ) ( -37 116 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -37 116 536 ) ( -99 72 536 ) ( -99 72 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -99 72 536 ) ( -52 37 565 ) ( -52 37 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 174
+{
+( 37 116 536 ) ( 19 61 565 ) ( -19 61 565 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -19 61 557 ) ( 19 61 557 ) ( 37 116 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -19 61 565 ) ( 19 61 565 ) ( 19 61 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 19 61 565 ) ( 37 116 536 ) ( 37 116 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 37 116 536 ) ( -19 61 565 ) ( -19 61 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 175
+{
+( -37 116 536 ) ( 37 116 536 ) ( -19 61 565 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -19 61 557 ) ( 37 116 528 ) ( -37 116 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -19 61 565 ) ( 37 116 536 ) ( 37 116 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 37 116 536 ) ( -37 116 536 ) ( -37 116 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -37 116 536 ) ( -19 61 565 ) ( -19 61 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 176
+{
+( 99 72 536 ) ( 52 37 565 ) ( 19 61 565 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 19 61 557 ) ( 52 37 557 ) ( 99 72 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 19 61 565 ) ( 52 37 565 ) ( 52 37 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 52 37 565 ) ( 99 72 536 ) ( 99 72 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 99 72 536 ) ( 19 61 565 ) ( 19 61 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 177
+{
+( 37 116 536 ) ( 99 72 536 ) ( 19 61 565 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 19 61 557 ) ( 99 72 528 ) ( 37 116 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 19 61 565 ) ( 99 72 536 ) ( 99 72 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 99 72 536 ) ( 37 116 536 ) ( 37 116 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 37 116 536 ) ( 19 61 565 ) ( 19 61 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 178
+{
+( 122 0 536 ) ( 64 0 565 ) ( 52 37 565 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 52 37 557 ) ( 64 0 557 ) ( 122 0 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 52 37 565 ) ( 64 0 565 ) ( 64 0 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 64 0 565 ) ( 122 0 536 ) ( 122 0 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 122 0 536 ) ( 52 37 565 ) ( 52 37 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 179
+{
+( 99 72 536 ) ( 122 0 536 ) ( 52 37 565 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 52 37 557 ) ( 122 0 528 ) ( 99 72 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 52 37 565 ) ( 122 0 536 ) ( 122 0 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 122 0 536 ) ( 99 72 536 ) ( 99 72 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 99 72 536 ) ( 52 37 565 ) ( 52 37 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 180
+{
+( 99 -71 536 ) ( 52 -37 565 ) ( 64 0 565 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 64 0 557 ) ( 52 -37 557 ) ( 99 -71 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 64 0 565 ) ( 52 -37 565 ) ( 52 -37 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 52 -37 565 ) ( 99 -71 536 ) ( 99 -71 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 99 -71 536 ) ( 64 0 565 ) ( 64 0 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 181
+{
+( 122 0 536 ) ( 99 -71 536 ) ( 64 0 565 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 64 0 557 ) ( 99 -71 528 ) ( 122 0 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 64 0 565 ) ( 99 -71 536 ) ( 99 -71 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 99 -71 536 ) ( 122 0 536 ) ( 122 0 528 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 122 0 536 ) ( 64 0 565 ) ( 64 0 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 182
+{
+( 52 -37 565 ) ( 19 -61 565 ) ( 0 0 576 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 568 ) ( 19 -61 557 ) ( 52 -37 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 576 ) ( 19 -61 565 ) ( 19 -61 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 19 -61 565 ) ( 52 -37 565 ) ( 52 -37 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 52 -37 565 ) ( 0 0 576 ) ( 0 0 568 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 183
+{
+( 19 -61 565 ) ( -19 -61 565 ) ( 0 0 576 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 568 ) ( -19 -61 557 ) ( 19 -61 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 576 ) ( -19 -61 565 ) ( -19 -61 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -19 -61 565 ) ( 19 -61 565 ) ( 19 -61 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 19 -61 565 ) ( 0 0 576 ) ( 0 0 568 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 184
+{
+( -19 -61 565 ) ( -52 -37 565 ) ( 0 0 576 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 568 ) ( -52 -37 557 ) ( -19 -61 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 576 ) ( -52 -37 565 ) ( -52 -37 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -52 -37 565 ) ( -19 -61 565 ) ( -19 -61 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -19 -61 565 ) ( 0 0 576 ) ( 0 0 568 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 185
+{
+( -52 -37 565 ) ( -64 0 565 ) ( 0 0 576 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 568 ) ( -64 0 557 ) ( -52 -37 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 576 ) ( -64 0 565 ) ( -64 0 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -64 0 565 ) ( -52 -37 565 ) ( -52 -37 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -52 -37 565 ) ( 0 0 576 ) ( 0 0 568 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 186
+{
+( -64 0 565 ) ( -52 37 565 ) ( 0 0 576 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 568 ) ( -52 37 557 ) ( -64 0 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 576 ) ( -52 37 565 ) ( -52 37 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -52 37 565 ) ( -64 0 565 ) ( -64 0 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -64 0 565 ) ( 0 0 576 ) ( 0 0 568 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 187
+{
+( -52 37 565 ) ( -19 61 565 ) ( 0 0 576 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 568 ) ( -19 61 557 ) ( -52 37 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 576 ) ( -19 61 565 ) ( -19 61 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -19 61 565 ) ( -52 37 565 ) ( -52 37 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -52 37 565 ) ( 0 0 576 ) ( 0 0 568 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 188
+{
+( -19 61 565 ) ( 19 61 565 ) ( 0 0 576 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 568 ) ( 19 61 557 ) ( -19 61 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 576 ) ( 19 61 565 ) ( 19 61 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 19 61 565 ) ( -19 61 565 ) ( -19 61 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -19 61 565 ) ( 0 0 576 ) ( 0 0 568 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 189
+{
+( 19 61 565 ) ( 52 37 565 ) ( 0 0 576 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 568 ) ( 52 37 557 ) ( 19 61 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 576 ) ( 52 37 565 ) ( 52 37 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 52 37 565 ) ( 19 61 565 ) ( 19 61 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 19 61 565 ) ( 0 0 576 ) ( 0 0 568 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 190
+{
+( 52 37 565 ) ( 64 0 565 ) ( 0 0 576 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 568 ) ( 64 0 557 ) ( 52 37 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 576 ) ( 64 0 565 ) ( 64 0 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 64 0 565 ) ( 52 37 565 ) ( 52 37 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 52 37 565 ) ( 0 0 576 ) ( 0 0 568 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 191
+{
+( 64 0 565 ) ( 52 -37 565 ) ( 0 0 576 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 568 ) ( 52 -37 557 ) ( 64 0 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 576 ) ( 52 -37 565 ) ( 52 -37 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 52 -37 565 ) ( 64 0 565 ) ( 64 0 557 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 64 0 565 ) ( 0 0 576 ) ( 0 0 568 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 192
+{
+( 249 -432 333 ) ( 241 -418 348 ) ( 418 -241 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 418 -241 340 ) ( 241 -418 340 ) ( 249 -432 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 418 -241 348 ) ( 241 -418 348 ) ( 241 -418 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 241 -418 348 ) ( 249 -432 333 ) ( 249 -432 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 249 -432 333 ) ( 418 -241 348 ) ( 418 -241 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 193
+{
+( 432 -249 333 ) ( 249 -432 333 ) ( 418 -241 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 418 -241 340 ) ( 249 -432 325 ) ( 432 -249 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 418 -241 348 ) ( 249 -432 333 ) ( 249 -432 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 249 -432 333 ) ( 432 -249 333 ) ( 432 -249 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 432 -249 333 ) ( 418 -241 348 ) ( 418 -241 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 194
+{
+( 0 -499 333 ) ( 0 -482 348 ) ( 241 -418 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 241 -418 340 ) ( 0 -482 340 ) ( 0 -499 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 241 -418 348 ) ( 0 -482 348 ) ( 0 -482 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 -482 348 ) ( 0 -499 333 ) ( 0 -499 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 -499 333 ) ( 241 -418 348 ) ( 241 -418 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 195
+{
+( 249 -432 333 ) ( 0 -499 333 ) ( 241 -418 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 241 -418 340 ) ( 0 -499 325 ) ( 249 -432 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 241 -418 348 ) ( 0 -499 333 ) ( 0 -499 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 -499 333 ) ( 249 -432 333 ) ( 249 -432 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 249 -432 333 ) ( 241 -418 348 ) ( 241 -418 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 196
+{
+( -250 -432 333 ) ( -241 -418 348 ) ( 0 -482 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 -482 340 ) ( -241 -418 340 ) ( -250 -432 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 -482 348 ) ( -241 -418 348 ) ( -241 -418 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -241 -418 348 ) ( -250 -432 333 ) ( -250 -432 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -250 -432 333 ) ( 0 -482 348 ) ( 0 -482 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 197
+{
+( 0 -499 333 ) ( -250 -432 333 ) ( 0 -482 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 -482 340 ) ( -250 -432 325 ) ( 0 -499 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 -482 348 ) ( -250 -432 333 ) ( -250 -432 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -250 -432 333 ) ( 0 -499 333 ) ( 0 -499 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 -499 333 ) ( 0 -482 348 ) ( 0 -482 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 198
+{
+( -433 -249 333 ) ( -418 -241 348 ) ( -241 -418 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -241 -418 340 ) ( -418 -241 340 ) ( -433 -249 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -241 -418 348 ) ( -418 -241 348 ) ( -418 -241 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -418 -241 348 ) ( -433 -249 333 ) ( -433 -249 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -433 -249 333 ) ( -241 -418 348 ) ( -241 -418 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 199
+{
+( -250 -432 333 ) ( -433 -249 333 ) ( -241 -418 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -241 -418 340 ) ( -433 -249 325 ) ( -250 -432 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -241 -418 348 ) ( -433 -249 333 ) ( -433 -249 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -433 -249 333 ) ( -250 -432 333 ) ( -250 -432 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -250 -432 333 ) ( -241 -418 348 ) ( -241 -418 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 200
+{
+( -500 0 333 ) ( -483 0 348 ) ( -418 -241 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -418 -241 340 ) ( -483 0 340 ) ( -500 0 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -418 -241 348 ) ( -483 0 348 ) ( -483 0 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -483 0 348 ) ( -500 0 333 ) ( -500 0 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -500 0 333 ) ( -418 -241 348 ) ( -418 -241 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 201
+{
+( -433 -249 333 ) ( -500 0 333 ) ( -418 -241 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -418 -241 340 ) ( -500 0 325 ) ( -433 -249 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -418 -241 348 ) ( -500 0 333 ) ( -500 0 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -500 0 333 ) ( -433 -249 333 ) ( -433 -249 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -433 -249 333 ) ( -418 -241 348 ) ( -418 -241 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 202
+{
+( -433 250 333 ) ( -418 241 348 ) ( -483 0 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -483 0 340 ) ( -418 241 340 ) ( -433 250 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -483 0 348 ) ( -418 241 348 ) ( -418 241 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -418 241 348 ) ( -433 250 333 ) ( -433 250 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -433 250 333 ) ( -483 0 348 ) ( -483 0 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 203
+{
+( -500 0 333 ) ( -433 250 333 ) ( -483 0 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -483 0 340 ) ( -433 250 325 ) ( -500 0 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -483 0 348 ) ( -433 250 333 ) ( -433 250 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -433 250 333 ) ( -500 0 333 ) ( -500 0 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -500 0 333 ) ( -483 0 348 ) ( -483 0 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 204
+{
+( -250 433 333 ) ( -241 418 348 ) ( -418 241 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -418 241 340 ) ( -241 418 340 ) ( -250 433 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -418 241 348 ) ( -241 418 348 ) ( -241 418 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -241 418 348 ) ( -250 433 333 ) ( -250 433 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -250 433 333 ) ( -418 241 348 ) ( -418 241 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 205
+{
+( -433 250 333 ) ( -250 433 333 ) ( -418 241 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -418 241 340 ) ( -250 433 325 ) ( -433 250 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -418 241 348 ) ( -250 433 333 ) ( -250 433 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -250 433 333 ) ( -433 250 333 ) ( -433 250 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -433 250 333 ) ( -418 241 348 ) ( -418 241 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 206
+{
+( 0 500 333 ) ( 0 483 348 ) ( -241 418 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -241 418 340 ) ( 0 483 340 ) ( 0 500 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -241 418 348 ) ( 0 483 348 ) ( 0 483 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 483 348 ) ( 0 500 333 ) ( 0 500 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 500 333 ) ( -241 418 348 ) ( -241 418 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 207
+{
+( -250 433 333 ) ( 0 500 333 ) ( -241 418 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -241 418 340 ) ( 0 500 325 ) ( -250 433 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -241 418 348 ) ( 0 500 333 ) ( 0 500 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 500 333 ) ( -250 433 333 ) ( -250 433 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -250 433 333 ) ( -241 418 348 ) ( -241 418 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 208
+{
+( 249 433 333 ) ( 241 418 348 ) ( 0 483 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 483 340 ) ( 241 418 340 ) ( 249 433 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 483 348 ) ( 241 418 348 ) ( 241 418 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 241 418 348 ) ( 249 433 333 ) ( 249 433 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 249 433 333 ) ( 0 483 348 ) ( 0 483 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 209
+{
+( 0 500 333 ) ( 249 433 333 ) ( 0 483 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 483 340 ) ( 249 433 325 ) ( 0 500 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 483 348 ) ( 249 433 333 ) ( 249 433 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 249 433 333 ) ( 0 500 333 ) ( 0 500 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 500 333 ) ( 0 483 348 ) ( 0 483 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 210
+{
+( 432 250 333 ) ( 418 241 348 ) ( 241 418 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 241 418 340 ) ( 418 241 340 ) ( 432 250 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 241 418 348 ) ( 418 241 348 ) ( 418 241 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 418 241 348 ) ( 432 250 333 ) ( 432 250 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 432 250 333 ) ( 241 418 348 ) ( 241 418 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 211
+{
+( 249 433 333 ) ( 432 250 333 ) ( 241 418 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 241 418 340 ) ( 432 250 325 ) ( 249 433 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 241 418 348 ) ( 432 250 333 ) ( 432 250 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 432 250 333 ) ( 249 433 333 ) ( 249 433 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 249 433 333 ) ( 241 418 348 ) ( 241 418 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 212
+{
+( 499 0 333 ) ( 482 0 348 ) ( 418 241 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 418 241 340 ) ( 482 0 340 ) ( 499 0 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 418 241 348 ) ( 482 0 348 ) ( 482 0 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 482 0 348 ) ( 499 0 333 ) ( 499 0 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 499 0 333 ) ( 418 241 348 ) ( 418 241 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 213
+{
+( 432 250 333 ) ( 499 0 333 ) ( 418 241 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 418 241 340 ) ( 499 0 325 ) ( 432 250 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 418 241 348 ) ( 499 0 333 ) ( 499 0 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 499 0 333 ) ( 432 250 333 ) ( 432 250 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 432 250 333 ) ( 418 241 348 ) ( 418 241 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 214
+{
+( 432 -249 333 ) ( 418 -241 348 ) ( 482 0 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 482 0 340 ) ( 418 -241 340 ) ( 432 -249 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 482 0 348 ) ( 418 -241 348 ) ( 418 -241 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 418 -241 348 ) ( 432 -249 333 ) ( 432 -249 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 432 -249 333 ) ( 482 0 348 ) ( 482 0 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 215
+{
+( 499 0 333 ) ( 432 -249 333 ) ( 482 0 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 482 0 340 ) ( 432 -249 325 ) ( 499 0 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 482 0 348 ) ( 432 -249 333 ) ( 432 -249 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 432 -249 333 ) ( 499 0 333 ) ( 499 0 325 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 499 0 333 ) ( 482 0 348 ) ( 482 0 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 216
+{
+( 241 -418 348 ) ( 230 -399 356 ) ( 399 -230 356 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 399 -230 348 ) ( 230 -399 348 ) ( 241 -418 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 399 -230 356 ) ( 230 -399 356 ) ( 230 -399 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 230 -399 356 ) ( 241 -418 348 ) ( 241 -418 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 241 -418 348 ) ( 399 -230 356 ) ( 399 -230 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 217
+{
+( 418 -241 348 ) ( 241 -418 348 ) ( 399 -230 356 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 399 -230 348 ) ( 241 -418 340 ) ( 418 -241 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 399 -230 356 ) ( 241 -418 348 ) ( 241 -418 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 241 -418 348 ) ( 418 -241 348 ) ( 418 -241 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 418 -241 348 ) ( 399 -230 356 ) ( 399 -230 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 218
+{
+( 0 -482 348 ) ( 0 -461 356 ) ( 230 -399 356 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 230 -399 348 ) ( 0 -461 348 ) ( 0 -482 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 230 -399 356 ) ( 0 -461 356 ) ( 0 -461 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 -461 356 ) ( 0 -482 348 ) ( 0 -482 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 -482 348 ) ( 230 -399 356 ) ( 230 -399 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 219
+{
+( 241 -418 348 ) ( 0 -482 348 ) ( 230 -399 356 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 230 -399 348 ) ( 0 -482 340 ) ( 241 -418 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 230 -399 356 ) ( 0 -482 348 ) ( 0 -482 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 -482 348 ) ( 241 -418 348 ) ( 241 -418 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 241 -418 348 ) ( 230 -399 356 ) ( 230 -399 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 220
+{
+( -241 -418 348 ) ( -230 -399 356 ) ( 0 -461 356 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 -461 348 ) ( -230 -399 348 ) ( -241 -418 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 -461 356 ) ( -230 -399 356 ) ( -230 -399 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -230 -399 356 ) ( -241 -418 348 ) ( -241 -418 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -241 -418 348 ) ( 0 -461 356 ) ( 0 -461 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 221
+{
+( 0 -482 348 ) ( -241 -418 348 ) ( 0 -461 356 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 -461 348 ) ( -241 -418 340 ) ( 0 -482 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 -461 356 ) ( -241 -418 348 ) ( -241 -418 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -241 -418 348 ) ( 0 -482 348 ) ( 0 -482 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 -482 348 ) ( 0 -461 356 ) ( 0 -461 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 222
+{
+( -418 -241 348 ) ( -399 -230 356 ) ( -230 -399 356 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -230 -399 348 ) ( -399 -230 348 ) ( -418 -241 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -230 -399 356 ) ( -399 -230 356 ) ( -399 -230 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -399 -230 356 ) ( -418 -241 348 ) ( -418 -241 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -418 -241 348 ) ( -230 -399 356 ) ( -230 -399 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 223
+{
+( -241 -418 348 ) ( -418 -241 348 ) ( -230 -399 356 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -230 -399 348 ) ( -418 -241 340 ) ( -241 -418 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -230 -399 356 ) ( -418 -241 348 ) ( -418 -241 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -418 -241 348 ) ( -241 -418 348 ) ( -241 -418 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -241 -418 348 ) ( -230 -399 356 ) ( -230 -399 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 224
+{
+( -483 0 348 ) ( -461 0 356 ) ( -399 -230 356 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -399 -230 348 ) ( -461 0 348 ) ( -483 0 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -399 -230 356 ) ( -461 0 356 ) ( -461 0 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -461 0 356 ) ( -483 0 348 ) ( -483 0 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -483 0 348 ) ( -399 -230 356 ) ( -399 -230 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 225
+{
+( -418 -241 348 ) ( -483 0 348 ) ( -399 -230 356 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -399 -230 348 ) ( -483 0 340 ) ( -418 -241 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -399 -230 356 ) ( -483 0 348 ) ( -483 0 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -483 0 348 ) ( -418 -241 348 ) ( -418 -241 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -418 -241 348 ) ( -399 -230 356 ) ( -399 -230 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 226
+{
+( -418 241 348 ) ( -399 230 356 ) ( -461 0 356 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -461 0 348 ) ( -399 230 348 ) ( -418 241 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -461 0 356 ) ( -399 230 356 ) ( -399 230 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -399 230 356 ) ( -418 241 348 ) ( -418 241 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -418 241 348 ) ( -461 0 356 ) ( -461 0 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 227
+{
+( -483 0 348 ) ( -418 241 348 ) ( -461 0 356 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -461 0 348 ) ( -418 241 340 ) ( -483 0 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -461 0 356 ) ( -418 241 348 ) ( -418 241 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -418 241 348 ) ( -483 0 348 ) ( -483 0 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -483 0 348 ) ( -461 0 356 ) ( -461 0 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 228
+{
+( -241 418 348 ) ( -230 399 356 ) ( -399 230 356 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -399 230 348 ) ( -230 399 348 ) ( -241 418 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -399 230 356 ) ( -230 399 356 ) ( -230 399 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -230 399 356 ) ( -241 418 348 ) ( -241 418 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -241 418 348 ) ( -399 230 356 ) ( -399 230 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 229
+{
+( -418 241 348 ) ( -241 418 348 ) ( -399 230 356 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -399 230 348 ) ( -241 418 340 ) ( -418 241 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -399 230 356 ) ( -241 418 348 ) ( -241 418 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -241 418 348 ) ( -418 241 348 ) ( -418 241 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -418 241 348 ) ( -399 230 356 ) ( -399 230 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 230
+{
+( 0 483 348 ) ( 0 461 356 ) ( -230 399 356 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -230 399 348 ) ( 0 461 348 ) ( 0 483 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -230 399 356 ) ( 0 461 356 ) ( 0 461 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 461 356 ) ( 0 483 348 ) ( 0 483 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 483 348 ) ( -230 399 356 ) ( -230 399 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 231
+{
+( -241 418 348 ) ( 0 483 348 ) ( -230 399 356 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -230 399 348 ) ( 0 483 340 ) ( -241 418 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -230 399 356 ) ( 0 483 348 ) ( 0 483 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 483 348 ) ( -241 418 348 ) ( -241 418 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -241 418 348 ) ( -230 399 356 ) ( -230 399 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 232
+{
+( 241 418 348 ) ( 230 399 356 ) ( 0 461 356 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 461 348 ) ( 230 399 348 ) ( 241 418 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 461 356 ) ( 230 399 356 ) ( 230 399 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 230 399 356 ) ( 241 418 348 ) ( 241 418 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 241 418 348 ) ( 0 461 356 ) ( 0 461 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 233
+{
+( 0 483 348 ) ( 241 418 348 ) ( 0 461 356 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 461 348 ) ( 241 418 340 ) ( 0 483 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 461 356 ) ( 241 418 348 ) ( 241 418 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 241 418 348 ) ( 0 483 348 ) ( 0 483 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 483 348 ) ( 0 461 356 ) ( 0 461 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 234
+{
+( 418 241 348 ) ( 399 230 356 ) ( 230 399 356 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 230 399 348 ) ( 399 230 348 ) ( 418 241 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 230 399 356 ) ( 399 230 356 ) ( 399 230 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 399 230 356 ) ( 418 241 348 ) ( 418 241 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 418 241 348 ) ( 230 399 356 ) ( 230 399 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 235
+{
+( 241 418 348 ) ( 418 241 348 ) ( 230 399 356 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 230 399 348 ) ( 418 241 340 ) ( 241 418 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 230 399 356 ) ( 418 241 348 ) ( 418 241 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 418 241 348 ) ( 241 418 348 ) ( 241 418 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 241 418 348 ) ( 230 399 356 ) ( 230 399 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 236
+{
+( 482 0 348 ) ( 461 0 356 ) ( 399 230 356 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 399 230 348 ) ( 461 0 348 ) ( 482 0 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 399 230 356 ) ( 461 0 356 ) ( 461 0 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 461 0 356 ) ( 482 0 348 ) ( 482 0 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 482 0 348 ) ( 399 230 356 ) ( 399 230 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 237
+{
+( 418 241 348 ) ( 482 0 348 ) ( 399 230 356 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 399 230 348 ) ( 482 0 340 ) ( 418 241 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 399 230 356 ) ( 482 0 348 ) ( 482 0 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 482 0 348 ) ( 418 241 348 ) ( 418 241 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 418 241 348 ) ( 399 230 356 ) ( 399 230 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 238
+{
+( 418 -241 348 ) ( 399 -230 356 ) ( 461 0 356 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 461 0 348 ) ( 399 -230 348 ) ( 418 -241 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 461 0 356 ) ( 399 -230 356 ) ( 399 -230 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 399 -230 356 ) ( 418 -241 348 ) ( 418 -241 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 418 -241 348 ) ( 461 0 356 ) ( 461 0 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 239
+{
+( 482 0 348 ) ( 418 -241 348 ) ( 461 0 356 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 461 0 348 ) ( 418 -241 340 ) ( 482 0 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 461 0 356 ) ( 418 -241 348 ) ( 418 -241 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 418 -241 348 ) ( 482 0 348 ) ( 482 0 340 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 482 0 348 ) ( 461 0 356 ) ( 461 0 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 240
+{
+( 230 -399 356 ) ( 218 -378 361 ) ( 378 -218 361 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 378 -218 353 ) ( 218 -378 353 ) ( 230 -399 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 378 -218 361 ) ( 218 -378 361 ) ( 218 -378 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 218 -378 361 ) ( 230 -399 356 ) ( 230 -399 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 230 -399 356 ) ( 378 -218 361 ) ( 378 -218 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 241
+{
+( 399 -230 356 ) ( 230 -399 356 ) ( 378 -218 361 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 378 -218 353 ) ( 230 -399 348 ) ( 399 -230 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 378 -218 361 ) ( 230 -399 356 ) ( 230 -399 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 230 -399 356 ) ( 399 -230 356 ) ( 399 -230 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 399 -230 356 ) ( 378 -218 361 ) ( 378 -218 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 242
+{
+( 0 -461 356 ) ( 0 -437 361 ) ( 218 -378 361 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 218 -378 353 ) ( 0 -437 353 ) ( 0 -461 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 218 -378 361 ) ( 0 -437 361 ) ( 0 -437 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 -437 361 ) ( 0 -461 356 ) ( 0 -461 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 -461 356 ) ( 218 -378 361 ) ( 218 -378 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 243
+{
+( 230 -399 356 ) ( 0 -461 356 ) ( 218 -378 361 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 218 -378 353 ) ( 0 -461 348 ) ( 230 -399 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 218 -378 361 ) ( 0 -461 356 ) ( 0 -461 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 -461 356 ) ( 230 -399 356 ) ( 230 -399 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 230 -399 356 ) ( 218 -378 361 ) ( 218 -378 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 244
+{
+( -230 -399 356 ) ( -218 -378 361 ) ( 0 -437 361 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 -437 353 ) ( -218 -378 353 ) ( -230 -399 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 -437 361 ) ( -218 -378 361 ) ( -218 -378 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -218 -378 361 ) ( -230 -399 356 ) ( -230 -399 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -230 -399 356 ) ( 0 -437 361 ) ( 0 -437 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 245
+{
+( 0 -461 356 ) ( -230 -399 356 ) ( 0 -437 361 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 -437 353 ) ( -230 -399 348 ) ( 0 -461 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 -437 361 ) ( -230 -399 356 ) ( -230 -399 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -230 -399 356 ) ( 0 -461 356 ) ( 0 -461 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 -461 356 ) ( 0 -437 361 ) ( 0 -437 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 246
+{
+( -399 -230 356 ) ( -379 -218 361 ) ( -218 -378 361 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -218 -378 353 ) ( -379 -218 353 ) ( -399 -230 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -218 -378 361 ) ( -379 -218 361 ) ( -379 -218 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -379 -218 361 ) ( -399 -230 356 ) ( -399 -230 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -399 -230 356 ) ( -218 -378 361 ) ( -218 -378 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 247
+{
+( -230 -399 356 ) ( -399 -230 356 ) ( -218 -378 361 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -218 -378 353 ) ( -399 -230 348 ) ( -230 -399 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -218 -378 361 ) ( -399 -230 356 ) ( -399 -230 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -399 -230 356 ) ( -230 -399 356 ) ( -230 -399 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -230 -399 356 ) ( -218 -378 361 ) ( -218 -378 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 248
+{
+( -461 0 356 ) ( -437 0 361 ) ( -379 -218 361 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -379 -218 353 ) ( -437 0 353 ) ( -461 0 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -379 -218 361 ) ( -437 0 361 ) ( -437 0 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -437 0 361 ) ( -461 0 356 ) ( -461 0 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -461 0 356 ) ( -379 -218 361 ) ( -379 -218 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 249
+{
+( -399 -230 356 ) ( -461 0 356 ) ( -379 -218 361 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -379 -218 353 ) ( -461 0 348 ) ( -399 -230 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -379 -218 361 ) ( -461 0 356 ) ( -461 0 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -461 0 356 ) ( -399 -230 356 ) ( -399 -230 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -399 -230 356 ) ( -379 -218 361 ) ( -379 -218 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 250
+{
+( -399 230 356 ) ( -379 218 361 ) ( -437 0 361 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -437 0 353 ) ( -379 218 353 ) ( -399 230 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -437 0 361 ) ( -379 218 361 ) ( -379 218 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -379 218 361 ) ( -399 230 356 ) ( -399 230 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -399 230 356 ) ( -437 0 361 ) ( -437 0 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 251
+{
+( -461 0 356 ) ( -399 230 356 ) ( -437 0 361 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -437 0 353 ) ( -399 230 348 ) ( -461 0 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -437 0 361 ) ( -399 230 356 ) ( -399 230 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -399 230 356 ) ( -461 0 356 ) ( -461 0 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -461 0 356 ) ( -437 0 361 ) ( -437 0 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 252
+{
+( -230 399 356 ) ( -218 379 361 ) ( -379 218 361 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -379 218 353 ) ( -218 379 353 ) ( -230 399 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -379 218 361 ) ( -218 379 361 ) ( -218 379 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -218 379 361 ) ( -230 399 356 ) ( -230 399 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -230 399 356 ) ( -379 218 361 ) ( -379 218 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 253
+{
+( -399 230 356 ) ( -230 399 356 ) ( -379 218 361 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -379 218 353 ) ( -230 399 348 ) ( -399 230 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -379 218 361 ) ( -230 399 356 ) ( -230 399 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -230 399 356 ) ( -399 230 356 ) ( -399 230 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -399 230 356 ) ( -379 218 361 ) ( -379 218 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 254
+{
+( 0 461 356 ) ( 0 437 361 ) ( -218 379 361 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -218 379 353 ) ( 0 437 353 ) ( 0 461 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -218 379 361 ) ( 0 437 361 ) ( 0 437 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 437 361 ) ( 0 461 356 ) ( 0 461 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 461 356 ) ( -218 379 361 ) ( -218 379 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 255
+{
+( -230 399 356 ) ( 0 461 356 ) ( -218 379 361 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -218 379 353 ) ( 0 461 348 ) ( -230 399 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -218 379 361 ) ( 0 461 356 ) ( 0 461 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 461 356 ) ( -230 399 356 ) ( -230 399 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -230 399 356 ) ( -218 379 361 ) ( -218 379 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 256
+{
+( 230 399 356 ) ( 218 379 361 ) ( 0 437 361 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 437 353 ) ( 218 379 353 ) ( 230 399 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 437 361 ) ( 218 379 361 ) ( 218 379 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 218 379 361 ) ( 230 399 356 ) ( 230 399 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 230 399 356 ) ( 0 437 361 ) ( 0 437 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 257
+{
+( 0 461 356 ) ( 230 399 356 ) ( 0 437 361 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 437 353 ) ( 230 399 348 ) ( 0 461 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 437 361 ) ( 230 399 356 ) ( 230 399 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 230 399 356 ) ( 0 461 356 ) ( 0 461 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 461 356 ) ( 0 437 361 ) ( 0 437 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 258
+{
+( 399 230 356 ) ( 378 218 361 ) ( 218 379 361 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 218 379 353 ) ( 378 218 353 ) ( 399 230 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 218 379 361 ) ( 378 218 361 ) ( 378 218 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 378 218 361 ) ( 399 230 356 ) ( 399 230 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 399 230 356 ) ( 218 379 361 ) ( 218 379 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 259
+{
+( 230 399 356 ) ( 399 230 356 ) ( 218 379 361 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 218 379 353 ) ( 399 230 348 ) ( 230 399 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 218 379 361 ) ( 399 230 356 ) ( 399 230 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 399 230 356 ) ( 230 399 356 ) ( 230 399 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 230 399 356 ) ( 218 379 361 ) ( 218 379 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 260
+{
+( 461 0 356 ) ( 437 0 361 ) ( 378 218 361 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 378 218 353 ) ( 437 0 353 ) ( 461 0 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 378 218 361 ) ( 437 0 361 ) ( 437 0 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 437 0 361 ) ( 461 0 356 ) ( 461 0 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 461 0 356 ) ( 378 218 361 ) ( 378 218 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 261
+{
+( 399 230 356 ) ( 461 0 356 ) ( 378 218 361 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 378 218 353 ) ( 461 0 348 ) ( 399 230 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 378 218 361 ) ( 461 0 356 ) ( 461 0 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 461 0 356 ) ( 399 230 356 ) ( 399 230 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 399 230 356 ) ( 378 218 361 ) ( 378 218 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 262
+{
+( 399 -230 356 ) ( 378 -218 361 ) ( 437 0 361 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 437 0 353 ) ( 378 -218 353 ) ( 399 -230 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 437 0 361 ) ( 378 -218 361 ) ( 378 -218 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 378 -218 361 ) ( 399 -230 356 ) ( 399 -230 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 399 -230 356 ) ( 437 0 361 ) ( 437 0 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 263
+{
+( 461 0 356 ) ( 399 -230 356 ) ( 437 0 361 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 437 0 353 ) ( 399 -230 348 ) ( 461 0 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 437 0 361 ) ( 399 -230 356 ) ( 399 -230 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 399 -230 356 ) ( 461 0 356 ) ( 461 0 348 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 461 0 356 ) ( 437 0 361 ) ( 437 0 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 264
+{
+( 218 -378 361 ) ( 154 -267 367 ) ( 267 -154 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 267 -154 359 ) ( 154 -267 359 ) ( 218 -378 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 267 -154 367 ) ( 154 -267 367 ) ( 154 -267 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 154 -267 367 ) ( 218 -378 361 ) ( 218 -378 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 218 -378 361 ) ( 267 -154 367 ) ( 267 -154 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 265
+{
+( 378 -218 361 ) ( 218 -378 361 ) ( 267 -154 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 267 -154 359 ) ( 218 -378 353 ) ( 378 -218 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 267 -154 367 ) ( 218 -378 361 ) ( 218 -378 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 218 -378 361 ) ( 378 -218 361 ) ( 378 -218 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 378 -218 361 ) ( 267 -154 367 ) ( 267 -154 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 266
+{
+( 0 -437 361 ) ( 0 -309 367 ) ( 154 -267 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 154 -267 359 ) ( 0 -309 359 ) ( 0 -437 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 154 -267 367 ) ( 0 -309 367 ) ( 0 -309 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 -309 367 ) ( 0 -437 361 ) ( 0 -437 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 -437 361 ) ( 154 -267 367 ) ( 154 -267 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 267
+{
+( 218 -378 361 ) ( 0 -437 361 ) ( 154 -267 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 154 -267 359 ) ( 0 -437 353 ) ( 218 -378 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 154 -267 367 ) ( 0 -437 361 ) ( 0 -437 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 -437 361 ) ( 218 -378 361 ) ( 218 -378 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 218 -378 361 ) ( 154 -267 367 ) ( 154 -267 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 268
+{
+( -218 -378 361 ) ( -154 -267 367 ) ( 0 -309 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 -309 359 ) ( -154 -267 359 ) ( -218 -378 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 -309 367 ) ( -154 -267 367 ) ( -154 -267 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -154 -267 367 ) ( -218 -378 361 ) ( -218 -378 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -218 -378 361 ) ( 0 -309 367 ) ( 0 -309 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 269
+{
+( 0 -437 361 ) ( -218 -378 361 ) ( 0 -309 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 -309 359 ) ( -218 -378 353 ) ( 0 -437 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 -309 367 ) ( -218 -378 361 ) ( -218 -378 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -218 -378 361 ) ( 0 -437 361 ) ( 0 -437 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 -437 361 ) ( 0 -309 367 ) ( 0 -309 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 270
+{
+( -379 -218 361 ) ( -268 -154 367 ) ( -154 -267 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -154 -267 359 ) ( -268 -154 359 ) ( -379 -218 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -154 -267 367 ) ( -268 -154 367 ) ( -268 -154 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -268 -154 367 ) ( -379 -218 361 ) ( -379 -218 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -379 -218 361 ) ( -154 -267 367 ) ( -154 -267 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 271
+{
+( -218 -378 361 ) ( -379 -218 361 ) ( -154 -267 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -154 -267 359 ) ( -379 -218 353 ) ( -218 -378 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -154 -267 367 ) ( -379 -218 361 ) ( -379 -218 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -379 -218 361 ) ( -218 -378 361 ) ( -218 -378 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -218 -378 361 ) ( -154 -267 367 ) ( -154 -267 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 272
+{
+( -437 0 361 ) ( -309 0 367 ) ( -268 -154 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -268 -154 359 ) ( -309 0 359 ) ( -437 0 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -268 -154 367 ) ( -309 0 367 ) ( -309 0 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -309 0 367 ) ( -437 0 361 ) ( -437 0 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -437 0 361 ) ( -268 -154 367 ) ( -268 -154 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 273
+{
+( -379 -218 361 ) ( -437 0 361 ) ( -268 -154 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -268 -154 359 ) ( -437 0 353 ) ( -379 -218 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -268 -154 367 ) ( -437 0 361 ) ( -437 0 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -437 0 361 ) ( -379 -218 361 ) ( -379 -218 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -379 -218 361 ) ( -268 -154 367 ) ( -268 -154 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 274
+{
+( -379 218 361 ) ( -268 154 367 ) ( -309 0 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -309 0 359 ) ( -268 154 359 ) ( -379 218 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -309 0 367 ) ( -268 154 367 ) ( -268 154 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -268 154 367 ) ( -379 218 361 ) ( -379 218 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -379 218 361 ) ( -309 0 367 ) ( -309 0 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 275
+{
+( -437 0 361 ) ( -379 218 361 ) ( -309 0 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -309 0 359 ) ( -379 218 353 ) ( -437 0 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -309 0 367 ) ( -379 218 361 ) ( -379 218 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -379 218 361 ) ( -437 0 361 ) ( -437 0 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -437 0 361 ) ( -309 0 367 ) ( -309 0 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 276
+{
+( -218 379 361 ) ( -154 268 367 ) ( -268 154 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -268 154 359 ) ( -154 268 359 ) ( -218 379 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -268 154 367 ) ( -154 268 367 ) ( -154 268 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -154 268 367 ) ( -218 379 361 ) ( -218 379 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -218 379 361 ) ( -268 154 367 ) ( -268 154 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 277
+{
+( -379 218 361 ) ( -218 379 361 ) ( -268 154 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -268 154 359 ) ( -218 379 353 ) ( -379 218 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -268 154 367 ) ( -218 379 361 ) ( -218 379 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -218 379 361 ) ( -379 218 361 ) ( -379 218 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -379 218 361 ) ( -268 154 367 ) ( -268 154 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 278
+{
+( 0 437 361 ) ( 0 309 367 ) ( -154 268 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -154 268 359 ) ( 0 309 359 ) ( 0 437 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -154 268 367 ) ( 0 309 367 ) ( 0 309 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 309 367 ) ( 0 437 361 ) ( 0 437 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 437 361 ) ( -154 268 367 ) ( -154 268 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 279
+{
+( -218 379 361 ) ( 0 437 361 ) ( -154 268 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -154 268 359 ) ( 0 437 353 ) ( -218 379 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -154 268 367 ) ( 0 437 361 ) ( 0 437 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 437 361 ) ( -218 379 361 ) ( -218 379 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -218 379 361 ) ( -154 268 367 ) ( -154 268 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 280
+{
+( 218 379 361 ) ( 154 268 367 ) ( 0 309 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 309 359 ) ( 154 268 359 ) ( 218 379 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 309 367 ) ( 154 268 367 ) ( 154 268 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 154 268 367 ) ( 218 379 361 ) ( 218 379 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 218 379 361 ) ( 0 309 367 ) ( 0 309 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 281
+{
+( 0 437 361 ) ( 218 379 361 ) ( 0 309 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 309 359 ) ( 218 379 353 ) ( 0 437 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 309 367 ) ( 218 379 361 ) ( 218 379 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 218 379 361 ) ( 0 437 361 ) ( 0 437 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 437 361 ) ( 0 309 367 ) ( 0 309 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 282
+{
+( 378 218 361 ) ( 267 154 367 ) ( 154 268 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 154 268 359 ) ( 267 154 359 ) ( 378 218 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 154 268 367 ) ( 267 154 367 ) ( 267 154 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 267 154 367 ) ( 378 218 361 ) ( 378 218 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 378 218 361 ) ( 154 268 367 ) ( 154 268 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 283
+{
+( 218 379 361 ) ( 378 218 361 ) ( 154 268 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 154 268 359 ) ( 378 218 353 ) ( 218 379 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 154 268 367 ) ( 378 218 361 ) ( 378 218 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 378 218 361 ) ( 218 379 361 ) ( 218 379 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 218 379 361 ) ( 154 268 367 ) ( 154 268 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 284
+{
+( 437 0 361 ) ( 309 0 367 ) ( 267 154 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 267 154 359 ) ( 309 0 359 ) ( 437 0 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 267 154 367 ) ( 309 0 367 ) ( 309 0 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 309 0 367 ) ( 437 0 361 ) ( 437 0 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 437 0 361 ) ( 267 154 367 ) ( 267 154 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 285
+{
+( 378 218 361 ) ( 437 0 361 ) ( 267 154 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 267 154 359 ) ( 437 0 353 ) ( 378 218 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 267 154 367 ) ( 437 0 361 ) ( 437 0 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 437 0 361 ) ( 378 218 361 ) ( 378 218 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 378 218 361 ) ( 267 154 367 ) ( 267 154 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 286
+{
+( 378 -218 361 ) ( 267 -154 367 ) ( 309 0 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 309 0 359 ) ( 267 -154 359 ) ( 378 -218 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 309 0 367 ) ( 267 -154 367 ) ( 267 -154 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 267 -154 367 ) ( 378 -218 361 ) ( 378 -218 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 378 -218 361 ) ( 309 0 367 ) ( 309 0 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 287
+{
+( 437 0 361 ) ( 378 -218 361 ) ( 309 0 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 309 0 359 ) ( 378 -218 353 ) ( 437 0 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 309 0 367 ) ( 378 -218 361 ) ( 378 -218 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 378 -218 361 ) ( 437 0 361 ) ( 437 0 353 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 437 0 361 ) ( 309 0 367 ) ( 309 0 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 288
+{
+( 154 -267 367 ) ( 80 -138 367 ) ( 138 -79 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 138 -79 359 ) ( 80 -138 359 ) ( 154 -267 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 138 -79 367 ) ( 80 -138 367 ) ( 80 -138 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 80 -138 367 ) ( 154 -267 367 ) ( 154 -267 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 154 -267 367 ) ( 138 -79 367 ) ( 138 -79 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 289
+{
+( 267 -154 367 ) ( 154 -267 367 ) ( 138 -79 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 138 -79 359 ) ( 154 -267 359 ) ( 267 -154 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 138 -79 367 ) ( 154 -267 367 ) ( 154 -267 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 154 -267 367 ) ( 267 -154 367 ) ( 267 -154 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 267 -154 367 ) ( 138 -79 367 ) ( 138 -79 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 290
+{
+( 0 -309 367 ) ( 0 -160 367 ) ( 80 -138 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 80 -138 359 ) ( 0 -160 359 ) ( 0 -309 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 80 -138 367 ) ( 0 -160 367 ) ( 0 -160 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 -160 367 ) ( 0 -309 367 ) ( 0 -309 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 -309 367 ) ( 80 -138 367 ) ( 80 -138 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 291
+{
+( 154 -267 367 ) ( 0 -309 367 ) ( 80 -138 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 80 -138 359 ) ( 0 -309 359 ) ( 154 -267 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 80 -138 367 ) ( 0 -309 367 ) ( 0 -309 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 -309 367 ) ( 154 -267 367 ) ( 154 -267 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 154 -267 367 ) ( 80 -138 367 ) ( 80 -138 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 292
+{
+( -154 -267 367 ) ( -80 -138 367 ) ( 0 -160 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 -160 359 ) ( -80 -138 359 ) ( -154 -267 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 -160 367 ) ( -80 -138 367 ) ( -80 -138 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -80 -138 367 ) ( -154 -267 367 ) ( -154 -267 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -154 -267 367 ) ( 0 -160 367 ) ( 0 -160 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 293
+{
+( 0 -309 367 ) ( -154 -267 367 ) ( 0 -160 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 -160 359 ) ( -154 -267 359 ) ( 0 -309 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 -160 367 ) ( -154 -267 367 ) ( -154 -267 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -154 -267 367 ) ( 0 -309 367 ) ( 0 -309 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 -309 367 ) ( 0 -160 367 ) ( 0 -160 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 294
+{
+( -268 -154 367 ) ( -138 -79 367 ) ( -80 -138 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -80 -138 359 ) ( -138 -79 359 ) ( -268 -154 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -80 -138 367 ) ( -138 -79 367 ) ( -138 -79 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -138 -79 367 ) ( -268 -154 367 ) ( -268 -154 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -268 -154 367 ) ( -80 -138 367 ) ( -80 -138 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 295
+{
+( -154 -267 367 ) ( -268 -154 367 ) ( -80 -138 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -80 -138 359 ) ( -268 -154 359 ) ( -154 -267 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -80 -138 367 ) ( -268 -154 367 ) ( -268 -154 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -268 -154 367 ) ( -154 -267 367 ) ( -154 -267 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -154 -267 367 ) ( -80 -138 367 ) ( -80 -138 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 296
+{
+( -309 0 367 ) ( -160 0 367 ) ( -138 -79 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -138 -79 359 ) ( -160 0 359 ) ( -309 0 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -138 -79 367 ) ( -160 0 367 ) ( -160 0 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -160 0 367 ) ( -309 0 367 ) ( -309 0 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -309 0 367 ) ( -138 -79 367 ) ( -138 -79 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 297
+{
+( -268 -154 367 ) ( -309 0 367 ) ( -138 -79 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -138 -79 359 ) ( -309 0 359 ) ( -268 -154 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -138 -79 367 ) ( -309 0 367 ) ( -309 0 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -309 0 367 ) ( -268 -154 367 ) ( -268 -154 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -268 -154 367 ) ( -138 -79 367 ) ( -138 -79 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 298
+{
+( -268 154 367 ) ( -138 80 367 ) ( -160 0 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -160 0 359 ) ( -138 80 359 ) ( -268 154 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -160 0 367 ) ( -138 80 367 ) ( -138 80 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -138 80 367 ) ( -268 154 367 ) ( -268 154 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -268 154 367 ) ( -160 0 367 ) ( -160 0 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 299
+{
+( -309 0 367 ) ( -268 154 367 ) ( -160 0 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -160 0 359 ) ( -268 154 359 ) ( -309 0 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -160 0 367 ) ( -268 154 367 ) ( -268 154 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -268 154 367 ) ( -309 0 367 ) ( -309 0 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -309 0 367 ) ( -160 0 367 ) ( -160 0 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 300
+{
+( -154 268 367 ) ( -80 138 367 ) ( -138 80 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -138 80 359 ) ( -80 138 359 ) ( -154 268 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -138 80 367 ) ( -80 138 367 ) ( -80 138 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -80 138 367 ) ( -154 268 367 ) ( -154 268 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -154 268 367 ) ( -138 80 367 ) ( -138 80 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 301
+{
+( -268 154 367 ) ( -154 268 367 ) ( -138 80 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -138 80 359 ) ( -154 268 359 ) ( -268 154 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -138 80 367 ) ( -154 268 367 ) ( -154 268 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -154 268 367 ) ( -268 154 367 ) ( -268 154 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -268 154 367 ) ( -138 80 367 ) ( -138 80 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 302
+{
+( 0 309 367 ) ( 0 160 367 ) ( -80 138 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -80 138 359 ) ( 0 160 359 ) ( 0 309 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -80 138 367 ) ( 0 160 367 ) ( 0 160 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 160 367 ) ( 0 309 367 ) ( 0 309 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 309 367 ) ( -80 138 367 ) ( -80 138 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 303
+{
+( -154 268 367 ) ( 0 309 367 ) ( -80 138 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -80 138 359 ) ( 0 309 359 ) ( -154 268 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -80 138 367 ) ( 0 309 367 ) ( 0 309 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 309 367 ) ( -154 268 367 ) ( -154 268 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -154 268 367 ) ( -80 138 367 ) ( -80 138 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 304
+{
+( 154 268 367 ) ( 80 138 367 ) ( 0 160 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 160 359 ) ( 80 138 359 ) ( 154 268 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 160 367 ) ( 80 138 367 ) ( 80 138 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 80 138 367 ) ( 154 268 367 ) ( 154 268 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 154 268 367 ) ( 0 160 367 ) ( 0 160 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 305
+{
+( 0 309 367 ) ( 154 268 367 ) ( 0 160 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 160 359 ) ( 154 268 359 ) ( 0 309 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 160 367 ) ( 154 268 367 ) ( 154 268 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 154 268 367 ) ( 0 309 367 ) ( 0 309 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 309 367 ) ( 0 160 367 ) ( 0 160 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 306
+{
+( 267 154 367 ) ( 138 80 367 ) ( 80 138 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 80 138 359 ) ( 138 80 359 ) ( 267 154 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 80 138 367 ) ( 138 80 367 ) ( 138 80 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 138 80 367 ) ( 267 154 367 ) ( 267 154 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 267 154 367 ) ( 80 138 367 ) ( 80 138 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 307
+{
+( 154 268 367 ) ( 267 154 367 ) ( 80 138 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 80 138 359 ) ( 267 154 359 ) ( 154 268 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 80 138 367 ) ( 267 154 367 ) ( 267 154 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 267 154 367 ) ( 154 268 367 ) ( 154 268 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 154 268 367 ) ( 80 138 367 ) ( 80 138 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 308
+{
+( 309 0 367 ) ( 160 0 367 ) ( 138 80 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 138 80 359 ) ( 160 0 359 ) ( 309 0 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 138 80 367 ) ( 160 0 367 ) ( 160 0 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 160 0 367 ) ( 309 0 367 ) ( 309 0 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 309 0 367 ) ( 138 80 367 ) ( 138 80 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 309
+{
+( 267 154 367 ) ( 309 0 367 ) ( 138 80 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 138 80 359 ) ( 309 0 359 ) ( 267 154 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 138 80 367 ) ( 309 0 367 ) ( 309 0 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 309 0 367 ) ( 267 154 367 ) ( 267 154 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 267 154 367 ) ( 138 80 367 ) ( 138 80 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 310
+{
+( 267 -154 367 ) ( 138 -79 367 ) ( 160 0 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 160 0 359 ) ( 138 -79 359 ) ( 267 -154 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 160 0 367 ) ( 138 -79 367 ) ( 138 -79 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 138 -79 367 ) ( 267 -154 367 ) ( 267 -154 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 267 -154 367 ) ( 160 0 367 ) ( 160 0 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 311
+{
+( 309 0 367 ) ( 267 -154 367 ) ( 160 0 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 160 0 359 ) ( 267 -154 359 ) ( 309 0 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 160 0 367 ) ( 267 -154 367 ) ( 267 -154 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 267 -154 367 ) ( 309 0 367 ) ( 309 0 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 309 0 367 ) ( 160 0 367 ) ( 160 0 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 312
+{
+( 138 -79 367 ) ( 80 -138 367 ) ( 0 0 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 359 ) ( 80 -138 359 ) ( 138 -79 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 367 ) ( 80 -138 367 ) ( 80 -138 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 80 -138 367 ) ( 138 -79 367 ) ( 138 -79 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 138 -79 367 ) ( 0 0 367 ) ( 0 0 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 313
+{
+( 80 -138 367 ) ( 0 -160 367 ) ( 0 0 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 359 ) ( 0 -160 359 ) ( 80 -138 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 367 ) ( 0 -160 367 ) ( 0 -160 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 -160 367 ) ( 80 -138 367 ) ( 80 -138 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 80 -138 367 ) ( 0 0 367 ) ( 0 0 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 314
+{
+( 0 -160 367 ) ( -80 -138 367 ) ( 0 0 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 359 ) ( -80 -138 359 ) ( 0 -160 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 367 ) ( -80 -138 367 ) ( -80 -138 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -80 -138 367 ) ( 0 -160 367 ) ( 0 -160 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 -160 367 ) ( 0 0 367 ) ( 0 0 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 315
+{
+( -80 -138 367 ) ( -138 -79 367 ) ( 0 0 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 359 ) ( -138 -79 359 ) ( -80 -138 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 367 ) ( -138 -79 367 ) ( -138 -79 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -138 -79 367 ) ( -80 -138 367 ) ( -80 -138 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -80 -138 367 ) ( 0 0 367 ) ( 0 0 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 316
+{
+( -138 -79 367 ) ( -160 0 367 ) ( 0 0 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 359 ) ( -160 0 359 ) ( -138 -79 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 367 ) ( -160 0 367 ) ( -160 0 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -160 0 367 ) ( -138 -79 367 ) ( -138 -79 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -138 -79 367 ) ( 0 0 367 ) ( 0 0 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 317
+{
+( -160 0 367 ) ( -138 80 367 ) ( 0 0 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 359 ) ( -138 80 359 ) ( -160 0 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 367 ) ( -138 80 367 ) ( -138 80 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -138 80 367 ) ( -160 0 367 ) ( -160 0 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -160 0 367 ) ( 0 0 367 ) ( 0 0 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 318
+{
+( -138 80 367 ) ( -80 138 367 ) ( 0 0 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 359 ) ( -80 138 359 ) ( -138 80 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 367 ) ( -80 138 367 ) ( -80 138 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -80 138 367 ) ( -138 80 367 ) ( -138 80 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -138 80 367 ) ( 0 0 367 ) ( 0 0 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 319
+{
+( -80 138 367 ) ( 0 160 367 ) ( 0 0 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 359 ) ( 0 160 359 ) ( -80 138 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 367 ) ( 0 160 367 ) ( 0 160 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 160 367 ) ( -80 138 367 ) ( -80 138 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -80 138 367 ) ( 0 0 367 ) ( 0 0 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 320
+{
+( 0 160 367 ) ( 80 138 367 ) ( 0 0 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 359 ) ( 80 138 359 ) ( 0 160 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 367 ) ( 80 138 367 ) ( 80 138 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 80 138 367 ) ( 0 160 367 ) ( 0 160 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 160 367 ) ( 0 0 367 ) ( 0 0 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 321
+{
+( 80 138 367 ) ( 138 80 367 ) ( 0 0 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 359 ) ( 138 80 359 ) ( 80 138 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 367 ) ( 138 80 367 ) ( 138 80 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 138 80 367 ) ( 80 138 367 ) ( 80 138 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 80 138 367 ) ( 0 0 367 ) ( 0 0 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 322
+{
+( 138 80 367 ) ( 160 0 367 ) ( 0 0 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 359 ) ( 160 0 359 ) ( 138 80 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 367 ) ( 160 0 367 ) ( 160 0 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 160 0 367 ) ( 138 80 367 ) ( 138 80 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 138 80 367 ) ( 0 0 367 ) ( 0 0 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 323
+{
+( 160 0 367 ) ( 138 -79 367 ) ( 0 0 367 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 359 ) ( 138 -79 359 ) ( 160 0 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 367 ) ( 138 -79 367 ) ( 138 -79 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 138 -79 367 ) ( 160 0 367 ) ( 160 0 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 160 0 367 ) ( 0 0 367 ) ( 0 0 359 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 324
+{
+( -433 -249 333 ) ( 0 0 333 ) ( -500 0 333 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -500 0 341 ) ( 0 0 341 ) ( -433 -249 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -500 0 333 ) ( 0 0 333 ) ( 0 0 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 333 ) ( -433 -249 333 ) ( -433 -249 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -433 -249 333 ) ( -500 0 333 ) ( -500 0 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 325
+{
+( 0 0 333 ) ( 249 -432 333 ) ( 432 -249 333 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 432 -249 341 ) ( 249 -432 341 ) ( 0 0 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 432 -249 333 ) ( 249 -432 333 ) ( 249 -432 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 249 -432 333 ) ( 0 0 333 ) ( 0 0 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 333 ) ( 432 -249 333 ) ( 432 -249 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 326
+{
+( -250 433 333 ) ( 0 0 333 ) ( 0 500 333 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 500 341 ) ( 0 0 341 ) ( -250 433 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 500 333 ) ( 0 0 333 ) ( 0 0 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 333 ) ( -250 433 333 ) ( -250 433 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -250 433 333 ) ( 0 500 333 ) ( 0 500 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 327
+{
+( -500 0 333 ) ( 0 0 333 ) ( -433 250 333 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -433 250 341 ) ( 0 0 341 ) ( -500 0 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -433 250 333 ) ( 0 0 333 ) ( 0 0 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 333 ) ( -500 0 333 ) ( -500 0 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -500 0 333 ) ( -433 250 333 ) ( -433 250 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 328
+{
+( -433 250 333 ) ( 0 0 333 ) ( -250 433 333 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -250 433 341 ) ( 0 0 341 ) ( -433 250 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -250 433 333 ) ( 0 0 333 ) ( 0 0 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 333 ) ( -433 250 333 ) ( -433 250 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -433 250 333 ) ( -250 433 333 ) ( -250 433 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 329
+{
+( 0 500 333 ) ( 0 0 333 ) ( 249 433 333 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 249 433 341 ) ( 0 0 341 ) ( 0 500 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 249 433 333 ) ( 0 0 333 ) ( 0 0 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 333 ) ( 0 500 333 ) ( 0 500 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 500 333 ) ( 249 433 333 ) ( 249 433 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 330
+{
+( 249 433 333 ) ( 0 0 333 ) ( 432 250 333 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 432 250 341 ) ( 0 0 341 ) ( 249 433 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 432 250 333 ) ( 0 0 333 ) ( 0 0 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 333 ) ( 249 433 333 ) ( 249 433 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 249 433 333 ) ( 432 250 333 ) ( 432 250 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 331
+{
+( -250 -432 333 ) ( 0 0 333 ) ( -433 -249 333 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -433 -249 341 ) ( 0 0 341 ) ( -250 -432 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -433 -249 333 ) ( 0 0 333 ) ( 0 0 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 333 ) ( -250 -432 333 ) ( -250 -432 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -250 -432 333 ) ( -433 -249 333 ) ( -433 -249 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 332
+{
+( -250 -432 333 ) ( 0 -499 333 ) ( 0 0 333 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 341 ) ( 0 -499 341 ) ( -250 -432 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 333 ) ( 0 -499 333 ) ( 0 -499 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 -499 333 ) ( -250 -432 333 ) ( -250 -432 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( -250 -432 333 ) ( 0 0 333 ) ( 0 0 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 333
+{
+( 0 0 333 ) ( 0 -499 333 ) ( 249 -432 333 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 249 -432 341 ) ( 0 -499 341 ) ( 0 0 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 249 -432 333 ) ( 0 -499 333 ) ( 0 -499 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 -499 333 ) ( 0 0 333 ) ( 0 0 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 333 ) ( 249 -432 333 ) ( 249 -432 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 334
+{
+( 0 0 333 ) ( 432 -249 333 ) ( 499 0 333 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 499 0 341 ) ( 432 -249 341 ) ( 0 0 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 499 0 333 ) ( 432 -249 333 ) ( 432 -249 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 432 -249 333 ) ( 0 0 333 ) ( 0 0 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 333 ) ( 499 0 333 ) ( 499 0 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+// local brush 335
+{
+( 0 0 333 ) ( 499 0 333 ) ( 432 250 333 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 432 250 341 ) ( 499 0 341 ) ( 0 0 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 432 250 333 ) ( 499 0 333 ) ( 499 0 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 499 0 333 ) ( 0 0 333 ) ( 0 0 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+( 0 0 333 ) ( 432 250 333 ) ( 432 250 341 ) spaceegg/spaceegg_texture 0 0 0 1 1 0 0 0
+}
+}

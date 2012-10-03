@@ -1,0 +1,247 @@
+---------------------------------------
+-- DoBar
+-- Draws the bar, gradually sizing it
+-- background, bar: Bar graphics
+-- x, y: Bar coordinates
+-- w, h: Bar dimensions
+-- cur: Current bar length
+-- value: Actual value of bar quantity
+-- bLeft: If true, grow from the left
+-- Returns: Updated bar length
+---------------------------------------
+local function DoBar (background, bar, x, y, w, h, cur, value, bLeft)
+	background:StretchBlt(x, y, w, h);
+
+	-- If the length matches the quantity, do nothing. Otherwise, grow or shrink the bar.
+	if math.abs(value - cur) > .01 then
+		cur = cur + (cur < value and .01 or -.01);
+	else
+		cur = value;
+	end
+
+	-- Draw the stretched bar and supply the updated length.
+	local dw = math.ceil(cur * w);
+	bar:StretchBlt(bLeft and x or x + w - dw, y, dw, h);
+	return cur;
+end
+
+--------------------------------------------
+-- GetPicture
+-- Acquires a widget and its graphics data
+-- team: Team index
+-- extra: Extra description
+-- Returns: Widget, picture, graphic handle
+--------------------------------------------
+local data = {};
+local function GetPicture (team, extra)
+	local widget = data["t" .. team .. (extra or "")];
+	local picture = widget:Current();
+	return widget, picture, picture:GetGraphic();
+end
+
+-----------------
+-- LoadHUD
+-- Loads the HUD
+-----------------
+local function LoadHUD ()
+	-- Team 1 name --
+	local t1, _, t1n = GetPicture(1);
+	data.pane:DockIn(t1, 0, vh - t1n:GetHeight() - 1, t1n:GetWidth(), t1n:GetHeight());
+
+	-- Team 1 players --
+	local ypos = vh - t1n:GetHeight() - 1;
+	for index = 4, 1, -1 do
+		-- Faces --
+		local pf, _, pft = GetPicture(1, "pface" .. index);
+		ypos = ypos - pft:GetHeight() - 5;
+		data.pane:DockIn(pf, 5, ypos, pft:GetWidth(), pft:GetHeight());
+
+		-- Names --
+		local pn, _, pnt = GetPicture(1, "pname" .. index);
+		data.pane:DockIn(pn, pft:GetWidth() + 10, ypos, pnt:GetWidth(), pnt:GetHeight());
+
+		-- Health, magic bars --
+		data.pane:DockIn(data["t" .. 1 .. "hbar" .. index], pft:GetWidth() + 10, ypos + pnt:GetHeight() + 5, pnt:GetWidth(), 7);
+		data.pane:DockIn(data["t" .. 1 .. "mbar" .. index], pft:GetWidth() + 10, ypos + pnt:GetHeight() + 15, pnt:GetWidth(), 7);
+	end
+
+	-- Team 2 name --
+	local t2, _, t2n = GetPicture(2);			
+	data.pane:DockIn(t2, vw - t2n:GetWidth() - 1, vh - t2n:GetHeight() - 1, t2n:GetWidth(), t2n:GetHeight());
+
+	-- Team 2 players --
+	local ypos = vh - t2n:GetHeight() - 1;
+	for index = 4, 1, -1 do
+		-- Faces --
+		local pf, pfp, pft = GetPicture(2, "pface" .. index);
+		pfp:SetFlipH(true);
+		local xpos = vw - pft:GetWidth() - 6;
+		ypos = ypos - pft:GetHeight() - 5;
+		data.pane:DockIn(pf, xpos, ypos, pft:GetWidth(), pft:GetHeight());
+
+		-- Names --
+		local pn, _, pnt = GetPicture(2, "pname" .. index);
+		data.pane:DockIn(pn, xpos - pnt:GetWidth() - 5, ypos, pnt:GetWidth(), pnt:GetHeight());
+
+		-- Health, magic bars --
+		data.pane:DockIn(data["t" .. 2 .. "hbar" .. index], xpos - pnt:GetWidth() - 5, ypos + pnt:GetHeight() + 5, pnt:GetWidth(), 7);
+		data.pane:DockIn(data["t" .. 2 .. "mbar" .. index], xpos - pnt:GetWidth() - 5, ypos + pnt:GetHeight() + 15, pnt:GetWidth(), 7);
+	end
+end
+
+------------------------------------
+-- LoadTeam
+-- Loads a team and associated data
+-- name: Team name
+-- which: Team index
+-- Returns: Team handle
+------------------------------------
+local function LoadTeam (name, which)
+	local team, config = class.new("Team", name), GetTeamConfig(name);
+
+	-- Team name --
+	data["t" .. which] = Image(config.nametexture);
+
+	-- Add players to the team.
+	for index, player in ipairs(config) do
+		local player = class.new("TeamPlayer", player.name, player.file);
+		team:addTeamPlayer(player);
+
+		-- Build the picture and name data sets.
+		local faces, names = {}, {}
+		for face = 1, 4 do
+			faces[#faces + 1] = class.new("Picture", hTXT(team:getPlayerHudFileMapped(WS(string.format("%i", index)), face - 1)));
+		end
+		for name = 1, 3 do
+			names[#names + 1] = class.new("Picture", hTXT(team:getPlayerHudFileMapped(WS(string.format("%i", index)), name + 3)));
+		end
+
+		-- Load the picture and names.
+		data["t" .. which .. "pface" .. index] = ImageDynamic(function()
+			if player:IsHurt() then
+				return faces[4];
+			else
+				if player:getHealthPercent() > .7 then
+					return faces[1];
+				elseif player:getHealthPercent() > .4 then
+					return faces[2];
+				else
+					return faces[3];
+				end
+			end
+		end);
+		data["t" .. which .. "pname" .. index] = ImageDynamic(function()
+			if player:getHealthPercent() > .7 then
+				return names[1];
+			elseif player:getHealthPercent() > .4 then
+				return names[2];
+			else
+				return names[3];
+			end
+		end);
+
+		-- Load the health and magic bars.
+		local background, hbar, mbar, hp, mp = hTXT(L"Textures/whitepix.png"), hTXT(L"Textures/redpix.png"), hTXT(L"Textures/bluepix.png"), 0, 0;
+		data["t" .. which .. "hbar" .. index] = Widget("render", function(W, x, y, w, h)
+			hp = DoBar(background, hbar, x, y, w, h, hp, player:getHealthPercent(), which == 1);
+		end);
+		data["t" .. which .. "mbar" .. index] = Widget("render", function(W, x, y, w, h)
+			mp = DoBar(background, mbar, x, y, w, h, mp, player:getMagicPercent(), which == 1);
+		end);
+	end
+
+	-- Install methods and return team.
+	for _, name in ipairs{ "Begin", "Serve", "Defense", "Offense", "GainPoint", "LosePoint", "Win", "Lose" } do
+		team[name] = config[name];
+	end
+	return team;
+end
+
+-- Install the game screen.
+LoadSection("Game", class.new("Section", function(S, state, ...)
+	-- Enter / Resume --
+	if state == "enter" or state == "resume" then
+		if state == "enter" then
+			data = { pane = Backdrop(false) };
+
+			-- TODO: Fix this up slightly
+			local name1, name2 = ...;
+			team1, team2 = LoadTeam(name1, 1), LoadTeam(name2, 2);
+			match = LoadMatch("SinglePlayerStory");
+
+			-- Install the HUD.
+			LoadHUD();
+			data.pane:Frame(0, 0, vw, vh);
+
+			-- Cue map load.
+			game.LoadMap();
+			game.WorldLoadPostMap();
+
+			-- TODO: Fix this up slightly.
+			ball = class.new("Ball");	
+		else
+		--	match.Resume();
+		end
+		Cursor = nil;
+
+	-- Close / Pop --
+	elseif state == "close" or state == "pop" then
+		for _, widget in pairs(data) do
+			widget:Unload();
+		end
+		data, ball, match, team1, team2 = nil;
+
+	-- Suspend --
+	elseif state == "suspend" then
+		-- match.Suspend();
+
+	-- Trap --
+	elseif state == "trap" then
+		local event, a1, a2, a3 = ...;
+		if event == "keyup" then
+			CallIf(a1 == inp._escape, Dialog, "Main");
+if a1 == inp._tab then
+	UpdateTasks:Add(function()
+		Dialog("Test");
+	end);
+end
+		elseif event == "mousemove" then
+			-- Rotate player around y-axis.
+			player:InvokeIf(not viewbLook, "Rotate", -a1 / 100);
+			player:UpdateView(a1, a2);
+		end
+
+	-- Update --
+	elseif state == "update" then
+		match:Update();
+	end
+end));
+
+local test;
+LoadSection("Test", class.new("Section", function(S, state, ...)
+	-- Enter --
+	if state == "enter" then
+		test = {}
+
+	-- Close / Pop --
+	elseif state == "close" or state == "pop" then
+
+	-- Trap --
+	elseif state == "trap" then
+		local event, a1, a2, a3 = ...;
+		if event == "keyup" then
+			if a1 == inp._escape then
+				UpdateTasks:Add(function()
+					S:Close();
+				end);
+			end
+		end
+
+	-- Render --
+	elseif state == "render" then
+
+	-- Update --
+	elseif state == "update" then
+
+	end
+end));

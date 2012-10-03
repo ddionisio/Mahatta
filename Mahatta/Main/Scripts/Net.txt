@@ -1,0 +1,20 @@
+--------------------------------------------
+-- Net class definition; inherits from Pane
+--------------------------------------------
+class.define("Net", {}, 
+
+-- New
+-- state: State handle
+-- persist: Method used to maintain net
+-- catch: Method to invoke on a catch
+----------------------------------------
+function(N, state, persist, catch)
+	class.scons("Pane", state);
+
+	-- Methods --
+	N:SetMethod("signal", function(N, cx, cy, x, y, w, h)
+		-- On an inpersistent press, invoke a catch.
+		CallIf(state:GetPress() and not persist(), catch);
+		state:Unsignal();
+	end);
+end, { base = "Pane" });

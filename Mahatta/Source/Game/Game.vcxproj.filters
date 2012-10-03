@@ -1,0 +1,451 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\entities">
+      <UniqueIdentifier>{d6cab636-266a-4470-a0c4-4e7815132542}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\commands">
+      <UniqueIdentifier>{854767a5-a506-4dba-a7a1-6c71d9bc8283}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\lua">
+      <UniqueIdentifier>{6ac45127-ec85-42b8-aa32-4e2af3e4382b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\lua\Bindings">
+      <UniqueIdentifier>{e5241fa6-9739-4274-9f91-e73e9a5f5e0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\sequence">
+      <UniqueIdentifier>{fa876c4b-5425-460e-9226-9a4d5b51aa1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Internal">
+      <UniqueIdentifier>{0c8bf4d6-5701-4c5b-82fa-2cee86a4c1b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx</Extensions>
+    </Filter>
+    <Filter Include="Scripts">
+      <UniqueIdentifier>{b83bd8c8-e69c-427b-92ff-4f78b04c9b41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Classes">
+      <UniqueIdentifier>{9f02eb04-fedf-434e-8764-bfefa6fb7e5a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Classes\Functions">
+      <UniqueIdentifier>{22beeb8d-8dab-42db-be2e-27df2707c6e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Classes\Sequences">
+      <UniqueIdentifier>{f24221ec-0938-4c97-bd19-3eda53ed7ff2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Classes\UI">
+      <UniqueIdentifier>{f427bd3b-456b-4984-9c98-2f6c24adef02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Classes\UI\Widgets">
+      <UniqueIdentifier>{23574f6a-6e67-483f-bf01-f6e75871a69a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Classes\UI\Widgets\Buttons">
+      <UniqueIdentifier>{a1851613-ec13-4ba0-8a64-a57f3f7f6b5a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Classes\UI\Widgets\Panes">
+      <UniqueIdentifier>{50c54be8-3a23-4f66-87ed-b832f6e8da4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Classes\UI\Widgets\Textlists">
+      <UniqueIdentifier>{48a44b9d-85c7-419a-a48f-7a56d0d46364}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Classes\Pictures">
+      <UniqueIdentifier>{cd67f32c-2f42-461d-a258-ff26750c5772}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Configuration">
+      <UniqueIdentifier>{25806e92-b644-4d3a-bc28-f0af72de1e08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Configuration\Match">
+      <UniqueIdentifier>{5b55b753-2e68-4371-8f7e-c52749650e78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Configuration\Team">
+      <UniqueIdentifier>{534ffff6-e4f4-48ff-9125-1b80ae73431a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Routines">
+      <UniqueIdentifier>{4368683b-b8a0-4fd5-baf2-a64efb2a8b59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Sections">
+      <UniqueIdentifier>{f7aa826f-7705-42e5-9068-2e5c831e0590}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Sections\Dialogs">
+      <UniqueIdentifier>{6d9ac9f1-71e7-4289-9ccf-5d6d18daafc4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Sections\Screens">
+      <UniqueIdentifier>{e1eb81bd-e0c2-40df-acb4-48a40d3481a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Utilities">
+      <UniqueIdentifier>{cd87b74b-e4ba-4410-9add-13e7904546aa}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="game_ball.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="game_destroy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="game_HUD.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="game_init.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="game_main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="game_match.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="game_render.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="game_saveload.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="game_score.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="game_spawn.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="game_steering.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="game_team.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="game_teamplayer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="game_update.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="trajectory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="entity_ball.cpp">
+      <Filter>Source Files\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="entity_block.cpp">
+      <Filter>Source Files\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="entity_bullet.cpp">
+      <Filter>Source Files\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="entity_courtside.cpp">
+      <Filter>Source Files\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="entity_doodad.cpp">
+      <Filter>Source Files\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="entity_door.cpp">
+      <Filter>Source Files\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="entity_NPC.cpp">
+      <Filter>Source Files\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="entity_ringarea.cpp">
+      <Filter>Source Files\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="entity_scorearea.cpp">
+      <Filter>Source Files\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="entity_skybox.cpp">
+      <Filter>Source Files\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="entity_teamplayer.cpp">
+      <Filter>Source Files\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="game_entity_load.cpp">
+      <Filter>Source Files\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="cmd_demo.cpp">
+      <Filter>Source Files\commands</Filter>
+    </ClCompile>
+    <ClCompile Include="cmd_init.cpp">
+      <Filter>Source Files\commands</Filter>
+    </ClCompile>
+    <ClCompile Include="cmd_player.cpp">
+      <Filter>Source Files\commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Lua_Access.cpp">
+      <Filter>Source Files\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Lua_Helpers.cpp">
+      <Filter>Source Files\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Lua_LibEx.cpp">
+      <Filter>Source Files\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Bind_Bit.cpp">
+      <Filter>Source Files\lua\Bindings</Filter>
+    </ClCompile>
+    <ClCompile Include="Bind_Class.cpp">
+      <Filter>Source Files\lua\Bindings</Filter>
+    </ClCompile>
+    <ClCompile Include="Bind_GameLogic.cpp">
+      <Filter>Source Files\lua\Bindings</Filter>
+    </ClCompile>
+    <ClCompile Include="Bind_Graphics.cpp">
+      <Filter>Source Files\lua\Bindings</Filter>
+    </ClCompile>
+    <ClCompile Include="Bind_Input.cpp">
+      <Filter>Source Files\lua\Bindings</Filter>
+    </ClCompile>
+    <ClCompile Include="Bind_Mathops.cpp">
+      <Filter>Source Files\lua\Bindings</Filter>
+    </ClCompile>
+    <ClCompile Include="Bind_Sequence.cpp">
+      <Filter>Source Files\lua\Bindings</Filter>
+    </ClCompile>
+    <ClCompile Include="Bind_State.cpp">
+      <Filter>Source Files\lua\Bindings</Filter>
+    </ClCompile>
+    <ClCompile Include="Bind_Std.cpp">
+      <Filter>Source Files\lua\Bindings</Filter>
+    </ClCompile>
+    <ClCompile Include="Bind_Voxel.cpp">
+      <Filter>Source Files\lua\Bindings</Filter>
+    </ClCompile>
+    <ClCompile Include="Interval.cpp">
+      <Filter>Source Files\sequence</Filter>
+    </ClCompile>
+    <ClCompile Include="Interval_Imp.cpp">
+      <Filter>Source Files\sequence</Filter>
+    </ClCompile>
+    <ClCompile Include="Sequence.cpp">
+      <Filter>Source Files\sequence</Filter>
+    </ClCompile>
+    <ClCompile Include="Sequence_Imp.cpp">
+      <Filter>Source Files\sequence</Filter>
+    </ClCompile>
+    <ClCompile Include="Spot.cpp">
+      <Filter>Source Files\sequence</Filter>
+    </ClCompile>
+    <ClCompile Include="Spot_Imp.cpp">
+      <Filter>Source Files\sequence</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="game_ball.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="game_local.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="game_lua.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="game_match.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="game_score.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="game_sequence.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="game_share.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="game_steering.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="game_team.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="game_teamplayer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="trajectory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="game_lua_i.h">
+      <Filter>Header Files\Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Game.def">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\Boot.txt">
+      <Filter>Scripts</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\Collection.txt">
+      <Filter>Scripts\Classes</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\Pen.txt">
+      <Filter>Scripts\Classes</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\Pump.txt">
+      <Filter>Scripts\Classes</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\Section.txt">
+      <Filter>Scripts\Classes</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\Timer.txt">
+      <Filter>Scripts\Classes</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\Generic.txt">
+      <Filter>Scripts\Classes\Functions</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\Method.txt">
+      <Filter>Scripts\Classes\Functions</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\Interval.txt">
+      <Filter>Scripts\Classes\Sequences</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\Sequence.txt">
+      <Filter>Scripts\Classes\Sequences</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\Spot.txt">
+      <Filter>Scripts\Classes\Sequences</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\State.txt">
+      <Filter>Scripts\Classes\UI</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\Checkbox.txt">
+      <Filter>Scripts\Classes\UI\Widgets</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\EditboxBasic.txt">
+      <Filter>Scripts\Classes\UI\Widgets</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\Grid.txt">
+      <Filter>Scripts\Classes\UI\Widgets</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\Image.txt">
+      <Filter>Scripts\Classes\UI\Widgets</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\Marquee.txt">
+      <Filter>Scripts\Classes\UI\Widgets</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\Radiobox.txt">
+      <Filter>Scripts\Classes\UI\Widgets</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\Ring.txt">
+      <Filter>Scripts\Classes\UI\Widgets</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\ScrollBar.txt">
+      <Filter>Scripts\Classes\UI\Widgets</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\Slider.txt">
+      <Filter>Scripts\Classes\UI\Widgets</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\StaticText.txt">
+      <Filter>Scripts\Classes\UI\Widgets</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\Widget.txt">
+      <Filter>Scripts\Classes\UI\Widgets</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\PushButton.txt">
+      <Filter>Scripts\Classes\UI\Widgets\Buttons</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\ScrollButton.txt">
+      <Filter>Scripts\Classes\UI\Widgets\Buttons</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\Net.txt">
+      <Filter>Scripts\Classes\UI\Widgets\Panes</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\Pane.txt">
+      <Filter>Scripts\Classes\UI\Widgets\Panes</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\Popup.txt">
+      <Filter>Scripts\Classes\UI\Widgets\Panes</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\Title.txt">
+      <Filter>Scripts\Classes\UI\Widgets\Panes</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\Combobox.txt">
+      <Filter>Scripts\Classes\UI\Widgets\Textlists</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\ListboxBasic.txt">
+      <Filter>Scripts\Classes\UI\Widgets\Textlists</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\Textlist.txt">
+      <Filter>Scripts\Classes\UI\Widgets\Textlists</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\MultiPicture.txt">
+      <Filter>Scripts\Classes\Pictures</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\Picture.txt">
+      <Filter>Scripts\Classes\Pictures</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\Config\Matches.txt">
+      <Filter>Scripts\Configuration</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\Config\Teams.txt">
+      <Filter>Scripts\Configuration</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\Config\Match\SinglePlayerStory.txt">
+      <Filter>Scripts\Configuration\Match</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\Config\Team\DaughtersOfXibalba.txt">
+      <Filter>Scripts\Configuration\Team</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\Config\Team\Elites.txt">
+      <Filter>Scripts\Configuration\Team</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\Config\Team\Twins.txt">
+      <Filter>Scripts\Configuration\Team</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\Routines\Main.txt">
+      <Filter>Scripts\Routines</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\Routines\Match.txt">
+      <Filter>Scripts\Routines</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\S_Home.txt">
+      <Filter>Scripts\Sections\Dialogs</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\S_Main.txt">
+      <Filter>Scripts\Sections\Dialogs</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\Section\Game.txt">
+      <Filter>Scripts\Sections\Screens</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\Section\TeamSelect.txt">
+      <Filter>Scripts\Sections\Screens</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\Utility\Actor.txt">
+      <Filter>Scripts\Utilities</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\Utility\AI.txt">
+      <Filter>Scripts\Utilities</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\Call.txt">
+      <Filter>Scripts\Utilities</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\Format.txt">
+      <Filter>Scripts\Utilities</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\List.txt">
+      <Filter>Scripts\Utilities</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\Table.txt">
+      <Filter>Scripts\Utilities</Filter>
+    </None>
+    <None Include="..\..\Main\Scripts\Utility\UI.txt">
+      <Filter>Scripts\Utilities</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="resource.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,134 @@
+-----------------------------------------------
+-- Ring class definition; inherits from Widget
+-----------------------------------------------
+class.define("Ring", {
+	-- Adds an object to the ring
+	-- object: Object to add
+	------------------------------
+	AddObject = function(R, object)
+		table.insert(R.objects, object);
+
+		-- Set the object in motion.
+		object:MixerBlendCycle(0, 1, 0);
+
+		-- If this is the first entry, invoke a switch.
+		R:CallIf(#R.objects == 1, "onSwitchTo");
+	end,
+
+	-- Gets the current ring index
+	-- Returns: Ring index
+	-------------------------------
+	GetIndex = function(R)
+		return R.index;
+	end,
+
+	-- Sets the ring incline
+	-- incline: Incline to assign
+	------------------------------
+	SetIncline = function(R, incline)
+		R.incline = incline;
+	end,
+
+	-- Initiates a turn
+	-- bClockwise: If true, turn clockwise
+	---------------------------------------
+	Turn = function(R, bClockwise)
+		R.bClockwise = bClockwise;
+		if #R.objects ~= 0 then
+			R.turn:SetDuration(R.turntime / #R.objects);
+		end
+	end
+},
+
+-- New
+-- state: State handle
+-- distance: Eye-ring center distance
+-- radius: Ring circle radius
+-- turntime: Time to turn through the ring
+-------------------------------------------
+function(R, state, distance, radius, turntime)
+	class.scons("Widget", state);
+
+	-- Assign fields.
+	R.incline, R.index, R.objects, R.radius, R.turntime = 0, 1, {}, radius, turntime;
+
+	-- Turn timer.
+	R.turn = class.new("Timer", function()
+		-- Update the ring index.
+		local next;
+		if R.bClockwise then
+			next = R.index ~= 1 and R.index - 1 or #R.objects;
+		else
+			next = R.index ~= #R.objects and R.index + 1 or 1;
+		end
+		R:InvokeIf(R.index ~= next, "SwitchAction", function()
+			R.index = next;
+		end);
+
+		-- Stop turning.
+		R.turn:SetDuration(nil);
+	end);
+
+	-- Set up a view displaced the requested distance from the ring center.
+	R.view = hVIEW(Vec3D(0, 0, distance), Vec3D(0, 0, 0));
+
+	-- Methods --
+	R:SetMethod{
+		render = function(R, x, y, w, h)
+			if #R.objects ~= 0 then
+				-- Partition the ring into equal arcs. From this, compute the angle of the
+				-- indexed object, as it would be without turning. Adjust if it is turning.
+				local da = 2 * math.pi / #R.objects;
+				local a = da * (R.index - 1);
+				local duration = R.turn:GetDuration();
+				if duration then
+					a = a + (R.bClockwise and -da or da) * R.turn:GetCounter() / duration;
+				end
+
+				-- Convert the angles to complex numbers on the unit circle.
+				da, a = Complex(1, -da, true), Complex(1, a, true);
+
+				-- Add a render task.
+				RenderTasks:Add(function()
+					-- Point the camera at the ring.
+					R.view:SetScene();
+
+					-- Prepare a basis for the objects, inclined as desired.
+					local r, u = Vec3D(1, 0, 0), Vec3D(0, math.cos(R.incline), math.sin(R.incline));
+					local f = Vec3D(0, -u.z, u.y);
+
+					-- Iterate through the objects. Compute each object's basis vectors from
+					-- the current angle, and rotate the angle through one arc.
+					for _, object in ipairs(R.objects) do
+						local ar, af = r * a.r - f * a.i, r * a.i + f * a.r;
+						a = a * da;
+
+						-- Use the forward vector to displace the object by the radial distance from
+						-- the ring center. Orient and render the object into the view.
+						object:Translate(-af * R.radius, false);
+						object:SetAxisMtx(Matrix(ar, u, af));
+						object:Display(0, 0);				
+					end
+
+					-- Overlay the 3-D scene over the background.
+					gfx.Clear(bit.Or(gfx.ClearZBuffer, gfx.ClearStencil), nil, 0, 1, 0);
+					gfx.SceneRender();
+					gfx.SceneClear();
+				end);
+			end
+		end,
+		onTrap = function(R, event, data)
+			if event == "keyup" and (data == "left" or data == "right") then
+				R:InvokeIf(not R.turn:GetDuration(), "Turn", data == "left");
+			end
+		end,
+		update = function(R)
+			R.turn:InvokeIf(#R.objects ~= 0, "Update");
+			
+			-- Update each object.
+			for _, object in ipairs(R.objects) do
+				object:Update();
+			end
+		end
+	};
+end, { base = "Widget" });

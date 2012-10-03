@@ -1,0 +1,84 @@
+---------------------------------
+-- MultiPicture class definition
+---------------------------------
+class.define("MultiPicture", {
+	-- Draws the picture
+	-- x, y: Draw coordinates
+	-- w, h: Draw dimensions
+	--------------------------
+	Draw = function(P, x, y, w, h)
+		-- Figure out the side and corner dimensions.
+		local ew, eh = math.max(w - P.sw, 0), math.max(h - P.sh, 0);
+		w, h = math.min(P.sw, w) / 2, math.min(P.sh, h) / 2; 
+		
+		-- Iterate through the table entries. If an entry is a false boolean, disable
+		-- drawing until after a true boolean entry. If drawing is allowed, draw the
+		-- cell indexed by and formatted in the entry.
+		local bDraw = true;
+		for _, item in ipairs{
+			-----------
+			-- Corners
+			-----------
+			{ 1, x, y, w, h },
+			{ 3, x + w + ew, y, w, h },
+			{ 7, x, y + h + eh, w, h },
+			{ 9, x + w + ew, y + h + eh, w, h },
+			
+			------------------------
+			-- Top and bottom sides
+			------------------------
+			ew > 0,
+			{ 2, x + w, y, ew, h },
+			{ 8, x + w, y + h + eh, ew, h },
+
+			------------------------
+			-- Left and right sides
+			------------------------
+			eh > 0,
+			{ 4, x, y + h, w, eh },
+			{ 6, x + w + ew, y + h, w, eh },			
+	
+			----------
+			-- Middle
+			----------
+			ew > 0 and eh > 0,	
+			{ 5, x + w, y + h, ew, eh }
+		} do
+			if type(item) == "boolean" then
+				bDraw = item;
+			elseif bDraw then
+				local index, x, y, w, h = unpack(item);
+				Invoke(P.grid[index], "Draw", x, y, w, h);
+			end
+		end
+	end,
+	
+	-- Gets the stretch thresholds
+	-- Returns: Threshold width and height
+	---------------------------------------
+	GetThresholds = function(P)
+		return P.sw, P.sh;
+	end,
+
+	-- Loads the picture data
+	-- slot: Picture slot
+	-- picture: Picture handle
+	---------------------------
+	SetPicture = function(P, slot, picture)
+		P.grid[slot] = picture;
+	end,
+
+	-- Assigns a stretch threshold
+	-- threshold: Threshold type
+	-- stretch: Stretch factor to assign
+	-------------------------------------
+	SetThreshold = function(P, threshold, stretch)
+		P["s" .. threshold] = stretch;
+	end
+},
+
+-- New
+-------
+function(P)
+	P.grid, P.sw, P.sh = {}, 1 / 3, 1 / 3;
+end);

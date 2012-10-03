@@ -1,0 +1,74 @@
+----------------------------
+-- Picture class definition
+----------------------------
+class.define("Picture", {
+	-- Draws the picture
+	-- x, y: Draw coordinates
+	-- w, h: Draw dimensions
+	--------------------------
+	Draw = function(P, x, y, w, h)
+		if P.graphic then
+			local blt = { flags = 0 };
+			for flag, value in pairs{ bFlipH = gfx.BltFlipH, bFlipV = gfx.BltFlipV } do
+				blt.flags = bit.Or(blt.flags, P[flag] and value or 0);
+			end
+			P.graphic:StretchBlt(x, y, w, h, P.rect, blt);
+		end
+	end,
+	
+	-- Gets the horizontal flip state
+	-- Returns: Flip state
+	----------------------------------
+	GetFlipH = function(P)
+		return P.bFlipH;
+	end,
+
+	-- Gets the vertical flip state
+	-- Returns: Flip state
+	--------------------------------
+	GetFlipV = function(P)
+		return P.bFlipV;
+	end,
+
+	-- Gets the picture graphic
+	-- Returns: Picture graphic
+	----------------------------
+	GetGraphic = function(P)
+		return P.graphic;
+	end,
+
+	-- Sets the horizontal flip state
+	-- bFlipH: Flip state
+	----------------------------------
+	SetFlipH = function(P, bFlipH)
+		P.bFlipH = bFlipH;
+	end,
+
+	-- Sets the vertical flip state
+	-- bFlipV: Flip state
+	--------------------------------
+	SetFlipV = function(P, bFlipV)
+		P.bFlipV = bFlipV;
+	end,
+
+	-- Sets the picture graphic
+	-- graphic: Graphic to assign
+	------------------------------
+	SetGraphic = function(P, graphic)
+		P.graphic = graphic;
+	end,
+
+	-- Sets the picture rect
+	-- rect: Rect to assign
+	--------------------------
+	SetRect = function(P, rect)
+		P.rect = rect and table.copy(rect) or nil;
+	end
+},
+
+-- New
+-- graphic: Graphic handle
+---------------------------
+function(P, graphic)
+	P:SetGraphic(graphic);
+end);

@@ -1,0 +1,51 @@
+----------------------------------
+-- Step
+-- Step in match coroutine
+-- step: Step name
+-- team1: First team handle
+-- action1, action2: Team actions
+----------------------------------
+local function Step (step, team1, action1, action2)
+	-- Set up all step state.
+	Call_(match["Enter" .. step])
+
+	-- Get the teams ready.
+	action1 = action1 or step;
+	team1:Invoke_(action1);
+	Team2(team1):Invoke_(action2 or action1);
+
+	-- Run the step.
+	Call_(match["Do" .. step]);
+end
+
+-----------------------------
+-- MatchProc
+-- Match coroutine procedure
+-----------------------------
+function MatchProc ()
+	-- Perform any pre-match events. Proceed until a team wins.
+	Step("Begin", team1);
+	repeat
+		-- Do the serve.
+		Step("Serve", team1);
+
+		-- Determine who is on offense and defense.	Play the point. Each time the ball is
+		-- hit, swap offense/defense sides.
+		local offense = ball.hitter;
+		repeat
+			ball.hitter = nil;
+			Step("Play", offense, "Defense", "Offense");
+			offense = Team2(offense);
+		until match.scorer;
+
+		-- Disable control until the serve.
+		match.bInPlay = false;
+
+		-- Update the score.
+		Step("Score", match.scorer, "GainPoint", "LosePoint");
+		match.scorer = nil;
+	until match.winner;
+
+	-- Finish the match.
+	Step("End", match.winner, "Win", "Lose");
+end

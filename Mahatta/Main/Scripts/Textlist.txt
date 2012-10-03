@@ -1,0 +1,103 @@
+---------------------------------------------------
+-- Textlist class definition; inherits from Widget
+---------------------------------------------------
+class.define("Textlist", {	
+	-- Adds an entry to the textlist
+	-- entry: Index of entry
+	-- text: Text to assign
+	-- datum: Datum to attach to entry
+	-----------------------------------
+	AddEntry = function(T, entry, text, datum)
+		T.sequence:InsertItems(entry, 1);
+		table.insert(T.array, entry + 1, { text = text, datum = datum });
+	end,
+	
+	-- Gets an entry from the textlist
+	-- entry: Index of entry
+	-- Returns: The textlist table entry
+	-------------------------------------
+	GetEntry = function(T, entry)
+		return T.array[entry + 1];
+	end,
+	
+	-- Builds an iterator over the textlist
+	-- start: Start index; if nil, start at 0
+	-- count: Range count; if nil, use item count
+	-- Returns: Iterator which returns index and entry
+	---------------------------------------------------
+	Iter = function(T, start, count)
+		local itemcount = #T.array;
+		start, count = start or 0, count or itemcount;
+		local final = start + count;
+		if final > itemcount then
+			final = itemcount;
+		end
+		return function(_, index)
+			if index + 1 < final then
+				return index + 1, T:GetEntry(index + 1);
+			end
+		end, nil, start - 1;
+	end,
+
+	-- Removes an entry from the textlist
+	-- entry: Entry to remove
+	--------------------------------------
+	RemoveEntry = function(T, entry)
+		table.remove(T.array, entry + 1);
+		T.sequence:DeleteItems(entry, 1);
+	end,
+	
+	-- Builds an iterator over a textlist's viewable items
+	-- Returns: Iterator which returns index and entry
+	-------------------------------------------------------
+	View = function(T)
+		return T:Iter(T.offset:Get(), T.capacity);
+	end
+},
+
+-- New
+-- state: State handle
+-- capacity: Textlist capacity
+-------------------------------
+function(T, state, capacity)
+	class.scons("Widget", state);
+
+	-- Assign format parameters.
+	T.array, T.capacity, T.parts = {}, capacity, {};
+
+	-- List sequence.
+	T.sequence = class.new("Sequence");
+
+	-- Offset used to track list position.
+	T.offset = T.sequence:CreateSpot(false, true);
+
+	-- Parts used to track events.
+	for index = 1, capacity do
+		table.insert(T.parts, T:CreatePart());
+	end
+
+	-- Methods --
+	T:SetMethod{
+		onScroll = function(bUp, count)
+			local offset = T.offset:Get() or 0;
+			if bUp then
+				if offset < count then
+					count = offset;
+				end
+			else
+				if offset + count >= #T.array then
+					count = #T.array - offset - 1;
+				end
+			end
+			T.offset:Set(bUp and offset - count or offset + count);	
+		end,
+		onKeyTrap = function(action, bPress)
+			if bPress then
+				T.action = action;
+				T.press:SetTimeout(250, true);
+			else
+				T.action = nil;
+			end
+		end		
+	};
+end, { base = "Widget" });

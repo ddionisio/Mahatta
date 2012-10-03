@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{26e34452-6a57-419a-afc0-9eae19394e05}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
+    </Filter>
+    <Filter Include="Source Files\memory">
+      <UniqueIdentifier>{5b28806c-ca80-4b81-9eed-65cd64c5028b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\pager">
+      <UniqueIdentifier>{08ccda08-35f2-451b-9d75-3d280e36723a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\log">
+      <UniqueIdentifier>{3bcb087b-a2fd-4796-988f-996e53293ac3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\file system">
+      <UniqueIdentifier>{374741db-61d8-423d-a673-06d9ac6365ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\parser">
+      <UniqueIdentifier>{89945431-54cc-42df-a5e1-a5d8145009ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\config">
+      <UniqueIdentifier>{702de5de-eedf-4e94-83a2-0fb1d57392a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{4eee0014-e3bd-47f7-89b3-3ecf5e87d398}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
+    </Filter>
+    <Filter Include="Header Files\zlib">
+      <UniqueIdentifier>{7ba9f33e-a50c-4221-8af4-b09ede0789f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{d593d25b-7d2f-4bad-a053-7cae8bf6b0a8}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="memory\memory.cpp">
+      <Filter>Source Files\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="pager\pager.cpp">
+      <Filter>Source Files\pager</Filter>
+    </ClCompile>
+    <ClCompile Include="log\log.cpp">
+      <Filter>Source Files\log</Filter>
+    </ClCompile>
+    <ClCompile Include="File\filesys.cpp">
+      <Filter>Source Files\file system</Filter>
+    </ClCompile>
+    <ClCompile Include="File\filesys_interface.cpp">
+      <Filter>Source Files\file system</Filter>
+    </ClCompile>
+    <ClCompile Include="File\filesys_openclose.cpp">
+      <Filter>Source Files\file system</Filter>
+    </ClCompile>
+    <ClCompile Include="Parser\commandline.cpp">
+      <Filter>Source Files\parser</Filter>
+    </ClCompile>
+    <ClCompile Include="Parser\findfile.cpp">
+      <Filter>Source Files\parser</Filter>
+    </ClCompile>
+    <ClCompile Include="Parser\parser.cpp">
+      <Filter>Source Files\parser</Filter>
+    </ClCompile>
+    <ClCompile Include="Cfg\cfg.cpp">
+      <Filter>Source Files\config</Filter>
+    </ClCompile>
+    <ClCompile Include="Cfg\shaderfile.cpp">
+      <Filter>Source Files\config</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\Std\cfg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Cfg\cfg_i.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Std\filesys.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="File\filesys_i.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Parser\i_parser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Std\log.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Std\memTool.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Std\pager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Std\parser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Std\std_types.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\zlib\crypt.h">
+      <Filter>Header Files\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\zlib\ioapi.h">
+      <Filter>Header Files\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\zlib\iowin32.h">
+      <Filter>Header Files\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\zlib\unzip.h">
+      <Filter>Header Files\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\zlib\zconf.h">
+      <Filter>Header Files\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\zlib\zlib.h">
+      <Filter>Header Files\zlib</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

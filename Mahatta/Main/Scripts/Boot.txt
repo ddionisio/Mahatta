@@ -1,0 +1,97 @@
+-- Install the primary scripts.
+LoadRoutines{
+	-- Debug support
+	function()
+		local list = {};
+		function printf (text, ...)
+			CallIf(#list == 25, table.remove, list, 1);
+			list[#list + 1] = WS(text:format(...));
+		end
+		function printf_draw (font, corner, space)
+			for index, str in ipairs(list) do
+				font:TextBox(str, -1, { left = corner.x, top = corner.y + index * space, right = vw, bottom = vh }, 0, bit.Not(0));
+			end
+		end
+	end,
+
+	-- Utilities
+	"Format.txt",
+	"List.txt",
+	"Table.txt",
+	"Utility/Actor.txt",
+	"Utility/AI.txt",
+	"Utility/UI.txt",
+	
+	-- Classes
+
+		-- UI
+		"State.txt",
+		"Widget.txt",
+
+			-- Buttons
+			"PushButton.txt",
+				"ScrollButton.txt",
+
+			-- Panes
+			"Pane.txt",
+				"Net.txt",
+				"Popup.txt",
+					"Title.txt",
+
+			-- Textlists
+			"Textlist.txt",
+				"Combobox.txt",
+				"ListboxBasic.txt",
+
+			-- Other
+			"Checkbox.txt",
+			"EditboxBasic.txt",
+			"Grid.txt",
+			"Image.txt",
+			"Marquee.txt",
+			"Radiobox.txt",
+			"Ring.txt",
+			"ScrollBar.txt",
+			"Slider.txt",
+			"StaticText.txt",
+
+		-- Pictures
+		"Picture.txt",
+		"MultiPicture.txt",
+
+		-- Other
+		"Collection.txt",
+		"Pen.txt",
+		"Pump.txt",
+		"Section.txt",
+		"Timer.txt",
+
+	-- Initialize systems.
+	function()
+		UI = class.new("State");
+		Font = hFNT(L"Arial Black", .01875 * vw, 0);
+	end,
+
+	-- Routines
+	"Routines/Main.txt",
+	"Routines/Match.txt",
+
+	-- Configuration
+	"Config/Matches.txt",
+	"Config/Teams.txt",
+
+	-- Sections
+
+		-- Dialogs
+		"S_Home.txt",	-- TODO: fix misleading prefixes (these are rather temporary right now anyhow)
+		"S_Main.txt",
+		
+		-- Screens
+		"Section/Game.txt",
+		"Section/TeamSelect.txt",
+
+	-- Begin on the home dialog.
+	function()
+		Screen("TeamSelect");
+	end
+};

@@ -1,0 +1,66 @@
+---------------------------
+-- Method class definition
+---------------------------
+class.define("Method", {
+	-- Appends an after routine
+	-- after: After routine to add
+	-------------------------------
+	AddAfter = function(M, after)
+		CallIf_N(table.insert, 2, M.afters, after);
+	end,
+
+	-- Prepends a filter routine
+	-- filter: Filter routine to add
+	---------------------------------
+	AddFilter = function(M, filter)
+		CallIf_N(table.insert, 2, M.filters, filter);
+	end,
+
+	-- __call metamethod
+	-- ...: Arguments to call
+	-- Returns: Results of call
+	----------------------------
+	__call = function(M, ...)
+		if M.func then
+			-- Invoke filter routines in reverse. On success, abort the call.
+			for index = #M.filters, 1, -1 do
+				if M.filters[index](...) then
+					return;
+				end
+			end
+
+			-- Invoke the routine. Invoke all after routines in order.
+			local results = { M.func(...) };
+			for _, after in ipairs(M.afters) do
+				after(...);
+			end
+			return unpack(results);		
+		end
+	end,
+
+	-- Removes the last after routine
+	----------------------------------
+	PopAfter = function(M)
+		table.remove(M.afters);
+	end,
+
+	-- Removes the first filter routine
+	------------------------------------
+	PopFilter = function(M)
+		table.remove(M.filters);
+	end,
+
+	-- Assigns the method function
+	-- func: Function to assign
+	-------------------------------
+	SetFunc = function(M, func)
+		M.func = func;
+	end
+},
+
+-- New
+-- func: Function to call
+--------------------------
+function(M, func)
+	M.afters, M.filters, M.func = {}, {}, func;
+end);

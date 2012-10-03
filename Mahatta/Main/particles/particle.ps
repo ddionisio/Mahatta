@@ -1,0 +1,363 @@
+// Particle Script Generated with Cipher's Particle Designer
+// www.cipherengine.com
+
+
+smoke
+{
+	shader textures/particles/smoke
+	fade_alpha
+	emitter_rate 12.010
+	emitter_life infinite
+	emitter_area sphere 2.500
+	direction 0.000 1.000 0.000
+	spread 1.000
+	minspeed 0.100
+	maxspeed 1.000
+	acceleration 0.000 1.000 0.000
+	life 8.000
+	spin_rate 50.000
+	size 0.100
+	growby 5.000
+}
+
+rain
+{
+	shader textures/particles/raindrop
+	emitter_rate 500.000
+	emitter_life infinite
+	emitter_area box 200.000 9.900 200.000
+	direction 0.000 -1.000 0.000
+	spread 0.020
+	minspeed 80.000
+	maxspeed 100.000
+	acceleration -1.000 0.000 0.000
+	motionblur 0.060
+	life 1.000
+	size 0.300
+}
+
+snow
+{
+	shader textures/particles/snowflake
+	emitter_rate 300.000
+	emitter_life infinite
+	emitter_area box 200.000 1.000 200.000
+	direction 0.000 -1.000 0.000
+	spread 0.020
+	minspeed 5.000
+	maxspeed 20.000
+	acceleration 0.000 0.000 0.000
+	life 7.000
+	size 1.200
+	spin_rate 200.000
+}
+
+cloudy
+{
+	shader textures/particles/mist
+	colour 0.580 0.000 1.000 1.000
+	fade_alpha
+	emitter_rate 15.000
+	emitter_life infinite
+	emitter_area sphere 30.000
+	direction -1.000 0.000 0.000
+	spread 0.200
+	minspeed 3.000
+	maxspeed 4.000
+	acceleration 0.500 0.000 0.000
+	life 15.000
+	spin_rate 15.000
+	growby 30.000
+}
+
+vapour_cloud
+{
+	shader textures/particles/gradient
+	fade_rgb
+	colour 0.580 0.100 1.000 1.000
+	emitter_rate 2500.000
+	emitter_life 0.100
+	emitter_area sphere 2.000
+	direction out
+	spread 1.000
+	minspeed 20.000
+	maxspeed 100.000
+	drag 3.000
+	life 1.500
+	size 10.000
+}
+
+willow_the_wisp
+{
+	shader textures/particles/gradient
+	fade_rgb
+	colour 0.050 0.150 0.100 1.000
+	emitter_rate 30.000
+	emitter_life infinite
+	emitter_area sphere 2.000
+	direction out
+	spread 1.000
+	minspeed 20.000
+	maxspeed 100.000
+	acceleration 0.000 75.000 0.000
+	drag 5.000
+	life 1.500
+	size 10.000
+}
+
+sparkler
+{
+	shader textures/particles/spark
+	fade_rgb
+	emitter_rate 500.000
+	emitter_life infinite
+	spread 1.000
+	minspeed 25.000
+	maxspeed 125.000
+	acceleration 0.000 -200.000 0.000
+	drag 4.000
+	motionblur 0.100
+	life 0.250
+	size 0.750
+}
+
+sparkler2
+{
+	shader textures/particles/spark
+	fade_rgb
+	emitter_rate 500.000
+	emitter_life infinite
+	spread 1.000
+	minspeed 25.000
+	maxspeed 125.000
+	acceleration 0.000 -200.000 0.000
+	drag 4.000
+	motionblur 0.100
+	life 0.250
+	size 1.250
+}
+
+fireworks01
+{
+	shader textures/particles/spark1
+	fade_rgb
+	emitter_rate 3000.000
+	emitter_life 0.100
+	emitter_area sphere 5.000
+	direction out
+	minspeed 150.000
+	maxspeed 200.000
+	acceleration 0.000 -100.000 0.000
+	motionblur 0.100
+	life 1.000
+	size 0.300
+}
+
+fireworks02
+{
+	shader textures/particles/spark2
+	fade_rgb
+	emitter_rate 2000.000
+	emitter_life 0.100
+	emitter_area box 0.000 1.000 1.000
+	direction out
+	minspeed 50.000
+	maxspeed 200.000
+	acceleration 0.000 -100.000 0.000
+	motionblur 0.120
+	life 1.000
+	size 0.300
+}
+
+candle_flame
+{
+	shader textures/particles/flame
+	fade_rgb
+	emitter_rate 25.000
+	emitter_life infinite
+	emitter_area sphere 0.500
+	minspeed 5.000
+	maxspeed 25.000
+	motionblur 0.600
+	life 0.750
+	growby 15.000
+}
+
+explosion_core
+{
+	shader textures/particles/explosion
+	fade_rgb
+	emitter_rate 250.000
+	emitter_life 0.150
+	emitter_area sphere 1.000
+	spread 1.000
+	minspeed 50.000
+	maxspeed 50.000
+	acceleration 0.000 100.000 0.000
+	drag 12.000
+	life 0.750
+	spin_rate 25.000
+	size 15.000
+	growby -5.000
+}
+
+explosion_smoke
+{
+	shader textures/particles/smoke
+	fade_alpha
+	fade_rgb
+	emitter_rate 250.000
+	emitter_life 0.150
+	emitter_area sphere 10.000
+	direction out
+	minspeed 0.000
+	maxspeed 15.000
+	acceleration 0.000 10.000 0.000
+	life 1.750
+	spin_rate 50.000
+	size 10.000
+	growby 10.000
+}
+
+red_willow_the_wisp
+{
+	shader textures/particles/gradient
+	fade_rgb
+	colour 0.150 0.030 0.030 1.000
+	emitter_rate 30.000
+	emitter_life infinite
+	emitter_area sphere 2.000
+	direction out
+	spread 1.000
+	minspeed 20.000
+	maxspeed 100.000
+	acceleration 0.000 75.000 0.000
+	drag 5.000
+	life 1.500
+	size 10.000
+}
+
+cloudy_2
+{
+	shader textures/particles/mist
+	colour 0.580 0.000 1.000 1.000
+	fade_alpha
+	emitter_rate 15.000
+	emitter_life infinite
+	emitter_area sphere 300.000
+	direction -1.000 0.000 0.000
+	spread 0.200
+	minspeed 3.000
+	maxspeed 4.000
+	acceleration 0.500 0.000 0.000
+	life 15.000
+	spin_rate 15.000
+	growby 300.000
+}
+
+ventsmoke
+{
+	shader textures/particles/smoke
+	fade_alpha
+	emitter_rate 12.010
+	emitter_life infinite
+	emitter_area sphere 2.500
+	direction out
+	spread 1.000
+	minspeed 0.100
+	maxspeed 1.500
+	acceleration 0.000 0.400 0.800
+	life 8.000
+	spin_rate 50.000
+	size 30.000
+	growby 15.000
+}
+
+ventsmoke_negX
+{
+	shader textures/particles/smoke
+	fade_alpha
+	emitter_rate 12.010
+	emitter_life infinite
+	emitter_area sphere 2.500
+	direction -1.000 0.000 0.000
+	spread 1.000
+	minspeed 0.100
+	maxspeed 1.500
+	acceleration 0.800 0.400 0.000
+	life 8.000
+	spin_rate 50.000
+	size 30.000
+	growby 15.000
+}
+
+purple_willow_the_wisp
+{
+	shader textures/particles/gradient
+	fade_rgb
+	colour 0.150 0.030 0.150 1.000
+	emitter_rate 30.000
+	emitter_life infinite
+	emitter_area sphere 15.000
+	direction out
+	spread 3.000
+	minspeed 20.000
+	maxspeed 150.000
+	acceleration 0.000 75.000 0.000
+	drag 2.500
+	life 2.500
+	size 30.000
+}
+
+bonfire
+{
+	shader textures/particles/flame
+	fade_rgb
+	emitter_rate 25.000
+	emitter_life infinite
+	emitter_area sphere 1.000
+	minspeed 10.000
+	maxspeed 30.000
+	motionblur 2.000
+	life 1.550
+	growby 10.000
+	size 10.000
+}
+
+
+bigsmoke
+{
+	shader textures/particles/smoke
+	fade_alpha
+	emitter_rate 12.010
+	emitter_life infinite
+	emitter_area sphere 2.500
+	direction 0.000 1.000 0.000
+	spread 1.000
+	minspeed 0.500
+	maxspeed 2.000
+	acceleration 0.000 2.000 0.000
+	life 4.500
+	spin_rate 50.000
+	size 0.000
+	growby 25.000
+}
+
+aura
+{
+	shader textures/particles/gradient
+	fade_rgb
+	colour 0.150 0.030 0.150 0.750
+	emitter_rate 12.010
+	emitter_life infinite
+	emitter_area sphere 30.000
+	direction in
+	minspeed 25.000
+	maxspeed 25.000
+	drag 1.000
+	life 4.500
+	spin_rate 50.000
+	size 0.000
+	growby 20.000
+	acceleration 0.000 2.000 0.000
+}

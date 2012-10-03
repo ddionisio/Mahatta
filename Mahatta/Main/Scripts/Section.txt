@@ -1,0 +1,205 @@
+------------------------
+-- Section table, stack
+------------------------
+local _Section, _Stack = {}, {};
+
+------------------------------------
+-- Remove
+-- Removes a section from the stack
+-- where: Stack position
+-- type: Removal type
+-- ...: Remove arguments
+------------------------------------
+local function Remove (where, type, ...)
+	local section = table.remove(_Stack, where);
+
+	-- Remove any wall.
+	if section.wall then
+		section.wall:Unload();
+		section.wall = nil;
+	end
+
+	-- Close the section.
+	section:proc(type);
+end
+
+------------------------
+-- Enter
+-- Enters a section
+-- S: Section handle
+-- ...: Enter arguments
+------------------------
+local function Enter (S, ...)
+	-- Wipe out current input.
+	UI:ClearInput();
+
+	-- Verify that the section is not already current. Suspend the current section, if any.
+	if CurrentSection ~= S then
+		Invoke(CurrentSection, "proc", "suspend");
+
+		-- If the section is already loaded, report the move.
+		CallIf_N(Remove, 1, table.find(_Stack, S), "move");
+
+		-- Push the section onto the stack.
+		_Stack[#_Stack + 1] = S;
+		
+		-- Enter the section.
+		S:proc("enter", ...);
+	end
+end
+
+----------------------------
+-- Section class definition
+----------------------------
+class.define("Section", {
+	-- Builds a section close routine
+	-- ...: Arguments to section close
+	-----------------------------------
+	Close = function(S, ...)
+		-- Close the section. If it was topmost, resume the new top section, if present.
+		local where = table.find(_Stack, S)
+		if where then
+			Remove(where, "close", ...);
+			InvokeIf(where == #_Stack + 1, CurrentSection, "proc", "resume");
+		end
+	end,
+	
+	-- Gets the current focus
+	-- Returns: Focus handle
+	--------------------------
+	GetFocus = function(S)
+		return #S.focus > 0 and S.focus[S.current] or nil;
+	end,
+	
+	-- Checks whether an item is in the focus chain
+	-- item: Item handle
+	-- Returns: If true, it is in the focus chain
+	------------------------------------------------
+	IsFocusItem = function(S, item)
+		return table.find(S.focus, item) ~= nil;
+	end,
+	
+	-- Loads the focus chain
+	-- ...: Item handles
+	-------------------------
+	LoadFocusChain = function(S, ...)
+		-- Install the focus chain and give the first item focus.
+		S.focus, S.current = { ... }, 1;
+		Invoke(S.focus[1], "Call", "onGainFocus", true);
+	end,
+
+	-- Renders the section
+	-- ...: Render arguments
+	-------------------------
+	Render = function(S, ...)
+		S:proc("render", ...);
+	end,
+
+	-- Sets the current focus
+	-- focus: Command or focus handle
+	----------------------------------
+	SetFocus = function(S, focus)
+		if S.current then		
+			-- If a command is passed instead of a name, get the item index.
+			if focus == "+" then
+				focus = S.current + 1;
+				if focus > #S.focus then
+					focus = 1;
+				end
+
+			-- Otherwise, find the index of the new focus.	
+			else
+				focus = table.find(S.focus, focus);
+			end
+
+			-- If the focus has switched, indicate that the old focus is lost, set the new
+			-- focus, then indicate that the new item has gained the focus.
+			if focus ~= S.current then
+				S:GetFocus():Call("onLoseFocus");
+				S.current = focus;
+				S.focus[focus]:Call("onGainFocus");
+			end
+		end
+	end,
+
+	-- Traps events to the section
+	-- event: Event type to trap
+	-- ...: Event arguments
+	-------------------------------
+	Trap = function(S, event, ...)
+		-- If the section has a trap, invoke it. If the result is non-nil, it contains new
+		-- arguments; using these, trap the event to the focus.
+		local args = S:proc("trap", event, ...);
+		if args and #S.focus > 0 then
+			S:GetFocus():Call("onTrap", event, args);
+		end
+	end,
+
+	-- Updates the section
+	-- ...: Update arguments
+	-------------------------
+	Update = function(S, ...)
+		S:proc("update", ...);
+	end
+}, 
+
+-- New
+-- proc: Section procedure
+-- ...: Load arguments
+---------------------------
+function(S, proc, ...)
+	S.focus, S.proc = {}, proc;
+
+	-- Load the section.
+	S:proc("load", ...);
+end);
+
+------------------------------------
+-- Dialog
+-- Launches a dialog
+-- name: Section name
+-- bModal: If true, dialog is modal
+-- ...: Enter arguments
+------------------------------------
+function Dialog (name, bModal, ...)
+	-- If the dialog is modal, block lower sections.
+	if bModal then
+		_Section[name].wall = Backdrop(true);
+		_Section[name]:Frame(0, 0, vw, vh);
+	end
+
+	-- Enter the dialog.
+	Enter(_Section[name], ...);
+end
+
+---------------------------
+-- LoadSection
+-- Assigns a section
+-- name: Section name
+-- section: Section handle
+-- Returns: Section handle
+---------------------------
+function LoadSection (name, section)
+	_Section[name] = section;
+end
+
+------------------------
+-- Screen
+-- Launches a screen
+-- name: Section name
+-- ...: Enter arguments
+------------------------
+function Screen (name, ...)
+	-- Unload all sections.
+	for _ = 1, #_Stack do
+		Remove(nil, "pop");
+	end
+
+	-- Enter the screen.
+	Enter(_Section[name], ...);
+end
+
+-- Override the current section global.
+BindGlobal("CurrentSection", function()
+	return table.top(_Stack);
+end, function() end);

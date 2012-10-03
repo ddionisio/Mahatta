@@ -1,0 +1,44 @@
+---------------------------------------------------
+-- Checkbox class definition; inherits from Widget
+---------------------------------------------------
+class.define("Checkbox", {
+	-- Gets the checkbox check state
+	-- Returns: Check state
+	---------------------------------
+	GetCheck = function(C)
+		return C.bCheck == true;
+	end,
+			
+	-- Sets the checkbox check state
+	-- bCheck: Check state to apply
+	-- bRefresh: If true, refresh on no change
+	-------------------------------------------
+	SetCheck = function(C, bCheck, bRefresh)
+		bCheck = bCheck and true or false;
+		if bCheck ~= C:GetCheck() then
+			C:SwitchAction(function()
+				C.bCheck = bCheck;
+			end);
+		elseif bRefresh then
+			C:Call("onSwitchTo");
+		end
+	end
+}, 
+
+-- New
+-- state: State handle
+-----------------------
+function(C, state)
+	class.scons("Widget", state);
+
+	-- Methods --
+	C:SetMethod{
+		onGrab = function()
+			C:SetCheck(not C:GetCheck());
+		end,
+		render = function(x, y, w, h)
+			C:DrawPicture(C:GetCheck() and "checked" or "default", x, y, w, h);
+			C:DrawFrame("default", x, y, w, h);
+		end
+	};
+end, { base = "Widget" });

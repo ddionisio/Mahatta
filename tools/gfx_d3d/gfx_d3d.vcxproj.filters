@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\d3dstuff">
+      <UniqueIdentifier>{cddd586f-54fe-4ae3-af32-0648de4eab99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Texture">
+      <UniqueIdentifier>{05de563f-01cb-44a3-a3de-37902c034ce9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Math">
+      <UniqueIdentifier>{8b40e3dd-8a30-452a-8b6f-d087211aa172}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\qbsp">
+      <UniqueIdentifier>{1db35e73-cfbe-409e-9516-67432c985e48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Model">
+      <UniqueIdentifier>{6c32075c-020c-40ad-9734-f2cc7c4c09c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Effect">
+      <UniqueIdentifier>{12b2c33e-9da9-4d39-9c70-eaa75427aa2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Object">
+      <UniqueIdentifier>{eb44eab4-d527-497b-bb64-0e0b03c7a00e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Particles">
+      <UniqueIdentifier>{029debf5-2dba-46da-8c0e-b355b2cf494b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files\d3dstuff">
+      <UniqueIdentifier>{b74b72ad-7b4b-4b9e-949b-6c7053e9d9ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\std">
+      <UniqueIdentifier>{451fd500-9749-43a8-b499-9f73dfa1af3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\qbsp">
+      <UniqueIdentifier>{78019294-b0c1-4f7d-911d-5caefa1f8b8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GFX_BkgrndFX.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GFX_Buffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GFX_Camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GFX_Error.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GFX_Fog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GFX_Font.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GFX_Frustrum.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GFX_Light.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GFX_Line.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GFX_Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GFX_Scene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GFX_Screen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GFX_Shadow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GFX_SkyBox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GFX_Sprite.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GFX_Video.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="d3dstuff\d3dutil.cpp">
+      <Filter>Source Files\d3dstuff</Filter>
+    </ClCompile>
+    <ClCompile Include="d3dstuff\dxutil.cpp">
+      <Filter>Source Files\d3dstuff</Filter>
+    </ClCompile>
+    <ClCompile Include="GFX_Texture.cpp">
+      <Filter>Source Files\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="GFX_TextureDisplay.cpp">
+      <Filter>Source Files\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="GFX_TextureLoad.cpp">
+      <Filter>Source Files\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="math\bound.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="math\matrix.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="math\plane.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="math\quaternion.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="math\random.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="math\ray.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="math\vector.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="qbsp\GFX_QBSPAreaPortal.cpp">
+      <Filter>Source Files\qbsp</Filter>
+    </ClCompile>
+    <ClCompile Include="qbsp\GFX_QBSPClientFrame.cpp">
+      <Filter>Source Files\qbsp</Filter>
+    </ClCompile>
+    <ClCompile Include="qbsp\GFX_QBSPCollision.cpp">
+      <Filter>Source Files\qbsp</Filter>
+    </ClCompile>
+    <ClCompile Include="qbsp\GFX_QBSPDecal.cpp">
+      <Filter>Source Files\qbsp</Filter>
+    </ClCompile>
+    <ClCompile Include="qbsp\GFX_QBSPDestroy.cpp">
+      <Filter>Source Files\qbsp</Filter>
+    </ClCompile>
+    <ClCompile Include="qbsp\GFX_QBSPEffect.cpp">
+      <Filter>Source Files\qbsp</Filter>
+    </ClCompile>
+    <ClCompile Include="qbsp\GFX_QBSPEnt.cpp">
+      <Filter>Source Files\qbsp</Filter>
+    </ClCompile>
+    <ClCompile Include="qbsp\GFX_QBSPLoad.cpp">
+      <Filter>Source Files\qbsp</Filter>
+    </ClCompile>
+    <ClCompile Include="qbsp\GFX_QBSPModel.cpp">
+      <Filter>Source Files\qbsp</Filter>
+    </ClCompile>
+    <ClCompile Include="qbsp\GFX_QBSPPatch.cpp">
+      <Filter>Source Files\qbsp</Filter>
+    </ClCompile>
+    <ClCompile Include="qbsp\GFX_QBSPRender.cpp">
+      <Filter>Source Files\qbsp</Filter>
+    </ClCompile>
+    <ClCompile Include="qbsp\GFX_QBSPTool.cpp">
+      <Filter>Source Files\qbsp</Filter>
+    </ClCompile>
+    <ClCompile Include="qbsp\GFX_QBSPVisBit.cpp">
+      <Filter>Source Files\qbsp</Filter>
+    </ClCompile>
+    <ClCompile Include="GFX_Model.cpp">
+      <Filter>Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="GFX_Model_Cal3D.cpp">
+      <Filter>Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="GFX_Model_X.cpp">
+      <Filter>Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="GFX_Effect.cpp">
+      <Filter>Source Files\Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="GFX_EffectCompatCheck.cpp">
+      <Filter>Source Files\Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="GFX_EffectParseParam.cpp">
+      <Filter>Source Files\Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="GFX_EffectScene.cpp">
+      <Filter>Source Files\Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="GFX_EffectSetParam.cpp">
+      <Filter>Source Files\Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="GFX_Object.cpp">
+      <Filter>Source Files\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="GFX_ObjectRender.cpp">
+      <Filter>Source Files\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="GFX_Particle.cpp">
+      <Filter>Source Files\Particles</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\Gfx\gfx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Gfx\gfx_bkgrndFX.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gfx_effect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gfx_effect_scene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gfx_i.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Gfx\gfx_math.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Gfx\gfx_math_types.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Gfx\gfx_qbsp_flags.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Gfx\gfx_types.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Gfx\gfxdyn.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="d3dstuff\d3dutil.h">
+      <Filter>Header Files\d3dstuff</Filter>
+    </ClInclude>
+    <ClInclude Include="d3dstuff\dxutil.h">
+      <Filter>Header Files\d3dstuff</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Std\log.h">
+      <Filter>Header Files\std</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Std\memTool.h">
+      <Filter>Header Files\std</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Std\pager.h">
+      <Filter>Header Files\std</Filter>
+    </ClInclude>
+    <ClInclude Include="qbsp\gfx_qbsp.h">
+      <Filter>Header Files\qbsp</Filter>
+    </ClInclude>
+    <ClInclude Include="qbsp\gfx_qbsp_i.h">
+      <Filter>Header Files\qbsp</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="gfx_d3d.def">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="resource.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

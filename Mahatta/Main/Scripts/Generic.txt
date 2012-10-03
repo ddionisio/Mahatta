@@ -1,0 +1,140 @@
+--------------------
+-- Function storage
+--------------------
+local _Generics = {};
+
+----------------------------
+-- Generic class definition
+----------------------------
+class.define("Generic", {
+	-- __call metamethod
+	-- ...: Arguments to call
+	-- Returns: Results of call
+	----------------------------
+	__call = function(G, ...)
+		local argc = select("#", ...);
+		if #G.funcs ~= 0 then
+			local args, funcs = { ... }, G.funcs;
+
+			-- Winnow down to the applicable functions. Untyped parameters will accept any
+			-- value. Quit if no valid function remains.
+			for index = 1, G.paramc do
+				local arg = args[index];
+				local afuncs, atype, bInstance = {}, GenericType(arg);
+				for _, entry in ipairs(funcs) do
+					local ptype = entry[index];
+					if type(ptype) == "nil" or atype == ptype or (bInstance and class.istype(arg, ptype)) then
+						afuncs[#afuncs + 1] = entry;
+					end
+				end
+				if #afuncs == 0 then
+					return;
+				end
+				funcs = afuncs;
+			end
+
+			-- Proceed left to right through the arguments. On each pass, optimize the current
+			-- function set. When only one function remains, invoke it.
+			local index = 1;
+			while #funcs > 1 do
+				local ctype, bInstance = GenericType(args[index]);
+				local types, bUseNil, choices, atype = {}, true;
+				
+				-- For instance-type arguments, build up a base class list. In this case,
+				-- the top of the hierarchy will be the argument key.
+				if bInstance then
+					atype = ctype;
+					while true do
+						local super = class.super(atype);
+						if super then
+							types[super], atype = atype, super;
+						else
+							break;
+						end
+					end
+					
+				-- For other arguments, the argument key is a dummy table. A one-element
+				-- type table is built to allow, by default, for untyped parameters.
+				else
+					atype = {};
+					types[atype] = ctype;
+				end
+
+				-- Iterate through the choices, beginning with the argument key, and accrue
+				-- functions whose type is at least as specific as this key; when an argument
+				-- is more specific, dispose of the current list and replace the key first.
+				-- As a last resort, accept untyped parameters.
+				funcs, choices = {}, funcs;
+				for _, entry in ipairs(choices) do
+					local bAdd, etype = false, entry[index];
+					if type(etype) == "nil" then
+						bAdd = bUseNil;
+					elseif etype == atype then
+						bAdd, bUseNil = true, false;
+					elseif types[etype] or etype == ctype then
+						bAdd, bUseNil = true, false;
+						while etype ~= atype do
+							types[atype], atype = nil, types[atype];
+						end
+						funcs = {};
+					end
+					CallIf(bAdd, table.insert, funcs, entry);
+				end
+				index = index + 1;
+			end
+			return funcs[1].func(...);
+		end
+	end,
+
+	-- Gets the parameter count
+	-- Returns: Parameter count
+	-----------------------------
+	Count = function(G)
+		return G.paramc;
+	end,
+
+	-- Defines a specialization
+	-- func: Function to assign
+	-- ...: Parameter types
+	----------------------------
+	Define = function(G, func, ...)
+		if select("#", ...) == G.paramc then
+			local params = { ... };
+
+			-- On each entry, run through all its parameters, comparing against the new
+			-- entry's list. If there are no differences, replace the old entry.
+			for _, entry in ipairs(G.funcs) do
+				local index = 0;
+				repeat
+					index = index + 1;
+					if index > G.paramc then
+						entry.func = func;
+						return;
+					end
+				until entry[index] ~= params[index];
+			end
+
+			-- Given no matches, add the function to the set.
+			params.func = func;
+			G.funcs[#G.funcs + 1] = params;
+		end
+	end
+},
+
+-- New
+-- paramc: Parameter count
+---------------------------
+function(G, paramc)
+	G.funcs, G.paramc = {}, paramc;
+end);
+
+--------------------------------------------------------------
+-- GenericType
+-- Gets an object's type
+-- object: Object, which may be a class instance
+-- Returns: Object's class or base type, and instance boolean
+--------------------------------------------------------------
+function GenericType(object)
+	local bInstance = class.isinstance(object);
+	return bInstance and class.type(object) or type(object), bInstance;
+end

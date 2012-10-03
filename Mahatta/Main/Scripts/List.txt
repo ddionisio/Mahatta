@@ -1,0 +1,105 @@
+------------------------------------------
+-- Adds an entry after another in a list
+-- head: List head
+-- prev: List entry after which to append
+-- entry: Entry to add
+-- Returns: List head after addition
+------------------------------------------
+function AddToListAfter (head, prev, entry)
+	-- Remove the entry if it is already in the list.
+	head = RemoveFromList(head, entry);
+
+	-- Bind surrounding entries. If no previous entry was specified, prepend the entry.
+	local next;
+	if prev then
+		prev.next, next = entry, prev.next;
+	else
+		next = head;
+	end
+	if next then
+		next.prev = entry;
+	end
+	entry.prev, entry.next = prev, next;
+
+	-- If the entry was appended, the entry becomes the back.
+	if head and head.back == prev then
+		head.back = entry;
+	end
+
+	-- If the entry was prepended or the list was empty, the entry becomes the head, and the
+	-- back of the list is moved or assigned. Return the head.
+	if head == next then
+		if next then
+			entry.back, next.back = next.back;
+		else
+			entry.back = entry;
+		end
+	end
+	return head == next and entry or head;
+end
+
+--------------------------------------
+-- Adds an entry to the end of a list
+-- head: List head
+-- entry: Entry to add
+-- Returns: List head after addition
+--------------------------------------
+function AppendToList (head, entry)
+	return AddToListAfter(head, BackOfList(head), entry);
+end
+
+---------------------------------
+-- Gets the back entry of a list
+-- head: List head
+-- Returns: Back entry
+---------------------------------
+function BackOfList (head)
+	return head and head.back or nil;
+end
+
+---------------------------
+-- GetListSize
+-- Gets the size of a list
+-- head: List head
+-- Returns: List size
+---------------------------
+function GetListSize (head)
+	local count, item = 0, head;
+	while item do
+		count, item = count + 1, item.next;
+	end
+	return count;
+end
+
+------------------------------------
+-- Removes an entry from a list
+-- head: List head
+-- entry: Entry to remove
+-- Returns: List head after removal
+------------------------------------
+function RemoveFromList (head, entry)
+	if head then
+		-- Remove references to and from the entry.
+		local prev, next = entry.prev, entry.next;
+		if prev then
+			prev.next, entry.prev = next;
+		end
+		if next then
+			next.prev, entry.next = prev;
+		end
+
+		-- If the entry is the back of the list, the previous entry becomes the back.
+		if entry == head.back then
+			head.back = prev;
+		end
+
+		-- If the head was removed, the next entry becomes the head. Return the head.
+		if entry == head then
+			if next then
+				next.back = head.back;
+			end
+			head, head.back = next;
+		end
+	end
+	return head;
+end

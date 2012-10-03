@@ -1,0 +1,101 @@
+---------------------------------------------------
+-- Radiobox class definition; inherits from Widget
+---------------------------------------------------
+class.define("Radiobox", {
+	-- Adds an option to a basic radiobox
+	-- x, y: Option position
+	--------------------------------------
+	AddOption = function(R, x, y)
+		table.insert(R.array, { x = x, y = y, part = R:CreatePart() });
+		
+		-- If this is the first option, invoke a refresh.
+		R:CallIf(#R.array == 1, "onRefresh", true);
+	end,
+
+	-- Clears the radiobox options
+	-------------------------------
+	Clear = function(R)
+		for _, option in R:Iter() do
+			option.part:Remove();
+		end
+		R.array, R.choice = {};
+	end,
+
+	-- Gets the radiobox choice
+	-- Returns: Radiobox choice
+	----------------------------
+	GetChoice = function(R)
+		return R.choice or 1;
+	end,
+	
+	-- Builds an iterator over the radiobox
+	-- Returns: Iterator which returns index and option position
+	-------------------------------------------------------------
+	Iter = function(R)
+		return ipairs(R.array);
+	end,
+
+	-- Sets the radiobox choice
+	-- choice: Choice to assign
+	-- bForceRefresh: If true, refresh unconditionally
+	---------------------------------------------------
+	SetChoice = function(R, choice, bForceRefresh)
+		if choice ~= R:GetChoice() or bForceRefresh then
+			R:RefreshAction(function()
+				R.choice = choice;
+			end);
+		end
+	end,
+
+	-- Sets the option dimensions
+	-- ow, oh: Option dimensions; if nil, no change
+	------------------------------------------------
+	SetDimensions = function(R, ow, oh)
+		R.ow, R.oh = ow or R.ow, oh or R.oh;
+	end
+},
+
+-- New
+-- state: State handle
+-- ow, oh: Option dimensions
+-- bFrame: Frame boolean
+-----------------------------
+function(R, state, ow, oh, bFrame)
+	class.scons("Widget", state);
+
+	-- Assign format parameters.
+	R.array, R.ow, R.oh, R.bFrame = {}, ow, oh, bFrame;
+
+	-- Methods --
+	R:SetMethod{
+		event = function(event)
+			if event == WE.DropPart then
+				R:SetChoice(R.pick);
+			end
+		end,
+		signal = function(cx, cy, x, y, w, h)
+			if PointInBox(cx, cy, x, y, w, h) then
+				R:Signal();
+				for index, option in R:Iter() do
+					if PointInBox(cx, cy, x + option.x, y + option.y, R.ow, R.oh) then
+						R.pick = index;
+						option.part:Signal();
+					end
+				end
+			end
+		end,
+		update = function(x, y, w, h)
+			R:DrawPicture("B", x, y, w, h);
+			
+			-- Iterate through the options. If the option is the choice, draw that; otherwise,
+			-- draw a normal option.
+			local choice = R:GetChoice();
+			for index, option in R:Iter() do
+				R:DrawPicture(index == choice and "C" or "O", x + option.x, y + option.y, R.ow, R.oh);
+			end
+			
+			-- If requested, frame the radiobox.
+			R:InvokeIf(R.bFrame, "DrawFrame", "F", x, y, w, h);
+		end
+	};
+end, { base = "Widget" });

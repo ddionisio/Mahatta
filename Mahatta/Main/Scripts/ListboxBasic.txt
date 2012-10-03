@@ -1,0 +1,176 @@
+---------------------------------------------------------
+-- ListboxBasic class definition; inherits from Textlist
+---------------------------------------------------------
+class.define("ListboxBasic", {
+	-- Adds an entry to the basic listbox
+	-- entry: Index of entry
+	-- text: Text to assign
+	-- datum: Datum to attach to entry
+	--------------------------------------
+	Add = function(L, entry, text, datum)
+		L:AddEntry(entry, text, datum);
+		
+		-- Make a selection if there is none.
+		if not L.selection then
+			L:Select(entry, false);
+			
+		-- Move the selection ahead if necessary.
+		elseif entry <= L.selection then
+			L:Select(L.selection + 1, true);
+		end
+	end,
+	
+	-- Adds an entry to the end of the basic listbox
+	-- text: Text to assign
+	-- datum: Datum to attach to entry
+	-------------------------------------------------
+	Append = function(L, text, datum)
+		L:Add(#L.array, text, datum);
+	end,
+	
+	-- Clears the basic listbox
+	----------------------------
+	Clear = function(L)
+		L.sequence:DeleteItems(0, #L.array);
+		L.array, L.selection = {};
+	end,
+	
+	-- Fills the basic listbox
+	-- supply: Supply iterator
+	-- test: Choice test routine
+	-----------------------------
+	Fill = function(L, supply, test)
+		L:Clear();
+		
+		-- Load all supplied entries. Determine which, if any, is the selection.
+		local choice = 0;
+		for index, text, datum in supply() do
+			L:AddEntry(index, text, datum);
+			if test(text, datum) then
+				choice = index;
+			end
+		end
+	
+		-- Assign the selection.
+		L:Select(choice, false);
+	end,
+	
+	-- Gets the basic listbox selection entry
+	-- Returns: The text and datum in the selection
+	------------------------------------------------
+	GetSelection = function(L)
+		if L.selection then
+			return L:GetEntry(L.selection);
+		end
+	end,
+	
+	-- Removes an entry from the basic listbox
+	-- entry: Entry to remove
+	-------------------------------------------
+	Remove = function(L, entry)
+		-- Move the selection back if removing before it, flagging an automatic switch.
+		local selection, bAuto = L.selection, false;
+		if entry < selection then
+			selection, bAuto = selection - 1, true;
+			
+		-- If the last entry is removed and it was the selection, move the selection back;
+		-- this may empty the listbox, in which case there is no longer a valid selection.
+		-- If removed elsewhere, nullify the selection so the listbox properly refreshes.
+		elseif entry == selection then
+			if selection + 1 == #L.array then
+				selection = selection > 0 and selection - 1 or nil;
+			else
+				L.selection = nil;	
+			end
+		end
+		L:RemoveEntry(entry);
+		
+		-- Make a new selection, using the updated index and auto flag.
+		L:Select(selection, bAuto);
+	end,
+
+	-- Selects an item in the basic listbox
+	-- item: Item to select
+	-- bAuto: Auto boolean
+	----------------------------------------
+	Select = function(L, item, bAuto)
+		-- If the selection is not automatic and it changed, refresh the listbox.
+		L:InvokeIf(not bAuto and L.selection ~= item, "RefreshAction", function()
+			L.selection = item;
+		end);
+	end,
+
+	-- Gets the basic listbox's selection index
+	-- Returns: Index of the selection
+	--------------------------------------------
+	Selection = function(L)
+		return L.selection;
+	end
+},
+
+-- New
+-- state: State handle
+-- capacity: Listbox capacity
+------------------------------
+function(L, state, capacity)
+	class.scons("Textlist", state, capacity);
+
+	-- Key press timer.
+	L.press = class.new("Timer", function()
+		if L.selection then
+			-- On up or down, move the cursor.
+			if L.action == "up" then
+				L:InvokeIf(L.selection ~= 0, "Select", L.selection - 1, false);
+			elseif L.action == "down" then
+				L:InvokeIf(L.selection + 1 ~= #L.array, "Select", L.selection + 1, false);
+			end
+			
+			-- Put the selection in view if it was altered while out of view.
+			if L.action == "up" or L.action == "down" then
+				L.offset:InvokeIf(L.selection < L.offset:Get(), "Set", L.selection);
+				L.offset:InvokeIf(L.selection >= L.offset:Get() + L.capacity, "Set", L.selection - L.capacity + 1);	
+			end
+		end
+	end);
+	
+	-- Methods --
+	L:SetMethod{
+		event = function(event)
+			if event == WE.GrabPart then
+				L:Select(L.offset:Get() + table.find(L.parts, state:GetGrabbed()) - 1);
+			end
+		end,
+		signal = function(cx, cy, x, y, w, h)
+			if PointInBox(cx, cy, x, y, w, h) then
+				L:Signal();
+
+				-- Signal an item if the cursor lies within it.
+				local vp, offset = Misc.Partition(y, h, L.capacity - 1), L.offset:Get() - 1;
+				for index in L:View() do
+					local range = vp[index - offset];
+					L.parts[index - offset]:InvokeIf(cy >= range.value and cy < range.value + range.dim, "Signal");
+				end
+			end
+		end,
+		update = function(x, y, w, h)
+			L:DrawPicture("B", x, y, w, h);
+
+			-- Update the key press timer.
+			L.press:Update();
+
+			-- Iterate through the visible items. If an item is selected, highlight it. Draw
+			-- the string attached to the item, then move on to the next line.
+			local vp, offset = Misc.Partition(y, h, L.capacity - 1), L.offset:Get() - 1;
+			for index, entry in L:View() do
+				local range = vp[index - offset];
+				if index == L.selection then
+					L:DrawPicture("S", x, range.value, w, range.dim);
+				end
+				L:StringF(entry.text, "vo", x, range.value, w, range.dim);
+			end
+			
+			-- Frame the listbox according to whether it is the focus.
+			L:DrawFrame(L:IsFocus() and "H" or "D", x, y, w, h);
+		end
+	};
+end, { base = "Textlist" });
